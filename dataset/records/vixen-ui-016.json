@@ -1,0 +1,215 @@
+{
+  "title": "'What is Brick mode?': before/after lock screen explainer",
+  "category": "explainer / state comparison",
+  "source_files": [
+    "batch-02/img-07"
+  ],
+  "attribution_visible_in_image": "Visible: headline 'What is Brick mode?'; 'BRICK' device mark inside the lock screen widget. No creator credit visible.",
+  "contains_third_party_content": "App icons (YouTube, TikTok, Instagram, Spotify) and photographed hands/devices.",
+  "observed": {
+    "layout": "Bold black headline 'What is Brick mode?' over a light background; two hand-held phones labeled 'Bricked' and 'Unbricked' separated by 'vs.'. Bricked: date, large time 9:41, a wide widget with a BRICK device icon and a running timer (9:10:55), weather advisory text, a small alarm chip (7:35 AM), a Spotify chip, flashlight and camera buttons. Unbricked: the same date and time plus a 'Notification Center' list with YouTube (3), TikTok (4) and Instagram (2) notification groups.",
+    "hierarchy": "Headline, then the two phones; the message is the contrast between empty space and a notification stack.",
+    "typography": "Heavy tight display sans for the headline; system-style UI inside phones.",
+    "iconography": "Brand app icons and system glyphs.",
+    "materials": "Photographic hands, flat UI mockups.",
+    "background": "Light warm grey."
+  },
+  "interpretation": {
+    "aesthetic": "Social-media education/explainer graphic.",
+    "concept": "A subtractive mode: removing information to reduce distraction, proven by symmetric before/after framing.",
+    "implementation_notes": [
+      "Two identical frames, same scale and background, label above each.",
+      "Lock-screen UI composited on device mockups with hands."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Make a mode understandable at a glance by holding everything constant except the thing that changes.",
+    "what_makes_it_work": [
+      "Identical framing isolates the one variable.",
+      "Strong headline-first hierarchy.",
+      "Labels name each state."
+    ],
+    "gaps_to_make_it_work": [
+      "Third-party app logos and photographed hands complicate reuse.",
+      "The Bricked screen's widgets are small; the benefit is shown by emptiness, not explained."
+    ]
+  },
+  "pattern": {
+    "name": "Symmetric before/after state comparison",
+    "use_when": [
+      "Explaining a mode, setting or redesign",
+      "Marketing a state change"
+    ],
+    "avoid_when": [
+      "Differences are subtle and need annotation"
+    ],
+    "must_preserve": [
+      "Same frame, scale and background for both states",
+      "Labels naming each state"
+    ],
+    "free_to_vary": [
+      "headline style",
+      "device frame",
+      "photography"
+    ],
+    "adaptation_examples": [
+      "Dark-mode explainer: same frame, light vs dark UI.",
+      "Pricing: Free vs Pro as equal cards."
+    ],
+    "failure_modes": [
+      "Unequal framing biases the comparison",
+      "Hands/photography distract"
+    ]
+  },
+  "lessons": [
+    "Hold everything constant except the variable you want to show.",
+    "Let empty space carry the argument when the concept is subtraction."
+  ],
+  "tags": [
+    "explainer",
+    "before-after",
+    "lock-screen",
+    "comparison",
+    "mobile"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-016",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#E4E0DF",
+        "page background (~43%)"
+      ],
+      [
+        "#121212",
+        "phone screens (~33%)"
+      ],
+      [
+        "#604D43",
+        "skin tones from the hand photos (~14%)"
+      ],
+      [
+        "#030302 / #151515",
+        "text blocks and widgets"
+      ],
+      [
+        "#F6F4F4 / #FDFDFD",
+        "UI text on dark"
+      ],
+      [
+        "#C52734",
+        "red from the YouTube icon (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral stage and black phones; the only color comes from app icons and hands.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Heading",
+        "role": "primary",
+        "fg": "#F6F4F4",
+        "bg": "#030302",
+        "ratio": 18.89,
+        "near_threshold": false
+      },
+      {
+        "element": "Notification Center title",
+        "role": "primary",
+        "fg": "#FDFDFD",
+        "bg": "#151515",
+        "ratio": 17.85,
+        "near_threshold": false
+      },
+      {
+        "element": "Timestamp \"24m ago\"",
+        "role": "secondary",
+        "fg": "#DCDCDC",
+        "bg": "#030303",
+        "ratio": 15.07,
+        "near_threshold": false
+      },
+      {
+        "element": "Heat Advisory text",
+        "role": "secondary",
+        "fg": "#E5E5E5",
+        "bg": "#151515",
+        "ratio": 14.55,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 5,
+        "weight": 15,
+        "points": 15.0,
+        "evidence": "The single message (what the mode changes) is obvious in seconds.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Strong headline, symmetric composition and ample space.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Comparison graphics are done correctly: equal frames, named states.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "The difference is legible without interaction; no explanation of how the mode is entered.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Consistent device framing, label style and spacing.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": "Before/after is a standard explainer pattern; subtraction as the message is clear but familiar.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "primary text min 17.85:1; secondary text min 14.55:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 83.0,
+    "critical_failures": [],
+    "final_total": 83.0,
+    "cap_applied": false,
+    "readiness": "A",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

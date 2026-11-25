@@ -1,0 +1,233 @@
+{
+  "title": "Dark glass tab bar with raised glowing center action and green current-tab marker (crypto/finance)",
+  "category": "navigation / tab bar",
+  "source_files": [
+    "batch-02/img-01"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": null,
+  "observed": {
+    "layout": "Bottom navigation inside a phone frame with five tabs: Home, Wallet, Exchange, Markets, Profile. The center 'Exchange' tab is a raised blue circle set into a smooth notch in the bar's top edge, with a blue glow. The current tab 'Markets' has a white icon and label and a short glowing green bar at the bottom edge. Above the bar, content appears as grey skeleton placeholders (circular avatars and text bars).",
+    "hierarchy": "Two emphasis systems at once: raised blue circle (primary action) and green tick under Markets (current location).",
+    "typography": "Rounded geometric sans, small labels; white active, grey inactive. Typeface unconfirmed.",
+    "iconography": "Consistent outline icons; the Markets icon is a shopping cart, an unusual metaphor for 'Markets'.",
+    "materials": "Dark frosted glass with visible film-grain noise, thin light edge, blue and green glows.",
+    "background": "Dark ribbon-like texture behind the phone."
+  },
+  "interpretation": {
+    "aesthetic": "Dark fintech/crypto. Glow color carries meaning (blue = act, green = you are here).",
+    "implementation_notes": [
+      "Notch: SVG path or mask with smooth bezier edges around the raised circle.",
+      "Glow: blurred pseudo-element or box-shadow in the accent color.",
+      "Grain: noise overlay (SVG feTurbulence or tiled PNG).",
+      "Skeleton placeholders imply a loading state in the screen above."
+    ],
+    "caveat": "Implementation notes are Claude's inference."
+  },
+  "concept_work": {
+    "essence": "Separate 'what can I do' (raised center action) from 'where am I' (glowing marker) using different shapes and colors.",
+    "what_makes_it_work": [
+      "Distinct visual language for action vs location.",
+      "Persistent labels on all tabs.",
+      "Texture and glow give depth on an otherwise flat dark UI."
+    ],
+    "gaps_to_make_it_work": [
+      "Inactive labels sit near 4:1 and the Exchange label near 3.3:1.",
+      "Cart icon for 'Markets' weakens meaning.",
+      "The green marker sits at the bar's bottom edge and may collide with the system home indicator.",
+      "Two glowing emphases can compete when both are on screen."
+    ]
+  },
+  "pattern": {
+    "name": "Raised center action tab plus separate current-tab marker",
+    "use_when": [
+      "Mobile app with 4-5 destinations and one dominant transactional action",
+      "Dark, premium or data-heavy products"
+    ],
+    "avoid_when": [
+      "The center action is not the main task",
+      "Low-contrast environments where labels must stay readable"
+    ],
+    "must_preserve": [
+      "Distinct treatment for action vs current location",
+      "Notch that follows the raised element"
+    ],
+    "free_to_vary": [
+      "accent colors",
+      "glow intensity",
+      "grain",
+      "icon set",
+      "side-tab count (2+2)"
+    ],
+    "adaptation_examples": [
+      "Ticketing app: raised center 'Scan' button, current tab shown by underline instead of a glow.",
+      "Light theme: replace glows with soft shadows, keep the notch."
+    ],
+    "failure_modes": [
+      "Competing emphases",
+      "Inactive labels near 4:1",
+      "Icon metaphor mismatch"
+    ]
+  },
+  "lessons": [
+    "Use different visual channels (shape vs color/glow) for action and location.",
+    "Check metaphors: an icon should match the label's meaning."
+  ],
+  "tags": [
+    "tab-bar",
+    "center-action",
+    "notch",
+    "glow",
+    "grain",
+    "dark",
+    "finance"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "Is there a motion version?"
+  ],
+  "id": "vixen-ui-010",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#171718 / #101011 / #0A0A0A / #030303",
+        "near-black glass and background (~70%)"
+      ],
+      [
+        "#29344B",
+        "blue-slate tint near the center button (~5%)"
+      ],
+      [
+        "#2A5DEE",
+        "blue accent (center button), saturated-pixel median"
+      ],
+      [
+        "#4AF81E",
+        "green current-tab marker, saturated-pixel median"
+      ],
+      [
+        "#787878 / #767676",
+        "inactive labels and icons"
+      ],
+      [
+        "#FEFFFE",
+        "active label"
+      ]
+    ],
+    "color_roles": "Near-black neutral surface; blue = primary action; green = current location; white = active text; mid-grey = inactive.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Markets active label",
+        "role": "primary",
+        "fg": "#FEFFFE",
+        "bg": "#141615",
+        "ratio": 18.19,
+        "near_threshold": false
+      },
+      {
+        "element": "Wallet inactive label",
+        "role": "primary",
+        "fg": "#787878",
+        "bg": "#0B0B0B",
+        "ratio": 4.48,
+        "near_threshold": true
+      },
+      {
+        "element": "Home inactive label",
+        "role": "primary",
+        "fg": "#767676",
+        "bg": "#131313",
+        "ratio": 4.07,
+        "near_threshold": false
+      },
+      {
+        "element": "Exchange label",
+        "role": "primary",
+        "fg": "#707387",
+        "bg": "#1B2348",
+        "ratio": 3.26,
+        "near_threshold": true
+      },
+      {
+        "element": "Wallet icon",
+        "role": "icon",
+        "fg": "#7C7C7C",
+        "bg": "#141414",
+        "ratio": 4.43,
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Five clearly named tabs and one dominant action fit a trading/wallet app.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Depth from glow, grain and notch; clear focal point on the center button.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": "Raised-center pattern is established, but the cart icon for 'Markets' and two competing emphases weaken correctness.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": "Active tab shown; pressed/disabled/badge states and Exchange-vs-Markets distinction are not shown.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Uniform outline icons and label style; center button intentionally different.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Grain texture plus glow as semantic color goes beyond the default dark tab bar.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "primary text min 3.26:1; secondary text min n/a:1; icon min 4.43:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 69.0,
+    "critical_failures": [],
+    "final_total": 69.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

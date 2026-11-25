@@ -1,0 +1,252 @@
+{
+  "title": "'Free UI Cards': one profile structure in two skins (header image and full-bleed gradient)",
+  "category": "card / profile",
+  "source_files": [
+    "batch-02/img-06"
+  ],
+  "attribution_visible_in_image": "Visible text: 'Free UI Cards', Figma logo, 'figma.com/@Spline', 'spline.one'. Likely the publisher/creator; not confirmed.",
+  "contains_third_party_content": "Photos of people; an Adobe logo inside the company chip.",
+  "observed": {
+    "layout": "Two 'Creative Director' cards on a dark-to-grey gradient page. Left: dark card with a warm blurred-gradient header, overlapping avatar with a green online dot, an 'Adobe Co.' chip, name/role, a bookmark-add button, an outlined stats strip (star 5.0 Rating; flag $160 hours; clock 24 Month) and a full-width white 'Get In Touch' button. Right: same structure over a full-bleed red/blue gradient with a dark silhouette and translucent glass chips and stats panel.",
+    "hierarchy": "Name, then the white CTA; stats are tertiary.",
+    "typography": "Neutral grotesk; bold names, small grey roles. Unconfirmed.",
+    "iconography": "Colored mini icons (yellow star, blue flag, purple clock).",
+    "materials": "Left: solid dark card. Right: gradient photo with glass overlays.",
+    "background": "Dark gradient."
+  },
+  "interpretation": {
+    "aesthetic": "Free UI-kit presentation; two skins on a shared structure.",
+    "implementation_notes": [
+      "Same component, two backgrounds: header-image vs full-bleed with backdrop-filter glass overlays.",
+      "White CTA stays constant across skins for recognition."
+    ],
+    "caveat": "Stats read '$160 / hours' and '24 / Month'. The intended meaning is probably rate per hour and 24 months of experience, but the labels as written are ambiguous."
+  },
+  "concept_work": {
+    "essence": "One information architecture, two moods, with the CTA constant.",
+    "what_makes_it_work": [
+      "Constant CTA across skins.",
+      "Structure survives a very different background.",
+      "Avatar overlap links the header and body."
+    ],
+    "gaps_to_make_it_work": [
+      "Stat value/label pairs are ambiguous.",
+      "On the red card, small light labels over saturated red measure about 2.5:1.",
+      "Left role text is about 3.3:1.",
+      "Bookmark button purpose is unclear without a label."
+    ]
+  },
+  "pattern": {
+    "name": "One card structure, two skins (header image vs full-bleed)",
+    "use_when": [
+      "Talent or people marketplaces",
+      "Cards with a single contact/hire CTA"
+    ],
+    "avoid_when": [
+      "Photos or backgrounds are unpredictable and no scrim is possible"
+    ],
+    "must_preserve": [
+      "Unambiguous value-label pairs",
+      "One high-contrast CTA",
+      "Scrim behind text on gradients or photos"
+    ],
+    "free_to_vary": [
+      "skin",
+      "stat icons",
+      "chip content",
+      "background"
+    ],
+    "adaptation_examples": [
+      "Freelancer card: '$160 / hour' and '24 mo experience'.",
+      "Speaker card: stats become talks given and rating."
+    ],
+    "failure_modes": [
+      "Ambiguous stat labels",
+      "Light text on saturated color near 2.5:1",
+      "Duplicate information across chip and stats"
+    ]
+  },
+  "lessons": [
+    "Keep the CTA constant when changing the skin.",
+    "Make value and label read as one phrase ('$160 / hour')."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "glass",
+    "two-skins",
+    "marketplace"
+  ],
+  "open_questions": [
+    "Creator confirmation (@Spline?)",
+    "Is the Figma file available?"
+  ],
+  "id": "vixen-ui-015",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#191919",
+        "left card (sampled)"
+      ],
+      [
+        "#2B2929 / #161515 / #1E1F20",
+        "page gradient darks"
+      ],
+      [
+        "#6E6D6D / #645D5D",
+        "page gradient grey (bottom)"
+      ],
+      [
+        "#EB7743",
+        "warm header gradient (sampled)"
+      ],
+      [
+        "#C70A26 / #B6212E",
+        "right card red (sampled)"
+      ],
+      [
+        "#0D3E88",
+        "right card blue (sampled)"
+      ],
+      [
+        "#341716",
+        "right card dark silhouette"
+      ],
+      [
+        "#FEFEFE",
+        "CTA button (sampled)"
+      ]
+    ],
+    "color_roles": "Dark neutral page; saturated red/blue only inside the right card; white CTA is the highest-contrast element in both.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Left name",
+        "role": "primary",
+        "fg": "#FEFEFE",
+        "bg": "#191919",
+        "ratio": 17.56,
+        "near_threshold": false
+      },
+      {
+        "element": "Left role",
+        "role": "secondary",
+        "fg": "#6A6A6A",
+        "bg": "#191919",
+        "ratio": 3.25,
+        "near_threshold": true
+      },
+      {
+        "element": "Left stat label",
+        "role": "secondary",
+        "fg": "#DCDCDC",
+        "bg": "#191919",
+        "ratio": 12.77,
+        "near_threshold": false
+      },
+      {
+        "element": "Right name",
+        "role": "primary",
+        "fg": "#FFFAF6",
+        "bg": "#341717",
+        "ratio": 15.76,
+        "near_threshold": false
+      },
+      {
+        "element": "Right role",
+        "role": "secondary",
+        "fg": "#F67987",
+        "bg": "#341716",
+        "ratio": 6.23,
+        "near_threshold": false
+      },
+      {
+        "element": "Right stat label",
+        "role": "secondary",
+        "fg": "#FF8193",
+        "bg": "#C70A26",
+        "ratio": 2.52,
+        "near_threshold": false
+      },
+      {
+        "element": "CTA label",
+        "role": "primary",
+        "fg": "#070707",
+        "bg": "#FEFEFE",
+        "ratio": 19.89,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "A hire/contact card with a clear CTA and credentials.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Strong contrast between the two skins and consistent structure.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": "Card conventions are followed, but stat labels are ambiguous or inverted, which hurts semantic correctness.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": "One CTA is clear; bookmark and chip behavior are unspecified; no hover/disabled states.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Both cards share the same spacing, radii and component layout.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": "Two skins on one structure is useful but the card patterns themselves are familiar.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "primary text min 15.76:1; secondary text min 2.52:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 69.0,
+    "critical_failures": [],
+    "final_total": 69.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

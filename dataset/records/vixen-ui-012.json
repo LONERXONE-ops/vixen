@@ -1,0 +1,219 @@
+{
+  "title": "Floating bottom bar with center + action in a smooth bump (light and dark)",
+  "category": "navigation / tab bar",
+  "source_files": [
+    "batch-02/img-03"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": null,
+  "observed": {
+    "layout": "Two floating bars, light above and dark below, each with five slots: home, chat, center plus, bell, profile. The center plus sits in a smooth wave-shaped bump in the bar's top edge. Light: filled purple gradient circle with glow and a dotted halo ring. Dark: ring-outline circle with glow. Active = filled home icon plus a small purple dot beneath.",
+    "hierarchy": "Center action first, active dot second.",
+    "typography": "No text labels.",
+    "iconography": "Outline icons; filled variant for active.",
+    "materials": "Light: off-white bar with soft shadow. Dark: near-black bar with soft shadow.",
+    "background": "Light grey."
+  },
+  "interpretation": {
+    "aesthetic": "Soft, minimal, theme-parity showcase.",
+    "implementation_notes": [
+      "Bump: SVG path with smooth curves rather than a circular cutout.",
+      "Halo: radial dotted ring or conic mask; glow via blurred accent shadow.",
+      "Dark variant swaps the filled circle for an outlined ring to keep the bar quiet."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A calm bar whose only saturated element is the action the user is most likely to take.",
+    "what_makes_it_work": [
+      "Accent confined to two roles.",
+      "Organic bump reads as part of the bar, not a pasted button.",
+      "Both themes derived systematically."
+    ],
+    "gaps_to_make_it_work": [
+      "Icon-only navigation depends on icon recognition; no labels.",
+      "Generic '+' does not say what it creates.",
+      "Dark ring may read as disabled."
+    ]
+  },
+  "pattern": {
+    "name": "Floating pill bar with center action in a smooth bump",
+    "use_when": [
+      "Apps with a frequent create action",
+      "Light/dark parity required"
+    ],
+    "avoid_when": [
+      "More than 5 destinations",
+      "Users need text labels to understand icons"
+    ],
+    "must_preserve": [
+      "Accent used only for primary action and active indicator",
+      "Bump continuous with the bar edge"
+    ],
+    "free_to_vary": [
+      "accent hue",
+      "bump depth",
+      "halo style",
+      "bar elevation"
+    ],
+    "adaptation_examples": [
+      "Notes app: center creates a note, brand-color accent.",
+      "Food delivery: add persistent labels and make the center 'Order'."
+    ],
+    "failure_modes": [
+      "Icon-only discoverability",
+      "Ambiguous center action",
+      "Dark ring looks disabled"
+    ]
+  },
+  "lessons": [
+    "Confine the accent color to the action and the active state.",
+    "Derive the dark theme from the same geometry instead of redesigning it."
+  ],
+  "tags": [
+    "tab-bar",
+    "center-action",
+    "light-dark",
+    "icon-only",
+    "purple"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-012",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F1F1F3 / #EBEBED / #F7F7F9",
+        "light page and bar (~80%)"
+      ],
+      [
+        "#24252A",
+        "dark bar (sampled)"
+      ],
+      [
+        "#744FFD",
+        "purple accent, saturated-pixel median"
+      ],
+      [
+        "#1D1C20",
+        "light-theme icons (sampled)"
+      ],
+      [
+        "#BBBCC0",
+        "dark-theme icons (sampled)"
+      ],
+      [
+        "#62616C",
+        "dark bar mid-tone (~12%)"
+      ]
+    ],
+    "color_roles": "Neutral bars with one purple accent used for the center action and active dot only.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Light bar chat icon",
+        "role": "icon",
+        "fg": "#1D1C20",
+        "bg": "#F8F7FA",
+        "ratio": 15.93,
+        "near_threshold": false
+      },
+      {
+        "element": "Light bar bell icon",
+        "role": "icon",
+        "fg": "#1A191D",
+        "bg": "#F8F8FA",
+        "ratio": 16.4,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark bar chat icon",
+        "role": "icon",
+        "fg": "#BBBCC0",
+        "bg": "#24252A",
+        "ratio": 8.02,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark bar bell icon",
+        "role": "icon",
+        "fg": "#B9BABF",
+        "bg": "#24252A",
+        "ratio": 7.89,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": "Generic social-app context; no domain content to anchor purpose.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Clean spacing, soft shadows, deliberate accent use.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Center-action bar is an established pattern executed with a continuous curve and active indicator.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": "Active state shown; no labels, pressed or badge states.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Both themes share geometry, spacing and icon style.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": "Center-action nav is common; the organic bump and halo add some distinction.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "primary text min n/a:1; secondary text min n/a:1; icon min 7.89:1; non-color state cue: True. Capped at 3: meaning depends on icon recognition or hover-only labels."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 70.0,
+    "critical_failures": [],
+    "final_total": 70.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "title": "Magnifying dock navigation presented as a website component (Osmo Nr. 003)",
+  "category": "navigation / dock",
+  "source_files": [
+    "batch-02/img-04"
+  ],
+  "attribution_visible_in_image": "Visible text: 'Osmo' wordmark, 'osmo.supply', 'Nr. 003 / Apple Dock Navigation Bar', 'Clone in Webflow'. Likely the publisher; creator not confirmed.",
+  "contains_third_party_content": "Brand logos (Notion, Asana, Slack, Spotify, Webflow, Adobe apps, Figma, etc.) are shown as tiles.",
+  "observed": {
+    "layout": "A pale strip holds a row of 11 square app-style tiles; the hovered 'Webflow' tile is enlarged, shows a hand cursor and a white tooltip label above it. Page chrome: 'Osmo' wordmark with an asterisk top-left, '-> osmo.supply' top-right, footer 'Nr. 003 / Apple Dock Navigation Bar' bottom-left and a 'Clone in Webflow' button bottom-right.",
+    "hierarchy": "The hovered tile is the only enlarged, labeled item.",
+    "typography": "Small grotesk UI type, dark on warm grey. Unconfirmed.",
+    "iconography": "Brand logos as rounded-square tiles.",
+    "materials": "Flat; the strip is almost the same color as the page.",
+    "background": "Warm light grey."
+  },
+  "interpretation": {
+    "aesthetic": "Component-library presentation of a macOS-dock hover-magnification effect used as website navigation.",
+    "implementation_notes": [
+      "Magnification: distance-based scale of the hovered tile and its neighbors (pointer tracking in JS or sibling selectors).",
+      "Tooltip appears above the hovered tile.",
+      "The 'Clone in Webflow' button indicates it is built with Webflow interactions."
+    ],
+    "caveat": "Motion is not visible; inferred from the title and the hovered state."
+  },
+  "concept_work": {
+    "essence": "Borrow the desktop dock's playful magnification to make a navigation row feel tactile.",
+    "what_makes_it_work": [
+      "Instantly recognizable metaphor.",
+      "Label appears only where attention is.",
+      "Uniform tile size keeps the row orderly."
+    ],
+    "gaps_to_make_it_work": [
+      "Labels are hover-only; no keyboard focus or touch equivalent shown.",
+      "Strip barely separates from the page.",
+      "Growing tiles can shift layout.",
+      "Footer index text is about 2.9:1."
+    ]
+  },
+  "pattern": {
+    "name": "Magnifying dock navigation",
+    "use_when": [
+      "Desktop portfolios or showcase sites with up to about 12 icon-recognizable destinations",
+      "Playful or tool-oriented brands"
+    ],
+    "avoid_when": [
+      "Touch-first or accessibility-critical products",
+      "Destinations that are not icon-recognizable"
+    ],
+    "must_preserve": [
+      "Label on hover and on keyboard focus",
+      "Smooth neighbor falloff",
+      "Reduced-motion fallback"
+    ],
+    "free_to_vary": [
+      "tile shape",
+      "scale factor",
+      "tooltip style",
+      "strip styling"
+    ],
+    "adaptation_examples": [
+      "Agency portfolio: tiles are case-study thumbnails.",
+      "Developer docs: dock of integrations with focus labels."
+    ],
+    "failure_modes": [
+      "Hover-only labels",
+      "Layout shift on scale",
+      "No touch equivalent",
+      "Strip invisible against page"
+    ]
+  },
+  "lessons": [
+    "Hover-driven delight needs keyboard and touch equivalents before it can be shipped.",
+    "Define the container: a component with no visible boundary reads as floating icons."
+  ],
+  "tags": [
+    "dock",
+    "magnification",
+    "hover",
+    "website-nav",
+    "webflow"
+  ],
+  "open_questions": [
+    "Creator confirmation (Osmo?)",
+    "Original interaction video available?"
+  ],
+  "id": "vixen-ui-013",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#E2E1DF / #E1E0DC",
+        "page and strip background (~85%)"
+      ],
+      [
+        "#0666F8",
+        "Webflow tile blue (sampled)"
+      ],
+      [
+        "#1FD662",
+        "Spotify tile green (sampled)"
+      ],
+      [
+        "#ED9C21",
+        "Illustrator tile orange (sampled)"
+      ],
+      [
+        "#2E2D2B",
+        "primary text (sampled)"
+      ],
+      [
+        "#878684",
+        "footer index text (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral warm-grey stage; all chroma comes from third-party logo tiles.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Footer \"Nr. 003\"",
+        "role": "secondary",
+        "fg": "#878684",
+        "bg": "#E7E6E4",
+        "ratio": 2.91,
+        "near_threshold": true
+      },
+      {
+        "element": "Footer title",
+        "role": "primary",
+        "fg": "#2E2D2B",
+        "bg": "#E8E7E5",
+        "ratio": 11.12,
+        "near_threshold": false
+      },
+      {
+        "element": "osmo.supply link",
+        "role": "primary",
+        "fg": "#373634",
+        "bg": "#E8E7E5",
+        "ratio": 9.72,
+        "near_threshold": false
+      },
+      {
+        "element": "Webflow tooltip",
+        "role": "primary",
+        "fg": "#232222",
+        "bg": "#FDFCFB",
+        "ratio": 15.49,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "The component's job (navigate between a set of tools) and its clone-ready packaging are clear.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": "Clean and spacious but the strip has almost no contrast with the page, weakening the container.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": "Dock magnification is a desktop-OS metaphor; labels, focus and touch behavior are not addressed.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": "Only the hover state is shown; no active, focus, touch or overflow states.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Uniform tile size, radius and spacing across the row.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Applying the OS dock to site navigation is a distinctive, motion-led idea.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "primary text min 9.72:1; secondary text min 2.91:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 64.0,
+    "critical_failures": [],
+    "final_total": 64.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "title": "Profile card with gradient aura header and overlapping white panel",
+  "category": "card / profile",
+  "source_files": [
+    "batch-02/img-05"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Photo of a person (avatar).",
+  "observed": {
+    "layout": "Rounded-square card. The top shows a soft gradient aura (blue-grey at edges, orange-pink at center) with a white inner panel overlapping it; the avatar breaks the panel's top-left edge. Content: name 'Verona Nov', two tinted tags (Writer, Golden User), a two-line grey bio, a large black pill 'Follow' with a plus icon, and two circular outline icon buttons (message, bell).",
+    "hierarchy": "Name, then the black Follow pill; bio and tags are secondary.",
+    "typography": "Geometric sans; large name, light-grey bio. Unconfirmed.",
+    "iconography": "Thin outline icons in circles.",
+    "materials": "Blurred gradient header, white panel, soft long shadow.",
+    "background": "White."
+  },
+  "interpretation": {
+    "aesthetic": "Soft, airy social/creator profile; the aura adds personality without photography.",
+    "implementation_notes": [
+      "Aura: layered radial gradients or blurred blobs.",
+      "Avatar overlap via negative margin and a white ring.",
+      "Tags: low-saturation tinted pills with darker text."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Personality from a gradient, authority from a single black action.",
+    "what_makes_it_work": [
+      "Clear information order for a profile.",
+      "One dominant action; secondary actions are visually quieter.",
+      "Tags use tint + dark text for legibility."
+    ],
+    "gaps_to_make_it_work": [
+      "Bio is about 4.4:1 on white.",
+      "Message and bell buttons are unlabeled.",
+      "An auto-generated aura could clash with avatar colors."
+    ]
+  },
+  "pattern": {
+    "name": "Profile card with gradient aura header and overlapping panel",
+    "use_when": [
+      "Social or creator profiles",
+      "Cards that need personality without relying on photography"
+    ],
+    "avoid_when": [
+      "Dense data cards",
+      "Strict flat-color brands"
+    ],
+    "must_preserve": [
+      "One dominant action",
+      "Low-saturation tags with dark text"
+    ],
+    "free_to_vary": [
+      "aura palette (could derive from avatar or interests)",
+      "button shape",
+      "overlap depth"
+    ],
+    "adaptation_examples": [
+      "Marketplace seller card: aura from shop color, Follow becomes Visit shop.",
+      "Team directory: neutral aura, Follow becomes Message."
+    ],
+    "failure_modes": [
+      "Bio contrast just under 4.5:1",
+      "Unlabeled icon buttons",
+      "Aura clashing with avatar"
+    ]
+  },
+  "lessons": [
+    "Let one element carry the strongest contrast; keep everything else quieter.",
+    "Tinted pills with dark text are a reliable way to add color safely."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "gradient",
+    "light",
+    "creator"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-014",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#FFFFFF / #FEFEFE / #F9F9F9",
+        "card and page white (~65%)"
+      ],
+      [
+        "#F2A543 / #F6944A",
+        "warm orange in the aura gradient (sampled)"
+      ],
+      [
+        "#C7C2C3",
+        "blue-grey and pink blend in the aura"
+      ],
+      [
+        "#030303",
+        "Follow button black (sampled)"
+      ],
+      [
+        "#E8EAF9",
+        "'Writer' tag tint"
+      ],
+      [
+        "#FBF7E5",
+        "'Golden User' tag tint"
+      ],
+      [
+        "#777777",
+        "bio text (sampled)"
+      ]
+    ],
+    "color_roles": "White card, soft gradient aura as the only color, black as the single strong action.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Name",
+        "role": "primary",
+        "fg": "#000000",
+        "bg": "#FCFCFC",
+        "ratio": 20.55,
+        "near_threshold": false
+      },
+      {
+        "element": "Bio",
+        "role": "secondary",
+        "fg": "#777777",
+        "bg": "#FDFDFD",
+        "ratio": 4.39,
+        "near_threshold": true
+      },
+      {
+        "element": "Tag \"Writer\"",
+        "role": "secondary",
+        "fg": "#4D4F5C",
+        "bg": "#E8EAF9",
+        "ratio": 6.79,
+        "near_threshold": false
+      },
+      {
+        "element": "Tag \"Golden User\"",
+        "role": "secondary",
+        "fg": "#534D3B",
+        "bg": "#FBF7E5",
+        "ratio": 7.84,
+        "near_threshold": false
+      },
+      {
+        "element": "Follow label",
+        "role": "primary",
+        "fg": "#FFFFFF",
+        "bg": "#030303",
+        "ratio": 20.61,
+        "near_threshold": false
+      },
+      {
+        "element": "Message icon",
+        "role": "icon",
+        "fg": "#363636",
+        "bg": "#FCFCFC",
+        "ratio": 11.77,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Information fits a creator profile and the main action is obvious.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Balanced composition; the overlap and aura give depth with restraint.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Profile hierarchy (avatar, name, tags, bio, primary and secondary actions) follows conventions.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Primary action is unmistakable; follow state, hover and message/notification meaning are not shown.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Shared radii, outline icon weight and pill shapes throughout.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": "Gradient-header profile cards are common; execution is refined rather than novel.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "primary text min 20.55:1; secondary text min 4.39:1; icon min 11.77:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 78.0,
+    "critical_failures": [],
+    "final_total": 78.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

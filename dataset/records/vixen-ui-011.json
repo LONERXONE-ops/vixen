@@ -1,0 +1,220 @@
+{
+  "title": "Green glass sidebar where the active item merges into the content panel (collapsed and expanded)",
+  "category": "navigation / sidebar",
+  "source_files": [
+    "batch-02/img-02"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": null,
+  "observed": {
+    "layout": "A collapsed icon rail and an expanded panel side by side on a vertical green-to-black gradient with faint sparkle dots. Expanded: leaf logo, small back chevron, five items (Home, Measure, Analyze, Reduce, Report) as translucent green capsules. The active item 'Reduce' is a white pill that extends to the right and joins the white content area with concave corners above and below. The rail mirrors the order with icon chips; the active chip is white.",
+    "hierarchy": "Active item is the only white element; it visually connects the menu to the content it controls.",
+    "typography": "Semibold sans, white on green and black on white. Typeface unconfirmed.",
+    "iconography": "Duotone/filled icons inside circular chips, consistent size.",
+    "materials": "Glass capsules with thin light borders over a gradient.",
+    "background": "Dark green gradient with sparkles."
+  },
+  "interpretation": {
+    "aesthetic": "Sustainability / carbon-tracking SaaS feel; menu order reads as a workflow (Measure, Analyze, Reduce, Report).",
+    "implementation_notes": [
+      "Merged tab: active item background extends into the content surface; concave corners via radial-gradient masks or inverse-radius pseudo-elements.",
+      "Collapse: same order, labels removed, capsules become circles, width transition.",
+      "Background: linear-gradient from green to near-black."
+    ],
+    "caveat": "Inference from a static image."
+  },
+  "concept_work": {
+    "essence": "The selected menu item physically becomes part of the page it opens.",
+    "what_makes_it_work": [
+      "Instant, unambiguous 'you are here'.",
+      "Collapsed state shown alongside expanded, same item order.",
+      "One-hue discipline keeps focus on the white tab."
+    ],
+    "gaps_to_make_it_work": [
+      "Inactive white labels on mid-green measure about 3.2-3.4:1; rail icons about 2.7:1.",
+      "Concave joins need care at different content widths and theme changes.",
+      "No hover/focus/tooltip for the collapsed rail is shown."
+    ]
+  },
+  "pattern": {
+    "name": "Active item merges into content panel ('folder tab' navigation)",
+    "use_when": [
+      "Sidebar where selecting a section replaces the main content",
+      "Process-style tools with 4-7 ordered sections"
+    ],
+    "avoid_when": [
+      "Multi-level nested navigation",
+      "Content area is not visually continuous with the menu"
+    ],
+    "must_preserve": [
+      "One high-contrast active treatment",
+      "Continuity between active item and content surface"
+    ],
+    "free_to_vary": [
+      "hue",
+      "capsule radius",
+      "icon style",
+      "gradient direction"
+    ],
+    "adaptation_examples": [
+      "Finance dashboard: navy gradient with a white merged tab.",
+      "Docs app: light theme with a tinted merged tab and neutral inactive items."
+    ],
+    "failure_modes": [
+      "Inactive labels near 3:1",
+      "Concave joins break at responsive widths",
+      "Unlabeled rail without tooltips"
+    ]
+  },
+  "lessons": [
+    "Connect the active menu item to its content for instant orientation.",
+    "Show collapsed and expanded states together."
+  ],
+  "tags": [
+    "sidebar",
+    "collapsible",
+    "glass",
+    "merged-tab",
+    "gradient",
+    "green"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-011",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#0A6952",
+        "mid green (~20%)"
+      ],
+      [
+        "#094D3C / #033D2F",
+        "deep green"
+      ],
+      [
+        "#03241D / #010605 / #02110E / #010101",
+        "green-to-black fade"
+      ],
+      [
+        "#189679 / #0F9576",
+        "capsule/panel green (sampled)"
+      ],
+      [
+        "#6AB3A1",
+        "light sage (glass highlights)"
+      ],
+      [
+        "#FBFBFB",
+        "active pill and content panel (sampled)"
+      ]
+    ],
+    "color_roles": "Single hue (green) gradient fading to black; white reserved for the active item and the content surface.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Measure label (inactive)",
+        "role": "primary",
+        "fg": "#D5FFFF",
+        "bg": "#189679",
+        "ratio": 3.44,
+        "near_threshold": false
+      },
+      {
+        "element": "Reduce label (active)",
+        "role": "primary",
+        "fg": "#020203",
+        "bg": "#FBFBFB",
+        "ratio": 20.0,
+        "near_threshold": false
+      },
+      {
+        "element": "Home label",
+        "role": "primary",
+        "fg": "#C7FFFA",
+        "bg": "#189A7A",
+        "ratio": 3.23,
+        "near_threshold": true
+      },
+      {
+        "element": "Rail icon (inactive)",
+        "role": "icon",
+        "fg": "#C0FFFB",
+        "bg": "#28A88A",
+        "ratio": 2.67,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Menu names read as a clear process for a measurement/reduction product.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Gradient, glass capsules and white merge produce a clear hierarchy.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Collapse/expand and active-state conventions are handled correctly; a back chevron is present.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Both menu states shown and active item obvious; focus, hover and tooltips not shown.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Same capsule radius, icon chip and spacing across items and states.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": "Active tab fusing with the content surface is a rare, memorable idea that also serves orientation.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "primary text min 3.23:1; secondary text min n/a:1; icon min 2.67:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 78.0,
+    "critical_failures": [],
+    "final_total": 78.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

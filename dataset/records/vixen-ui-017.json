@@ -1,0 +1,234 @@
+{
+  "title": "AI image generation dashboard with content-derived orange accent",
+  "category": "dashboard / creative tool",
+  "source_files": [
+    "batch-02/img-08"
+  ],
+  "attribution_visible_in_image": "Visible: 'AG' logo; the supplied filename is 'AI image generation dashboard - Creative AI Web UI'. Creator not confirmed.",
+  "contains_third_party_content": "AI-generated or stock-style portrait imagery.",
+  "observed": {
+    "layout": "Dark app window: left icon rail (5 circular icons); 'Generate Images' prompt panel with a text area, 'AI prompt' toggle, '3D Render Style' selector with thumbnail and + button, Model and Style rows with chevrons, 'Image Detail' slider (Low/Medium/High), and a full-width orange 'Generate' button. Top: 'AG' logo and mode tabs (Image active in orange, Video, AI tools). Center: large portrait with tags (9:16, Classic, Photo) and a caption. Right: a grid of variants including a 'Generation...' loading tile with a star icon and a stacked 'Collections - 42 Presets' card in peach.",
+    "hierarchy": "Hero image and the orange Generate button are the two focal points.",
+    "typography": "Geometric sans; small white/grey text on dark. Unconfirmed.",
+    "iconography": "Outline icons in circles; star motif.",
+    "materials": "Flat dark rounded panels, one light peach card for contrast.",
+    "background": "Light grey outside the app window.",
+    "note": "The prompt text describes robotic animals while the results shown are human portraits (mockup inconsistency)."
+  },
+  "interpretation": {
+    "aesthetic": "Dark creative-tool UI whose accent color is drawn from the generated imagery so interface and content share a palette.",
+    "implementation_notes": [
+      "Accent could be derived dynamically from the active image.",
+      "Loading tile communicates asynchronous generation.",
+      "Controls are ordered as a workflow: prompt, style, detail, generate."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A creative tool where the UI recedes and takes its accent from the work.",
+    "what_makes_it_work": [
+      "Orange accent harmonizes with the images.",
+      "Control order follows the task.",
+      "Loading state is part of the grid."
+    ],
+    "gaps_to_make_it_work": [
+      "White text on the orange Generate button measures about 2.2-2.7:1.",
+      "Slider labels about 2.3:1.",
+      "Very small type for a dense control set.",
+      "Prompt and results do not match in the mockup."
+    ]
+  },
+  "pattern": {
+    "name": "Content-derived accent color in a creative tool",
+    "use_when": [
+      "Creative tools where content is the focus",
+      "Dark UIs with colorful content"
+    ],
+    "avoid_when": [
+      "Content colors are unpredictable and the accent must keep contrast",
+      "Brand color is fixed"
+    ],
+    "must_preserve": [
+      "Accent tied to a single role (primary action and active state)",
+      "A loading placeholder in the result grid",
+      "Controls grouped in workflow order"
+    ],
+    "free_to_vary": [
+      "accent hue",
+      "panel widths",
+      "grid layout"
+    ],
+    "adaptation_examples": [
+      "Music tool: accent from album art.",
+      "Photo editor: neutral UI with accent from the selected filter."
+    ],
+    "failure_modes": [
+      "Light text on mid-orange under 3:1",
+      "Small low-contrast labels",
+      "Prompt/result mismatch in demos"
+    ]
+  },
+  "lessons": [
+    "A button's text color must be chosen for the accent it sits on, not copied from other UI.",
+    "Tie the accent to the content when the content is the product."
+  ],
+  "tags": [
+    "dashboard",
+    "ai-tool",
+    "dark",
+    "orange",
+    "accent-from-content"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-017",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#221F1F / #121212",
+        "dark panels (~37%)"
+      ],
+      [
+        "#B1532B / #7F3119",
+        "orange-brown tones from the imagery (~26%)"
+      ],
+      [
+        "#D3D3D3",
+        "light card tone (~23%, includes the peach Collections card)"
+      ],
+      [
+        "#EC7E2A",
+        "Generate button orange (sampled)"
+      ],
+      [
+        "#F38F0C",
+        "orange accent, saturated-pixel median"
+      ],
+      [
+        "#F6CFB1 / #EADDD2",
+        "peach collection card"
+      ],
+      [
+        "#ABABAD",
+        "prompt text (sampled)"
+      ]
+    ],
+    "color_roles": "Dark neutral UI; one orange accent for primary action and active tab, matching the orange tones of the generated images.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Prompt text",
+        "role": "primary",
+        "fg": "#ABABAD",
+        "bg": "#1E1E20",
+        "ratio": 7.21,
+        "near_threshold": false
+      },
+      {
+        "element": "Slider labels",
+        "role": "secondary",
+        "fg": "#58585A",
+        "bg": "#1E1E20",
+        "ratio": 2.34,
+        "near_threshold": false
+      },
+      {
+        "element": "Generate label",
+        "role": "primary",
+        "fg": "#FFE4AF",
+        "bg": "#EC7E2A",
+        "ratio": 2.24,
+        "near_threshold": false
+      },
+      {
+        "element": "Image caption",
+        "role": "secondary",
+        "fg": "#E3BAAB",
+        "bg": "#853608",
+        "ratio": 4.68,
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Controls map to the generate workflow and results are central.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Palette harmony between UI and content; clear focal points.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Prompt, style and model selectors, loading tile, gallery and collections follow generation-tool conventions.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Loading state and mode tabs are shown; many small controls and no error or empty states.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": "Consistent components, but prompt text contradicts the images shown.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Content-derived accent and stacked collections card go beyond a stock dark dashboard.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "primary text min 2.24:1; secondary text min 2.34:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 72.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast",
+        "borderline": false,
+        "detail": [
+          "Generate label 2.24:1"
+        ]
+      }
+    ],
+    "final_total": 69.0,
+    "cap_applied": true,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

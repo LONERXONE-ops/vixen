@@ -1,0 +1,225 @@
+{
+  "title": "Profile cards: solid card vs full-bleed photo with progressive blur",
+  "category": "card / profile",
+  "source_files": [
+    "batch-02/img-10"
+  ],
+  "attribution_visible_in_image": "A very small watermark at the bottom-right is illegible at this resolution.",
+  "contains_third_party_content": "Photo of a person.",
+  "observed": {
+    "layout": "Two profile cards on a near-black background. Left: dark grey card with the photo in a rounded rectangle at the top, 'Sophie Bennett' with a green verified badge, a grey two-line bio, two stat counts (312 and 48 with icons) and a dark 'Follow +' pill. Right: the photo fills the whole card and fades progressively into blur and dark at the bottom; text is white, badge is white/grey, and the Follow pill is white with dark text.",
+    "hierarchy": "Photo, then name, then Follow.",
+    "typography": "Clean sans; white names, grey (left) or white (right) bio. Unconfirmed.",
+    "iconography": "Tiny outline stat icons; verified seal.",
+    "materials": "Left: solid card. Right: progressive blur and gradient mask over the photo.",
+    "background": "Near-black."
+  },
+  "interpretation": {
+    "aesthetic": "Premium dark profile cards where the photo blends into the content.",
+    "implementation_notes": [
+      "Progressive blur: stacked backdrop-filter layers with increasing blur plus a gradient mask, or a gradient scrim.",
+      "Follow pill inverts to white to stay visible over the photo."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Dissolve the boundary between photo and text so the card reads as one surface.",
+    "what_makes_it_work": [
+      "Photo stays large and emotional.",
+      "Text sits on a controlled blurred/dark area.",
+      "Controlled comparison: only the treatment changes between variants."
+    ],
+    "gaps_to_make_it_work": [
+      "Right bio measures about 3.3:1 over the blurred bright area.",
+      "No follow/hover/following states shown.",
+      "Backdrop blur costs performance on low-end devices."
+    ]
+  },
+  "pattern": {
+    "name": "Progressive blur photo-to-text transition",
+    "use_when": [
+      "Cards where photography is the identity",
+      "Overlaying text on varied photos"
+    ],
+    "avoid_when": [
+      "Photos with bright bottoms and no scrim",
+      "Performance-constrained devices"
+    ],
+    "must_preserve": [
+      "Enough scrim darkness behind text",
+      "A button treatment that flips for contrast"
+    ],
+    "free_to_vary": [
+      "blur radius",
+      "fade height",
+      "badge color"
+    ],
+    "adaptation_examples": [
+      "Real-estate listing: photo fades into price and address.",
+      "Event card: poster fades into date and CTA."
+    ],
+    "failure_modes": [
+      "Bio over bright blur near 3:1",
+      "Blur performance",
+      "Missing action states"
+    ]
+  },
+  "lessons": [
+    "Pair any text-over-photo treatment with a measured scrim.",
+    "Present variants that change one variable at a time."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "progressive-blur",
+    "photo",
+    "dark"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-019",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#2E2F2F / #1F1F1F / #252424 / #212221",
+        "near-black page and card tones (~60%)"
+      ],
+      [
+        "#C9D3D2 / #A29E99",
+        "cool grey photo background"
+      ],
+      [
+        "#52504D",
+        "photo shadow tones"
+      ],
+      [
+        "#41CE45",
+        "verified badge green (sampled)"
+      ],
+      [
+        "#363636",
+        "left Follow pill (sampled)"
+      ],
+      [
+        "#E7E7E7",
+        "right Follow pill (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral dark page; green appears only in the left badge; the Follow pill flips from dark to white across variants.",
+    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Left name",
+        "role": "primary",
+        "fg": "#FFFFFF",
+        "bg": "#292929",
+        "ratio": 14.49,
+        "near_threshold": false
+      },
+      {
+        "element": "Left bio",
+        "role": "secondary",
+        "fg": "#8A8A8A",
+        "bg": "#2C2C2C",
+        "ratio": 4.0,
+        "near_threshold": false
+      },
+      {
+        "element": "Right bio",
+        "role": "secondary",
+        "fg": "#E8F2F3",
+        "bg": "#7A8788",
+        "ratio": 3.26,
+        "near_threshold": true
+      },
+      {
+        "element": "Left Follow",
+        "role": "primary",
+        "fg": "#FEFEFE",
+        "bg": "#363636",
+        "ratio": 11.96,
+        "near_threshold": false
+      },
+      {
+        "element": "Right Follow",
+        "role": "primary",
+        "fg": "#060606",
+        "bg": "#E7E7E7",
+        "ratio": 16.37,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.0",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": "Social profile with a clear follow action.",
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Photo-led composition with a smooth transition to text.",
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": "Profile card conventions are met; progressive blur is applied with a contrast-aware button flip.",
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": "Follow is clear; no followed/hover/loading state shown.",
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": "The two variants differ only in treatment, giving a clean comparison.",
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": "Progressive blur integration goes beyond the standard photo-top card.",
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "primary text min 11.96:1; secondary text min 3.26:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+      }
+    },
+    "raw_total": 79.0,
+    "critical_failures": [],
+    "final_total": 79.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}
