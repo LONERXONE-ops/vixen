@@ -1,0 +1,101 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-001",
+  "title": "Glass launcher menu over dark bloom wallpaper (Wuthering Waves themed)",
+  "category": "navigation / app menu",
+  "source_files": [
+    "batch-01/img-01"
+  ],
+  "contains_third_party_content": "Game promotional art and a character avatar appear inside the mockup; do not redistribute the image.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#7C7C7C",
+        "wallpaper light grey (~18%)"
+      ],
+      [
+        "#848585",
+        "wallpaper light grey (~16%)"
+      ],
+      [
+        "#010101",
+        "bloom shadow / near-black (~15%)"
+      ],
+      [
+        "#414141",
+        "mid charcoal (~13%)"
+      ],
+      [
+        "#252525",
+        "dark charcoal (~12%)"
+      ],
+      [
+        "#0D0D0D",
+        "near-black (~10%)"
+      ],
+      [
+        "#A4A5A5",
+        "highlight grey (~8%)"
+      ],
+      [
+        "#FF5F54 / #FCBD30 / #2AC745",
+        "window controls, the only chroma in the UI"
+      ]
+    ],
+    "roles": "Achromatic system. Panel is a translucent dark-grey glass; text white. Only chromatic accents are the traffic-light dots and the promo banner image."
+  },
+  "observed": {
+    "layout": "Single narrow vertical panel (~2:5 ratio) with large corner radius. Top-to-bottom: window controls, avatar + name + UID, hairline divider, 'MENU' label, 5 nav rows, divider, promo banner card, divider, Settings and Log out.",
+    "hierarchy": "Name is the largest text. Menu rows are uniform size. The active row ('Start') is marked by an outlined, lightly filled glass pill, not by color. A white circular badge ('4') on News is the highest-contrast small element.",
+    "typography": "Humanist-style sans with slightly flared strokes (reads as Gill Sans-like). Typeface unconfirmed. Mixed case labels, small uppercase section label.",
+    "iconography": "Mixed styles: mostly monoline outline (account, cart, gear) with a filled cursor and two icons that are small illustrations (News, Waveplate), so icon style is inconsistent.",
+    "materials": "Frosted glass: background blur, thin light border, visible soft shadow of the wallpaper forms through the panel.",
+    "background": "Soft black 3D bloom/ribbon wallpaper on grey, which gives the glass something to refract."
+  },
+  "interpretation": {
+    "aesthetic": "Dark glassmorphism with a desktop-OS feel (macOS-style window dots). Gaming-launcher context: a promo banner and profile UID signal a game/account hub.",
+    "implementation_notes": [
+      "Glass panel: backdrop-filter blur(20-40px) with a low-alpha dark background, 1px rgba(255,255,255,0.2-0.3) border, optional inset highlight.",
+      "Active row: border + slightly lighter translucent fill rather than a solid color; works because the surface itself is neutral.",
+      "Badge: fixed-size circle, white fill, dark numeral."
+    ],
+    "caveat": "All implementation notes are Claude's interpretation of the image, not from the creator."
+  },
+  "concept_work": {
+    "essence": "A calm, monochrome glass menu whose only emphasis tools are shape, border and one white badge.",
+    "what_makes_it_work": [
+      "Restraint: one neutral palette lets the promo art be the only color moment.",
+      "Consistent row rhythm and generous padding make 8+ items scannable.",
+      "Dividers group profile / navigation / promo / system actions clearly."
+    ],
+    "gaps_to_make_it_work": [
+      "Glass over a busy or bright wallpaper can drop text contrast below accessible levels; needs a fallback solid scrim.",
+      "Active state relies on a subtle outline only, which is weak for low-vision users.",
+      "Mixed icon styles weaken the system.",
+      "backdrop-filter is costly on low-end devices."
+    ]
+  },
+  "lessons": [
+    "In a neutral glass UI, use border + fill for state and reserve color for content.",
+    "Glass needs a controlled backdrop or a contrast-safe scrim to be shippable."
+  ],
+  "tags": [
+    "glassmorphism",
+    "dark",
+    "sidebar",
+    "gaming",
+    "monochrome"
+  ],
+  "confidence": "medium: visual analysis only",
+  "open_questions": [
+    "Creator and source?",
+    "Is there code or a prototype?"
+  ]
+}

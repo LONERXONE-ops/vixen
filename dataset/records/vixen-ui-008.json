@@ -1,0 +1,95 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-008",
+  "title": "Liquid-glass pill navigation on a phone, cropped close-up",
+  "category": "navigation / floating controls",
+  "source_files": [
+    "batch-01/img-09"
+  ],
+  "contains_third_party_content": "A photo of a person (dark silhouette) is in the background.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#01DAF2",
+        "bright cyan (~19%)"
+      ],
+      [
+        "#01D1ED / #04D7F0",
+        "cyan variants"
+      ],
+      [
+        "#2FBCCE",
+        "teal transition"
+      ],
+      [
+        "#15171D",
+        "near-black navy (~20%)"
+      ],
+      [
+        "#19232E / #0C0D11",
+        "dark shades"
+      ],
+      [
+        "#395B62",
+        "blue-green blend"
+      ],
+      [
+        "#E0F4F6",
+        "glass pill tint (sampled)"
+      ]
+    ],
+    "roles": "Cyan field against near-black photo; the glass control borrows the colors behind it."
+  },
+  "observed": {
+    "layout": "Cropped to a phone's bottom-left corner. A large translucent rounded 'bubble' (selected tab) with a layered, thick-edge look overlaps a wider translucent bar containing white icons (camera, trophy). A small glass circle with a lightning icon floats mid-screen. The home indicator is visible.",
+    "hierarchy": "The selected bubble is the largest and most refractive object; the bar is a thin strip.",
+    "typography": "None visible.",
+    "iconography": "Rounded filled white glyphs.",
+    "materials": "Translucent glass with bright edge highlights, visible thickness, and color tinting from the background; the pill appears to bend what is behind it.",
+    "background": "Cyan and dark photo."
+  },
+  "interpretation": {
+    "aesthetic": "Liquid-glass / refractive glassmorphism, closer to physical glass than frosted blur.",
+    "implementation_notes": [
+      "Real refraction is not possible with plain CSS blur; web approximations combine backdrop-filter with SVG displacement filters (limited browser support) or pre-rendered assets.",
+      "Native platforms increasingly ship a system glass material, which is the practical route for production apps.",
+      "Apparent thickness comes from a lighter inner edge plus offset shadow."
+    ],
+    "caveat": "Platform claims are general knowledge and may need checking against current docs; the creator's method is unknown."
+  },
+  "concept_work": {
+    "essence": "The selected tab is a lens, a physical-feeling piece of glass that sits over the bar.",
+    "what_makes_it_work": [
+      "Color of the glass adapts to the content behind it, which ties UI to context.",
+      "Larger selected element gives clear state."
+    ],
+    "gaps_to_make_it_work": [
+      "Contrast of icons depends on whatever is behind the glass, which varies.",
+      "Refraction and blur are expensive on lower-end devices.",
+      "The crop shows too little to judge the whole layout."
+    ]
+  },
+  "lessons": [
+    "Glass that depends on its backdrop needs a contrast guarantee (scrim or adaptive tint).",
+    "Refraction is a high-effect/high-cost technique; plan a flat fallback."
+  ],
+  "tags": [
+    "liquid-glass",
+    "floating-nav",
+    "refraction",
+    "mobile",
+    "cropped"
+  ],
+  "confidence": "low-medium: heavily cropped",
+  "open_questions": [
+    "Creator and source?",
+    "Is there a full view?"
+  ]
+}

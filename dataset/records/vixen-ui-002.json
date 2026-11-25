@@ -1,0 +1,92 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-002",
+  "title": "Black pill bottom navigation with expanding active label",
+  "category": "navigation / tab bar",
+  "source_files": [
+    "batch-01/img-02"
+  ],
+  "contains_third_party_content": null,
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#000000",
+        "bar fill (~20%)"
+      ],
+      [
+        "#111111",
+        "bar fill variant"
+      ],
+      [
+        "#222222",
+        "active chip fill (sampled)"
+      ],
+      [
+        "#F6F6F6",
+        "card background (sampled)"
+      ],
+      [
+        "#E8E8E8",
+        "page background (sampled)"
+      ],
+      [
+        "#DFDFDF",
+        "page background shading"
+      ]
+    ],
+    "roles": "Fully achromatic: white card, black capsules, dark-grey active chip, white icons and label."
+  },
+  "observed": {
+    "layout": "Five stacked frames of the same 5-item bar (Home, Category, Cart, Save, Profile), each showing a different active tab. Each bar is a full-radius capsule.",
+    "hierarchy": "Active item is the only one with a label, a filled icon and a chip behind it; inactive items are outline icons only.",
+    "typography": "Small geometric sans label in white, sentence case (Poppins-like; unconfirmed).",
+    "iconography": "Outline for inactive, filled for active, which gives two redundant state cues beyond the label.",
+    "materials": "Flat. No gradients or shadows inside the bars; the card has a soft shadow.",
+    "background": "Light grey with subtle texture."
+  },
+  "interpretation": {
+    "aesthetic": "Minimal, high-contrast, product-UI style.",
+    "implementation_notes": [
+      "Active chip width animates to fit icon + label while others stay icon-width; flex with width/max-width transition or a shared layout animation.",
+      "State = filled icon variant + label reveal + chip fill.",
+      "Frames are a static storyboard of one component, so the transition itself is not visible."
+    ],
+    "caveat": "Motion is inferred; the image is static."
+  },
+  "concept_work": {
+    "essence": "Only the current destination gets words; everything else gets out of the way.",
+    "what_makes_it_work": [
+      "Strong black/white contrast.",
+      "Three simultaneous active cues (fill, label, chip) mean state is never color-dependent.",
+      "Equal icon spacing keeps the bar stable."
+    ],
+    "gaps_to_make_it_work": [
+      "Icon-only inactive tabs fail discoverability for ambiguous icons (Save, Category).",
+      "The width change shifts neighbors; must be animated smoothly and respect reduced-motion.",
+      "Needs accessible names on every icon and a 44-48px touch target."
+    ]
+  },
+  "lessons": [
+    "Showing the label only on the active tab saves width but costs discoverability; choose icons that are universally understood.",
+    "Redundant state cues are good accessibility."
+  ],
+  "tags": [
+    "tab-bar",
+    "pill",
+    "expanding",
+    "monochrome",
+    "mobile"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Creator and source?",
+    "Is a motion version available?"
+  ]
+}

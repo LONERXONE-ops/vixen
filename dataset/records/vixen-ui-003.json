@@ -1,0 +1,81 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-003",
+  "title": "Navigation bar active-state variant matrix (12 variants)",
+  "category": "navigation / component taxonomy",
+  "source_files": [
+    "batch-01/img-03"
+  ],
+  "contains_third_party_content": null,
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#FFFFFF",
+        "page (~46%)"
+      ],
+      [
+        "#E9E9E9",
+        "bar background (~39% combined)"
+      ],
+      [
+        "#BFBFBF",
+        "inactive icon/label grey"
+      ],
+      [
+        "near-black approx",
+        "active icon/fill (not sampled)"
+      ]
+    ],
+    "roles": "Achromatic; one near-black fill marks active."
+  },
+  "observed": {
+    "layout": "Two columns by six rows of identical 4-item bars (home, filter, profile, settings) in rounded rectangles. Each variant is labeled in tiny text: simple, icon simple, icon circle, icon rectangle, icon underline, text simple, text circle, text rectangle, text underline, expandable, elevated rectangle, elevated circle.",
+    "hierarchy": "Reads as a specimen sheet: label above each variant, same bar repeated.",
+    "typography": "Tiny lowercase grotesk labels (Inter-like; unconfirmed).",
+    "iconography": "Monoline outline icons; the active icon becomes filled.",
+    "materials": "Flat grey capsules; 'elevated' variants lift the active circle/rectangle above the bar edge.",
+    "background": "White."
+  },
+  "interpretation": {
+    "aesthetic": "Design-system documentation.",
+    "implementation_notes": [
+      "Taxonomy of indicator shapes: none, circle, rounded rectangle, underline, expand (icon+label), elevated.",
+      "Dimensions combine two axes: content (icon / text / both) and indicator (none / circle / rect / underline / elevated).",
+      "Elevated variants need the bar to allow overflow above its top edge."
+    ],
+    "caveat": "Taxonomy as a lens is Claude's synthesis."
+  },
+  "concept_work": {
+    "essence": "A systematic exploration of how one nav component can signal active state, holding everything else constant.",
+    "what_makes_it_work": [
+      "Controlled comparison: only one variable changes per row, which makes trade-offs visible.",
+      "Reusable as a design-system spec."
+    ],
+    "gaps_to_make_it_work": [
+      "No guidance on when to choose which variant.",
+      "Text-only variants lose icon recognition; underline-only is subtle.",
+      "No states beyond active (pressed, disabled, badge)."
+    ]
+  },
+  "lessons": [
+    "Explore a component along orthogonal axes (content type x indicator shape) instead of making random variations.",
+    "A specimen sheet is itself a valuable dataset format."
+  ],
+  "tags": [
+    "design-system",
+    "tab-bar",
+    "taxonomy",
+    "component-variants"
+  ],
+  "confidence": "high for structure, low for exact colors",
+  "open_questions": [
+    "Creator and source?"
+  ]
+}

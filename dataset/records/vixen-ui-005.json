@@ -1,0 +1,110 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-005",
+  "title": "Collapsible workspace sidebar, light and dark glass versions (Vitaliy D.)",
+  "category": "navigation / sidebar",
+  "source_files": [
+    "batch-01/img-05 (light)",
+    "batch-01/img-08 (dark)"
+  ],
+  "contains_third_party_content": "Photo avatar and third-party service logos (Jira, Slack, Intercom) appear in the mockup.",
+  "grouping_note": "Two images appear to be one concept in two themes. User to confirm.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "light #FDFFFE / #EBF1F4 / #DDEDF2 / #D0E5EE",
+        "frosted panel and white cards"
+      ],
+      [
+        "light #A9C2CC / #C7D8E2",
+        "panel shading"
+      ],
+      [
+        "light #22567F / #649CC2",
+        "blue bloom wallpaper"
+      ],
+      [
+        "light accent ~#2F82F3",
+        "active pill and FAB blue (saturated-pixel median)"
+      ],
+      [
+        "light badge ~#DE5A40",
+        "notification red"
+      ],
+      [
+        "dark #544652 / #453C49 / #77666F",
+        "plum-grey glass panel"
+      ],
+      [
+        "dark wallpaper #DFAFAB / #E1B9B7 / #DC9A93 / #ACC0CA",
+        "pink bloom"
+      ],
+      [
+        "dark accent ~#4578EC",
+        "blue FAB"
+      ],
+      [
+        "dark marker ~#74C875",
+        "green edge indicator for active row"
+      ],
+      [
+        "dark badge ~#E6474E",
+        "notification red"
+      ]
+    ],
+    "roles": "Same layout in two themes: light uses blue as the active-state color; dark uses a bright green edge marker and blue FAB."
+  },
+  "observed": {
+    "layout": "Two panels side by side: expanded sidebar and a collapsed icon-only rail. Sections: greeting + avatar, 'Menu: 6' (Dashboard, My project task, Calendar, Mail, Notification, Sales), 'Service: 3' (Jira, Slack, Intercom, add plugin) in a white/dark inset card, 'Settings: 6' as a row of icons in a pill, and a large 'Create new task' card with a round + button. A collapse chevron sits at the top edge.",
+    "hierarchy": "Sections labeled with counts. Active row is a solid blue pill (light) or has a lit label plus a green edge tick (dark). The round + button is the primary CTA in both.",
+    "typography": "Clean sans with strong weight contrast: bold greeting name, medium row labels, small grey section headers (Inter/Manrope-like; unconfirmed).",
+    "iconography": "Filled duotone-like icons, consistent size, in the same grey-blue; service logos in color.",
+    "materials": "Frosted glass panels with inset solid cards, soft shadows; wallpaper bloom visible through glass.",
+    "background": "Blue bloom wallpaper (light) and pink bloom wallpaper (dark); both resemble Windows 11 Bloom wallpapers (unverified)."
+  },
+  "interpretation": {
+    "aesthetic": "Soft modern glassmorphism with a productivity-app purpose.",
+    "implementation_notes": [
+      "Collapsed rail keeps the same icon order and inset-card structure, so collapse is a width transition with labels fading.",
+      "Counts in section headers act as quick metadata.",
+      "Dark theme replaces the filled-pill active state with a thin lit marker, a sign that the active treatment is theme-specific."
+    ],
+    "caveat": "Interpretation only."
+  },
+  "concept_work": {
+    "essence": "One information architecture that survives both a wide and a collapsed state and both a light and a dark theme.",
+    "what_makes_it_work": [
+      "Clear grouping with solid inset cards on top of glass improves legibility where glass alone would not.",
+      "The rail preserves position memory: same order, same icons.",
+      "Strong single CTA."
+    ],
+    "gaps_to_make_it_work": [
+      "Light-glass grey text on pale panels is low contrast.",
+      "Settings icon row in the rail truncates ('chevron down') with no shown overflow behavior.",
+      "Collapsed state needs tooltips (not shown here)."
+    ]
+  },
+  "lessons": [
+    "Put solid cards inside glass for dense or critical content.",
+    "Design the collapsed state at the same time as the expanded state."
+  ],
+  "tags": [
+    "sidebar",
+    "collapsible",
+    "glassmorphism",
+    "light-dark-theme",
+    "productivity"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Same concept? (05 and 08)",
+    "Creator and source?"
+  ]
+}

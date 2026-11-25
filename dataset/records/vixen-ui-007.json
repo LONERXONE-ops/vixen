@@ -1,0 +1,81 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-007",
+  "title": "Three tab bar active-state treatments on magenta (underline / notch dot / tinted tile)",
+  "category": "navigation / tab bar",
+  "source_files": [
+    "batch-01/img-07"
+  ],
+  "contains_third_party_content": null,
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#C2508E",
+        "magenta-pink background and accent (~51% of image)"
+      ],
+      [
+        "#FDFFFE",
+        "white bars (~35%)"
+      ],
+      [
+        "#DBBFCF / #EBD7EA",
+        "tint behind active tile"
+      ],
+      [
+        "approx #333333",
+        "icons and inactive labels (not sampled)"
+      ]
+    ],
+    "roles": "Two-color system: white UI on a saturated magenta field; the same magenta marks active items."
+  },
+  "observed": {
+    "layout": "Three white rounded bars stacked on a magenta field, each with 5 items (Home, Search, Likes, Notifications, Profile). Bar 1: icons only, underline under Home. Bar 2: icons with labels; the bar has a small round notch with a dot above the active Notifications; active icon and label turn magenta. Bar 3: active Home sits in a rounded-square tinted tile with magenta icon and bold label.",
+    "hierarchy": "Active is the only magenta element in each bar.",
+    "typography": "Neo-grotesque small labels (Helvetica/Arial-like), semi-bold for active.",
+    "iconography": "Consistent 2px outline icons, rounded.",
+    "materials": "Flat, no shadows.",
+    "background": "Flat magenta."
+  },
+  "interpretation": {
+    "aesthetic": "Clean, playful, flat social-app style.",
+    "implementation_notes": [
+      "Notch + dot: a cutout in the bar shape (SVG/mask) with a small dot in the cut; harder to build than underline or tile.",
+      "Tinted tile: accent at ~15-20% opacity behind icon + label."
+    ],
+    "caveat": "Interpretation only."
+  },
+  "concept_work": {
+    "essence": "Three levels of indicator effort (underline, notch, tile) shown on the same icon set.",
+    "what_makes_it_work": [
+      "Color change on active icon and label creates a clear second cue.",
+      "Saturated background makes the white bar pop."
+    ],
+    "gaps_to_make_it_work": [
+      "Magenta on white for small text may be near the contrast limit; needs checking.",
+      "Notch variant is the least robust: it must follow the active item and be animated.",
+      "Bar 1 has no labels and gives less accessibility support."
+    ]
+  },
+  "lessons": [
+    "Pair a color change with a shape change so state is not color-only.",
+    "Rank indicator treatments by implementation cost as well as looks."
+  ],
+  "tags": [
+    "tab-bar",
+    "accent-color",
+    "notch",
+    "tile",
+    "flat"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Creator and source?"
+  ]
+}

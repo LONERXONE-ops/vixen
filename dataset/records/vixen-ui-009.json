@@ -1,0 +1,109 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-009",
+  "title": "Edge-docked AI usage meter widget on a gradient phone wallpaper",
+  "category": "widget / system overlay",
+  "source_files": [
+    "batch-01/img-10"
+  ],
+  "contains_third_party_content": "Icons inside the rings resemble AI-assistant brand logos; not confirmed.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#B0A0AA",
+        "mauve-grey (~23%)"
+      ],
+      [
+        "#F2F2F2",
+        "page background (~20%)"
+      ],
+      [
+        "#DE9B8D",
+        "salmon (~19%)"
+      ],
+      [
+        "#171717",
+        "widget black (~11%)"
+      ],
+      [
+        "#A2B2B8",
+        "blue-grey (~9%)"
+      ],
+      [
+        "#C58873",
+        "terracotta"
+      ],
+      [
+        "#C5BEA9",
+        "sand"
+      ],
+      [
+        "#EBD4AF",
+        "pale gold"
+      ],
+      [
+        "#F3914A",
+        "wallpaper orange (saturated median)"
+      ],
+      [
+        "#485AF5",
+        "wallpaper blue"
+      ]
+    ],
+    "roles": "Soft, grainy rainbow gradient wallpaper; the widget is pure black with white text and three ring colors (orange-red, green, yellow; not precisely sampled)."
+  },
+  "observed": {
+    "layout": "Two phone corners at an angle on a dotted light background. A black vertical widget hugs the right screen edge, joined by inverted (concave) curves at top and bottom. It shows 3 circular progress rings with a logo each and percentages (73%, 21%, 52%), and a gear button at the bottom. Status bar shows 'Thu 29 Aug 11.22'.",
+    "hierarchy": "Black widget has the highest contrast on the page; rings are color-coded per tool.",
+    "typography": "System-style sans, small white percentages.",
+    "iconography": "Ring gauges around brand-like marks.",
+    "materials": "Flat black with grain on the wallpaper; the widget's curves look like it grows out of the bezel.",
+    "background": "Grainy gradient wallpaper over a dotted off-white page."
+  },
+  "interpretation": {
+    "aesthetic": "Ambient dashboard widget; brutally simple black element against an expressive gradient.",
+    "implementation_notes": [
+      "Concave joins are CSS masks with radial gradients or SVG clip paths.",
+      "Rings: SVG circle with stroke-dasharray, or conic-gradient.",
+      "Persistent overlay on top of other apps is OS-dependent and may not be possible on all platforms; as a web/app widget it would sit inside the app only."
+    ],
+    "caveat": "Platform feasibility is Claude's assessment, not a creator statement."
+  },
+  "concept_work": {
+    "essence": "Show the one number you care about (remaining usage) as a glanceable edge dock instead of an app you have to open.",
+    "what_makes_it_work": [
+      "Extreme contrast separates it from any wallpaper.",
+      "Rings plus percentages give two readable encodings.",
+      "The edge position limits how much of the screen it takes."
+    ],
+    "gaps_to_make_it_work": [
+      "System-level persistence is a feasibility question.",
+      "It overlays content and may block edge gestures.",
+      "Color alone distinguishes tools; labels are needed for accessibility.",
+      "Data source (usage APIs) is undefined."
+    ]
+  },
+  "lessons": [
+    "A concept can be mostly an information decision: pick the single number to surface.",
+    "Check platform constraints before committing to overlay-style ideas."
+  ],
+  "tags": [
+    "widget",
+    "edge-dock",
+    "progress-rings",
+    "ambient",
+    "mobile"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Creator and source?",
+    "Which platform is it intended for?"
+  ]
+}

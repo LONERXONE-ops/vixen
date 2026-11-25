@@ -1,0 +1,108 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-006",
+  "title": "Dark glass agency sidebar with glowing blue accent and hover tooltips",
+  "category": "navigation / sidebar",
+  "source_files": [
+    "batch-01/img-06"
+  ],
+  "contains_third_party_content": "Photo avatars and a logo mark appear in the mockup; the visible names 'Aceagency.Design' and 'AmirBaqian' are in-mockup content and are not confirmed as the creator.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#141415",
+        "darkest panel (~15%)"
+      ],
+      [
+        "#171A1D",
+        "(~14%)"
+      ],
+      [
+        "#1F2020",
+        "(~12%)"
+      ],
+      [
+        "#262A2E",
+        "(~14%)"
+      ],
+      [
+        "#303131",
+        "(~15%)"
+      ],
+      [
+        "#08090A",
+        "shadow"
+      ],
+      [
+        "#7E7E80",
+        "wallpaper highlight grey"
+      ],
+      [
+        "#454E5C",
+        "cool slate"
+      ],
+      [
+        "#075FF7",
+        "accent blue (saturated-pixel median)"
+      ],
+      [
+        "#FF594A / #F6BE3A / #5CE545",
+        "window controls"
+      ]
+    ],
+    "roles": "Near-black neutral surfaces with cool undertone, a single vivid blue accent, and a colored glow that bleeds into the surface."
+  },
+  "observed": {
+    "layout": "Expanded sidebar and collapsed rail. Expanded: window dots + collapse arrow, brand lockup, MENU (6 items, one with a '2' badge), MESSAGES (4 people with unread counts), blue 'All messages' pill, user at the bottom. Collapsed: icons only; one hovered icon shows a blue tooltip pill ('Case Study') with a cursor; one messages row shows a '...' blue pill; bottom blue pill with a down arrow.",
+    "hierarchy": "The blue is the only saturated color, used for tooltip, count badge and CTA, so everything blue means 'interactive or attention'.",
+    "typography": "Rounded geometric sans, small sizes, white on dark with grey secondary text (unconfirmed face).",
+    "iconography": "Small filled icons in grey, consistent size.",
+    "materials": "Dark frosted panels, soft blue outer glow under blue pills.",
+    "background": "Greyscale 3D ribbon/bloom wallpaper."
+  },
+  "interpretation": {
+    "aesthetic": "Dark premium dashboard, glassmorphism with a neon accent.",
+    "implementation_notes": [
+      "Glow: box-shadow with the accent color at low alpha and large blur, or a blurred pseudo-element behind the pill.",
+      "Hover tooltip in the collapsed rail replaces the missing label and is part of the concept's answer to 'what happens when collapsed'.",
+      "Message list lives in a recessed darker inset card."
+    ],
+    "caveat": "Interpretation only."
+  },
+  "concept_work": {
+    "essence": "A dark glass rail where one electric color means 'act here', and hover tooltips solve the collapsed state.",
+    "what_makes_it_work": [
+      "Disciplined single accent.",
+      "The collapsed-state hover tooltip is shown, not left implied.",
+      "Inset card separates communication from navigation."
+    ],
+    "gaps_to_make_it_work": [
+      "Small grey-on-near-black text is likely below contrast guidelines.",
+      "Tooltips need keyboard focus and touch equivalents.",
+      "Glow effects read poorly on low-contrast displays."
+    ]
+  },
+  "lessons": [
+    "Limiting saturated color to one hue makes it function as an interaction signal.",
+    "Document collapsed-state behavior in the concept itself."
+  ],
+  "tags": [
+    "sidebar",
+    "dark",
+    "glow",
+    "tooltip",
+    "collapsible",
+    "glassmorphism"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Creator and source?"
+  ]
+}

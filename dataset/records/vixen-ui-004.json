@@ -1,0 +1,86 @@
+{
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "id": "vixen-ui-004",
+  "title": "Social video app tab bar with raised circular active tab",
+  "category": "navigation / tab bar",
+  "source_files": [
+    "batch-01/img-04"
+  ],
+  "contains_third_party_content": null,
+  "note_on_format": "Supplied as a GIF with 1 frame only, so no animation is visible and none can be analyzed.",
+  "color": {
+    "method": "Pixel sampling via median-cut quantization of the supplied JPEG/GIF (compressed images, so values are approximate within a few units). Entries marked 'approx' were judged by eye, not sampled.",
+    "palette": [
+      [
+        "#32B3FE",
+        "dominant sky-blue background (~70% combined with #31B1FE, #33B4FE, #33B5FD)"
+      ],
+      [
+        "#28A4FF",
+        "deeper blue shading"
+      ],
+      [
+        "#E2F2FD",
+        "pale tint (frame highlight/glow)"
+      ],
+      [
+        "#3ECDFE",
+        "active circle cyan (sampled, gradient to blue)"
+      ],
+      [
+        "#FFFFFF",
+        "tab bar"
+      ]
+    ],
+    "roles": "Single-hue blue field; white bar; cyan gradient circle as the sole accent; slate-grey outline icons."
+  },
+  "observed": {
+    "layout": "A phone silhouette fills the top; white bottom tab bar with 5 items (home, live, message, follow, personal). The active 'home' tab sits in a circle that rises above the bar with a concave cutout in the bar around it. Title 'TAB Bar Design - Social Video applications' below.",
+    "hierarchy": "Elevated gradient circle dominates; labels are small and light.",
+    "typography": "Title in bold italic condensed-style sans with speed lines (DIN-like; unconfirmed). Tab labels light, small.",
+    "iconography": "Rounded monoline icons with playful details (face for personal, smile for message); active icon filled white on cyan.",
+    "materials": "Soft gradients, soft shadow below the phone, glossy-light feel.",
+    "background": "Blue gradient wash."
+  },
+  "interpretation": {
+    "aesthetic": "Friendly, mid-2010s-to-2020 mobile app style with soft shadows and rounded forms.",
+    "implementation_notes": [
+      "Notch/raised tab is usually an SVG path or a masked pseudo-element behind the bar; the circle translates between slots and the notch follows.",
+      "Gradient circle: linear-gradient(cyan to blue) with a soft drop shadow."
+    ],
+    "caveat": "Motion cannot be verified from this file."
+  },
+  "concept_work": {
+    "essence": "The active tab physically rises out of the bar, so position and shape carry state.",
+    "what_makes_it_work": [
+      "Instant, high-salience state change.",
+      "Single-color system keeps focus on the circle."
+    ],
+    "gaps_to_make_it_work": [
+      "Raised tab eats vertical space and collides with safe-area/home-indicator zones.",
+      "Light grey labels on white fail contrast.",
+      "Notch geometry needs animating between 5 positions without jank."
+    ]
+  },
+  "lessons": [
+    "Physical metaphors (rising, notching) give strong state cues but cost layout robustness."
+  ],
+  "tags": [
+    "tab-bar",
+    "notch",
+    "raised-tab",
+    "gradient",
+    "video-app"
+  ],
+  "confidence": "medium",
+  "open_questions": [
+    "Creator and source?",
+    "Original animated version available?"
+  ]
+}
