@@ -1,0 +1,50 @@
+{
+ "image_dir": "/mnt/user-data/uploads",
+ "images": {
+  "03": {
+   "file": "329436b5-b071-4767-bd7e-3b21e45fcac4.jpeg",
+   "boxes": [
+    {
+     "element": "Name",
+     "role": "primary",
+     "box": [
+      104,
+      276,
+      243,
+      296
+     ]
+    },
+    {
+     "element": "Bio",
+     "role": "secondary",
+     "box": [
+      104,
+      306,
+      275,
+      341
+     ]
+    },
+    {
+     "element": "Stat label",
+     "role": "secondary",
+     "box": [
+      110,
+      402,
+      136,
+      414
+     ]
+    },
+    {
+     "element": "Social icon",
+     "role": "icon",
+     "box": [
+      113,
+      444,
+      133,
+      462
+     ]
+    }
+   ]
+  }
+ }
+}
