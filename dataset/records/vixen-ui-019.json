@@ -30,7 +30,7 @@
       "Controlled comparison: only the treatment changes between variants."
     ],
     "gaps_to_make_it_work": [
-      "Right bio measures about 3.3:1 over the blurred bright area.",
+      "The first line of the right bio measures about 2.7-3.1:1 over the blurred mid-grey area.",
       "No follow/hover/following states shown.",
       "Backdrop blur costs performance on low-end devices."
     ]
@@ -59,7 +59,7 @@
       "Event card: poster fades into date and CTA."
     ],
     "failure_modes": [
-      "Bio over bright blur near 3:1",
+      "Bio line over blurred mid-grey near 3:1",
       "Blur performance",
       "Missing action states"
     ]
@@ -79,6 +79,7 @@
     "Creator and source?"
   ],
   "id": "vixen-ui-019",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -115,108 +116,141 @@
       ]
     ],
     "color_roles": "Neutral dark page; green appears only in the left badge; the Follow pill flips from dark to white across variants.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Left name",
         "role": "primary",
+        "bg": "#2B2B2B",
         "fg": "#FFFFFF",
-        "bg": "#292929",
-        "ratio": 14.49,
+        "ratio": 14.18,
+        "ratio_low": 14.16,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Left bio",
         "role": "secondary",
-        "fg": "#8A8A8A",
-        "bg": "#2C2C2C",
-        "ratio": 4.0,
-        "near_threshold": false
-      },
-      {
-        "element": "Right bio",
-        "role": "secondary",
-        "fg": "#E8F2F3",
-        "bg": "#7A8788",
-        "ratio": 3.26,
+        "bg": "#2D2D2D",
+        "fg": "#909090",
+        "ratio": 4.33,
+        "ratio_low": 3.97,
+        "fg_assumed": null,
         "near_threshold": true
       },
       {
         "element": "Left Follow",
         "role": "primary",
-        "fg": "#FEFEFE",
-        "bg": "#363636",
-        "ratio": 11.96,
+        "bg": "#353535",
+        "fg": "#FFFFFF",
+        "ratio": 12.22,
+        "ratio_low": 11.69,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Right Follow",
         "role": "primary",
-        "fg": "#060606",
-        "bg": "#E7E7E7",
-        "ratio": 16.37,
+        "bg": "#E6E6E6",
+        "fg": "#030303",
+        "ratio": 16.54,
+        "ratio_low": 15.74,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Right bio line 1",
+        "role": "secondary",
+        "bg": "#879696",
+        "fg": "#F0FAFB",
+        "ratio": 2.9,
+        "ratio_low": 2.73,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Right bio line 2",
+        "role": "secondary",
+        "bg": "#2B3333",
+        "fg": "#F3FCFC",
+        "ratio": 12.39,
+        "ratio_low": 11.64,
+        "fg_assumed": null,
         "near_threshold": false
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Social profile with a clear follow action.",
+        "evidence": [
+          "Social profile with a clear follow action."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Photo-led composition with a smooth transition to text.",
+        "evidence": [
+          "Photo-led composition with a smooth transition to text."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Profile card conventions are met; progressive blur is applied with a contrast-aware button flip.",
+        "evidence": [
+          "Profile card conventions are met; progressive blur is applied with a contrast-aware button flip."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 3,
         "weight": 15,
         "points": 9.0,
-        "evidence": "Follow is clear; no followed/hover/loading state shown.",
+        "evidence": [
+          "Follow is clear; no followed/hover/loading state shown."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 5,
         "weight": 10,
         "points": 10.0,
-        "evidence": "The two variants differ only in treatment, giving a clean comparison.",
+        "evidence": [
+          "The two variants differ only in treatment, giving a clean comparison."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Progressive blur integration goes beyond the standard photo-top card.",
+        "evidence": [
+          "Progressive blur integration goes beyond the standard photo-top card."
+        ],
         "basis": "judged"
       },
       "accessibility": {
-        "score": 4,
+        "score": 3,
         "weight": 10,
-        "points": 8.0,
+        "points": 6.0,
         "evidence": [
-          "primary text min 11.96:1; secondary text min 3.26:1; icon min n/a:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 11.69:1; secondary text min 2.73:1; icon min n/a:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
-    "raw_total": 79.0,
+    "raw_total": 77.0,
     "critical_failures": [],
-    "final_total": 79.0,
+    "cf1_watchlist": [],
+    "final_total": 77.0,
     "cap_applied": false,
     "readiness": "B",
     "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",

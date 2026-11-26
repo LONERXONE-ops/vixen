@@ -1,0 +1,386 @@
+{
+  "title": "Streetwear landing page with oversized headlines, cut-out hero and a 'rotate your phone' prompt",
+  "category": "website / landing hero",
+  "source_files": [
+    "batch-03/img-02"
+  ],
+  "attribution_visible_in_image": "Visible brand 'VYBE' and 'The Vybe Tribe' (mockup brand). No creator credit visible.",
+  "contains_third_party_content": "Fashion photography.",
+  "observed": {
+    "layout": "A landscape website mockup shown rotated 90 degrees inside a portrait frame, with a small rotate icon and the text 'Rotate your phone please :)' on the left. In the landscape layout: vertical nav (Shop, Collections, About, Contact), 'VYBE' logo, oversized black condensed headlines 'Own the EDGE' and 'Keep the VIBE' placed around a cut-out model who overlaps a coral panel. The panel contains 'New Arrivals', 'Where Art Meets your Style', a sentence of body copy, a white 'New Drops' pill with an arrow, a 'Rated 5 Stars by The Vybe Tribe' pill with avatars, three small feature labels (Unique Designs, Limited Drops, Future Threads), and a Featured Product card (photo, 'Urban Vanguard Tee', $26.72 price pill). A cart pill reads '1 product'. Pink brush swirls sit behind the model.",
+    "hierarchy": "Oversized headlines, then the cut-out subject, then the panel copy and CTA.",
+    "typography": "Heavy condensed display sans for headlines; clean sans for body. Unconfirmed.",
+    "iconography": "Simple outline feature icons.",
+    "materials": "Flat coral panel with a cut-out photo breaking its edge; translucent pill overlays.",
+    "background": "Pale pink."
+  },
+  "interpretation": {
+    "aesthetic": "Loud streetwear brand site; attitude carried by type scale and a subject that breaks the panel.",
+    "implementation_notes": [
+      "Cut-out photo as a transparent PNG layered over the panel with a higher z-index.",
+      "Headlines positioned around the subject; text-behind-subject effects need a separate cut-out layer.",
+      "The rotate prompt suggests the layout is landscape-only rather than responsive."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Brand attitude through scale: huge type, a subject that escapes its container, and one bright field.",
+    "what_makes_it_work": [
+      "Instant brand voice.",
+      "Depth from the overlapping cut-out.",
+      "A direct purchase path through the featured product card."
+    ],
+    "gaps_to_make_it_work": [
+      "White text on coral measures about 2.8:1, including the large sub-head.",
+      "The layout depends on landscape, so phone users are told to rotate instead of getting a responsive layout.",
+      "Feature labels and body text are very small on coral."
+    ]
+  },
+  "components": [
+    {
+      "name": "Vertical nav",
+      "role": "site navigation",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Cart pill"
+      ]
+    },
+    {
+      "name": "Oversized headlines",
+      "role": "brand voice",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Cut-out hero"
+      ]
+    },
+    {
+      "name": "Cut-out hero photo",
+      "role": "focal point; breaks the panel edge",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Coral panel",
+        "Headlines"
+      ]
+    },
+    {
+      "name": "Coral hero panel",
+      "role": "holds copy, CTA and proof",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA pill",
+        "Social proof pill"
+      ]
+    },
+    {
+      "name": "CTA pill 'New Drops'",
+      "role": "primary action",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Featured product card"
+      ]
+    },
+    {
+      "name": "Social proof pill",
+      "role": "reinforces the CTA",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA pill"
+      ]
+    },
+    {
+      "name": "Featured product card",
+      "role": "direct path to purchase",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Cart pill"
+      ]
+    },
+    {
+      "name": "Cart pill",
+      "role": "shows cart count ('1 product')",
+      "states_shown": [
+        "populated"
+      ],
+      "connects_to": [
+        "Featured product card"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "coral as the single brand color",
+      "pill shapes for every action and badge",
+      "large-radius panels",
+      "heavy black display type"
+    ],
+    "links": [
+      "Headlines wrap the subject so type and photo read as one composition.",
+      "'New Arrivals' and 'New Drops' label and action repeat the same idea.",
+      "The price pill reuses the panel's coral so the product card belongs to the panel."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Layered divs with a transparent cut-out image",
+      "Responsive restack: headlines above the subject on narrow screens",
+      "Real orientation-independent layout instead of a rotate prompt"
+    ],
+    "risks": [
+      "Cut-out asset quality",
+      "Responsive reflow of type-around-subject",
+      "Heavy hero image"
+    ]
+  },
+  "pattern": {
+    "name": "Type-around-subject hero with cut-out overlap",
+    "use_when": [
+      "Fashion, streetwear or youth brands that need attitude"
+    ],
+    "avoid_when": [
+      "Mobile-first products",
+      "Text must remain readable over imagery without a scrim"
+    ],
+    "must_preserve": [
+      "Subject overlapping the panel edge",
+      "Headline contrast against its own background",
+      "A featured-product shortcut"
+    ],
+    "free_to_vary": [
+      "brand color",
+      "headline words",
+      "panel shape",
+      "feature labels"
+    ],
+    "adaptation_examples": [
+      "Sneaker drop: shoe cut-out, headlines vertical, price pill kept.",
+      "Music festival: performer cut-out, ticket CTA pill."
+    ],
+    "failure_modes": [
+      "White text on coral near 2.8:1",
+      "Orientation lock",
+      "Cut-out quality dependence"
+    ]
+  },
+  "lessons": [
+    "Make a layout respond to the viewport instead of asking the user to rotate the device.",
+    "Large type does not remove the need for contrast: check text on brand colors."
+  ],
+  "tags": [
+    "landing",
+    "hero",
+    "streetwear",
+    "cut-out",
+    "orientation-lock",
+    "coral"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "Is there a portrait/mobile version?"
+  ],
+  "id": "vixen-ui-021",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#FA8B8A / #FC6C6B",
+        "coral hero panel (~25%)"
+      ],
+      [
+        "#FAFAFA",
+        "white frame (~23%)"
+      ],
+      [
+        "#FCE7E6 / #FCE6E6",
+        "pale pink page (~31%)"
+      ],
+      [
+        "#B2524F",
+        "deep coral shadow"
+      ],
+      [
+        "#1C1C1C",
+        "headline black (sampled)"
+      ],
+      [
+        "#E73D4D / #1F9780 / #33789F",
+        "red, teal-green and blue from the garment (saturated medians)"
+      ],
+      [
+        "#F95857",
+        "price pill (sampled)"
+      ]
+    ],
+    "color_roles": "Coral as the single brand field; black for headlines; white for text on coral and for UI surfaces.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Headline \"Own the EDGE\"",
+        "role": "primary",
+        "bg": "#FAFAFA",
+        "fg": "#1C1C1C",
+        "ratio": 16.42,
+        "ratio_low": 15.67,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Hero sub-head",
+        "role": "primary",
+        "bg": "#FC6C6B",
+        "fg": "#FFFFFF",
+        "ratio": 2.79,
+        "ratio_low": 2.79,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Body sentence",
+        "role": "secondary",
+        "bg": "#FC6D6C",
+        "fg": "#FFFFFF",
+        "ratio": 2.78,
+        "ratio_low": 2.78,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Left nav text",
+        "role": "primary",
+        "bg": "#FAFAFA",
+        "fg": "#5E5E5E",
+        "ratio": 6.17,
+        "ratio_low": 4.99,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button label \"New Drops\"",
+        "role": "primary",
+        "bg": "#FDFCFB",
+        "fg": "#BE7879",
+        "ratio": 3.33,
+        "ratio_low": 3.14,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Price pill",
+        "role": "primary",
+        "bg": "#F95857",
+        "fg": "#FFFFFF",
+        "ratio": 3.2,
+        "ratio_low": 3.2,
+        "fg_assumed": "white",
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A fashion drop site with a clear purchase path."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong scale contrast, depth and a single brand color."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Landing conventions are present, but forcing landscape instead of responding to the viewport is a web-correctness problem, and text contrast is low."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "Phone users must rotate; small labels; only the default state is shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Pills, radii and color are used consistently."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Oversized type around a panel-breaking subject is distinctive."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.79:1; secondary text min 2.78:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 64.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": true,
+        "detail": [
+          "Hero sub-head: 2.79-2.79:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 64.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

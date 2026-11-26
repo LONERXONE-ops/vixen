@@ -34,7 +34,7 @@
       "Labels are hover-only; no keyboard focus or touch equivalent shown.",
       "Strip barely separates from the page.",
       "Growing tiles can shift layout.",
-      "Footer index text is about 2.9:1."
+      "Footer index text is about 2.5-2.8:1."
     ]
   },
   "pattern": {
@@ -85,6 +85,7 @@
     "Original interaction video available?"
   ],
   "id": "vixen-ui-013",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -121,85 +122,105 @@
       ]
     ],
     "color_roles": "Neutral warm-grey stage; all chroma comes from third-party logo tiles.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Footer \"Nr. 003\"",
         "role": "secondary",
+        "bg": "#E2E1DF",
         "fg": "#878684",
-        "bg": "#E7E6E4",
-        "ratio": 2.91,
+        "ratio": 2.78,
+        "ratio_low": 2.53,
+        "fg_assumed": null,
         "near_threshold": true
       },
       {
         "element": "Footer title",
         "role": "primary",
-        "fg": "#2E2D2B",
-        "bg": "#E8E7E5",
-        "ratio": 11.12,
+        "bg": "#E2E1DF",
+        "fg": "#22211F",
+        "ratio": 12.25,
+        "ratio_low": 9.77,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "osmo.supply link",
         "role": "primary",
-        "fg": "#373634",
-        "bg": "#E8E7E5",
-        "ratio": 9.72,
+        "bg": "#E2E1DF",
+        "fg": "#2F2E2C",
+        "ratio": 10.43,
+        "ratio_low": 8.5,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Webflow tooltip",
         "role": "primary",
-        "fg": "#232222",
-        "bg": "#FDFCFB",
-        "ratio": 15.49,
+        "bg": "#FDFDFB",
+        "fg": "#1E1D1D",
+        "ratio": 16.45,
+        "ratio_low": 12.99,
+        "fg_assumed": null,
         "near_threshold": false
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "The component's job (navigate between a set of tools) and its clone-ready packaging are clear.",
+        "evidence": [
+          "The component's job (navigate between a set of tools) and its clone-ready packaging are clear."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 3,
         "weight": 20,
         "points": 12.0,
-        "evidence": "Clean and spacious but the strip has almost no contrast with the page, weakening the container.",
+        "evidence": [
+          "Clean and spacious but the strip has almost no contrast with the page, weakening the container."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 3,
         "weight": 20,
         "points": 12.0,
-        "evidence": "Dock magnification is a desktop-OS metaphor; labels, focus and touch behavior are not addressed.",
+        "evidence": [
+          "Dock magnification is a desktop-OS metaphor; labels, focus and touch behavior are not addressed."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 2,
         "weight": 15,
         "points": 6.0,
-        "evidence": "Only the hover state is shown; no active, focus, touch or overflow states.",
+        "evidence": [
+          "Only the hover state is shown; no active, focus, touch or overflow states."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Uniform tile size, radius and spacing across the row.",
+        "evidence": [
+          "Uniform tile size, radius and spacing across the row."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Applying the OS dock to site navigation is a distinctive, motion-led idea.",
+        "evidence": [
+          "Applying the OS dock to site navigation is a distinctive, motion-led idea."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -207,13 +228,14 @@
         "weight": 10,
         "points": 6.0,
         "evidence": [
-          "primary text min 9.72:1; secondary text min 2.91:1; icon min n/a:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 8.5:1; secondary text min 2.53:1; icon min n/a:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 64.0,
     "critical_failures": [],
+    "cf1_watchlist": [],
     "final_total": 64.0,
     "cap_applied": false,
     "readiness": "B",

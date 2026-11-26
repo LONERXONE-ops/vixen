@@ -1,0 +1,404 @@
+{
+  "title": "Soft UI component sheet: follow card, video card, product card, toggles, nav, search, progress ring",
+  "category": "UI kit / component sheet",
+  "source_files": [
+    "batch-03/img-07"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Illustrated artwork.",
+  "observed": {
+    "layout": "A canvas of about eight components: (1) follow card with illustrated avatar, name 'Mo zhate', description, pink 'Follow' pill and white 'Cancel' pill; (2) product card 'DBH / 2020 fish skateboard' with description, pink 'Details' pill and two board images; (3) toggles, off (white on white) and on (green track); (4) stat card with a user icon tile, '3,457', 'Follows' label and an avatar row; (5) video card with illustrated thumbnail and play button, pencil '12' and thumbs-up chips, 'Teaching Video', description, a comments field and a rocket button; (6) bottom nav with active 'Home' (pink house icon and label, glow) and inactive light-grey icons; (7) search bar 'Skateboard...' with a blue circular button and glow; (8) pink progress ring.",
+    "hierarchy": "Pink marks primary action and active state; blue marks search.",
+    "typography": "Rounded sans; bold card titles, light-grey descriptions. Unconfirmed.",
+    "iconography": "Line icons with a filled active state; playful illustrated avatars.",
+    "materials": "Soft, large-radius white surfaces with diffuse shadows and colored glows under pink and blue buttons.",
+    "background": "Pale blue-grey."
+  },
+  "interpretation": {
+    "aesthetic": "Soft, playful UI kit, neumorphic-lite, themed around skateboarding.",
+    "implementation_notes": [
+      "Elevation from layered box-shadows; colored glow shadows under accent buttons.",
+      "Toggle via styled checkbox; progress ring via SVG stroke or conic-gradient.",
+      "One content theme ties the components into a coherent story."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A kit where every component shares one radius, one shadow recipe and one accent, so they assemble into screens.",
+    "what_makes_it_work": [
+      "Strong token consistency.",
+      "States shown for the toggle and the nav.",
+      "Thematic content makes the set feel like a real product."
+    ],
+    "gaps_to_make_it_work": [
+      "Inactive nav icons measure about 1.6:1 against white.",
+      "Descriptions and the comments placeholder measure about 1.6-2.0:1.",
+      "The 'off' toggle is nearly invisible (white on white).",
+      "Pink and blue accents compete."
+    ]
+  },
+  "components": [
+    {
+      "name": "Follow card",
+      "role": "social action",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat card",
+        "Video card"
+      ]
+    },
+    {
+      "name": "Product card",
+      "role": "product detail entry",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Search bar"
+      ]
+    },
+    {
+      "name": "Toggle",
+      "role": "binary setting",
+      "states_shown": [
+        "off",
+        "on"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat card",
+      "role": "count with avatars",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Follow card"
+      ]
+    },
+    {
+      "name": "Video card",
+      "role": "content with engagement actions",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Comments field"
+      ]
+    },
+    {
+      "name": "Bottom navigation",
+      "role": "global navigation",
+      "states_shown": [
+        "Home active; others inactive"
+      ],
+      "connects_to": [
+        "Search bar"
+      ]
+    },
+    {
+      "name": "Search bar",
+      "role": "query input with action button",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Product card"
+      ]
+    },
+    {
+      "name": "Progress ring",
+      "role": "progress",
+      "states_shown": [
+        "partial fill"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "one large radius scale",
+      "one diffuse shadow recipe",
+      "hot pink as the single action color",
+      "white surfaces on a tinted canvas"
+    ],
+    "links": [
+      "Follow, Details, nav active and progress ring all use the same pink, so the pink always means 'primary or current'.",
+      "Search results would lead to the product card; the nav and search are the entry points to the other components."
+    ]
+  },
+  "build": {
+    "effort": "Low",
+    "approach": [
+      "Design tokens for radius, shadow and accent",
+      "Standard card, toggle, nav and input components",
+      "SVG progress ring"
+    ],
+    "risks": [
+      "Low-contrast neutrals",
+      "Glow shadows on dark backgrounds"
+    ]
+  },
+  "pattern": {
+    "name": "Token-driven component family",
+    "use_when": [
+      "Starting a component library that must look like one product"
+    ],
+    "avoid_when": [
+      "Strict accessibility targets with pale neutrals"
+    ],
+    "must_preserve": [
+      "One radius scale",
+      "One shadow recipe",
+      "One primary accent"
+    ],
+    "free_to_vary": [
+      "accent hue",
+      "illustration style",
+      "density"
+    ],
+    "adaptation_examples": [
+      "Fitness app kit: accent orange, same radii and shadows.",
+      "Finance kit: replace glows with borders and raise neutral contrast."
+    ],
+    "failure_modes": [
+      "Pale neutrals below 3:1",
+      "Invisible off state",
+      "Two accents competing"
+    ]
+  },
+  "lessons": [
+    "A shared token set is what makes separate components feel like one system.",
+    "Neutral text on pale surfaces is the first thing to fail contrast."
+  ],
+  "tags": [
+    "ui-kit",
+    "components",
+    "soft-ui",
+    "pink",
+    "tokens"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-026",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#ECEFF4 / #ECEFF6 / #E9F0F4 / #ECEFF3",
+        "canvas (~63%)"
+      ],
+      [
+        "#FFFFFF",
+        "card surface (~21%)"
+      ],
+      [
+        "#D4BCC9",
+        "pink-tinted shadow tone"
+      ],
+      [
+        "#EF31A4 / #D02C65",
+        "hot pink action accent (medians)"
+      ],
+      [
+        "#0776F8",
+        "blue search button (median)"
+      ],
+      [
+        "approx green",
+        "toggle on state (not sampled)"
+      ]
+    ],
+    "color_roles": "Pale canvas with white cards; hot pink for actions and active state; blue only for search; green for the 'on' toggle.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Card name \"Mo zhate\"",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#0A0A0A",
+        "ratio": 19.44,
+        "ratio_low": 17.28,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card description",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#B7B7B7",
+        "ratio": 1.98,
+        "ratio_low": 1.84,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button \"Follow\"",
+        "role": "primary",
+        "bg": "#FC2B69",
+        "fg": "#FFFFFF",
+        "ratio": 3.69,
+        "ratio_low": 3.69,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Product title",
+        "role": "primary",
+        "bg": "#FEFEFE",
+        "fg": "#5D5C61",
+        "ratio": 6.52,
+        "ratio_low": 4.04,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Product description",
+        "role": "secondary",
+        "bg": "#FEFEFE",
+        "fg": "#DA3EA4",
+        "ratio": 4.0,
+        "ratio_low": 3.61,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button \"Details\"",
+        "role": "primary",
+        "bg": "#FC34BA",
+        "fg": "#FFFFFF",
+        "ratio": 3.31,
+        "ratio_low": 3.31,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Nav label \"Home\"",
+        "role": "primary",
+        "bg": "#FEFAFD",
+        "fg": "#D13CA0",
+        "ratio": 4.17,
+        "ratio_low": 3.96,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Nav icon (inactive)",
+        "role": "icon",
+        "bg": "#FDFEFE",
+        "fg": "#C6CACD",
+        "ratio": 1.63,
+        "ratio_low": 1.57,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Comments placeholder",
+        "role": "secondary",
+        "bg": "#EBEEF2",
+        "fg": "#B1B4B9",
+        "ratio": 1.79,
+        "ratio_low": 1.64,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Toggle label \"off\"",
+        "role": "secondary",
+        "bg": "#FEFEFE",
+        "fg": "#AEAEAE",
+        "ratio": 2.2,
+        "ratio_low": 1.97,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A themed kit that covers follow, content, product, settings, navigation and search."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Soft, cohesive look with clear pink focal points."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Common controls are present, but the off toggle lacks an affordance and neutral text is too faint for conventional practice."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Toggle and nav states are shown; input, error and disabled states are not."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "Radii, shadows, accent and spacing are tightly consistent across all components."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Conventional components in a pleasant but familiar soft-UI style."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 3.31:1; secondary text min 1.64:1; icon min 1.57:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 69.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 69.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "title": "'Which is Better' card A/B test: photo-top card vs full-bleed photo card with overlay",
+  "category": "card / profile (comparison post)",
+  "source_files": [
+    "batch-03/img-09"
+  ],
+  "attribution_visible_in_image": "Footer credit 'Abraham John @ui.abraham' and header 'Design Testing 00'. Likely the author; not confirmed. The upload filename ('Framer Portfolio Website Design') does not match the content.",
+  "contains_third_party_content": "Photo of a person.",
+  "observed": {
+    "layout": "A 'design testing' poster: serif headline 'Which is Better' (second word lighter) over a graph-paper grid with a rounded frame; two phone-shaped cards labeled A and B in white circles. A: rounded photo on top with a bookmark button on the photo, name 'Natasha Romanoff' with a blue verified badge, two-line bio, a three-stat row (4.8 Rating, $45k+ Earned, $50/hr Rate) with dividers, and a black full-width 'Get In Touch' with a mail icon. B: photo fills the card with a dark gradient overlay and white text, the same stats, and a CTA row with a white 'Get In Touch' pill and a separate dark bookmark button. Footer: author avatar and 'Abraham John @ui.abraham' at left, 'Save for later' with a bookmark icon at right.",
+    "hierarchy": "Headline, then the two cards, then the A/B labels.",
+    "typography": "High-contrast serif display for the headline; neutral sans in the cards. Unconfirmed.",
+    "iconography": "Mail and bookmark icons; verified badge; star in the rating.",
+    "materials": "A: white card with rounded photo. B: full-bleed photo with gradient overlay.",
+    "background": "Cream graph paper."
+  },
+  "interpretation": {
+    "aesthetic": "Design-critique / engagement post format.",
+    "implementation_notes": [
+      "B overlay: gradient from transparent to near-black behind the text block.",
+      "Bookmark moves from the photo (A) into the CTA row (B).",
+      "Stats use dividers in both variants."
+    ],
+    "caveat": "Inference. The A/B change is not a single variable: photo treatment, text color, CTA color and bookmark placement all differ."
+  },
+  "concept_work": {
+    "essence": "Present two treatments of one card side by side and ask which communicates better.",
+    "what_makes_it_work": [
+      "Identical content and framing make the comparison fair at a glance.",
+      "Stat values carry units (Earned, Rate).",
+      "Both variants measure comfortably high contrast."
+    ],
+    "gaps_to_make_it_work": [
+      "More than one variable changes between A and B, so the 'test' is confounded.",
+      "No hypothesis or success metric is stated.",
+      "B's bio legibility depends on the overlay depth."
+    ]
+  },
+  "components": [
+    {
+      "name": "Headline",
+      "role": "frames the question",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "A and B labels"
+      ]
+    },
+    {
+      "name": "Card A",
+      "role": "image-top variant",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "A label"
+      ]
+    },
+    {
+      "name": "Card B",
+      "role": "full-bleed overlay variant",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "B label"
+      ]
+    },
+    {
+      "name": "Verified badge",
+      "role": "trust",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat row",
+      "role": "Rating / Earned / Rate",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA"
+      ]
+    },
+    {
+      "name": "CTA",
+      "role": "contact",
+      "states_shown": [
+        "black bar (A)",
+        "white pill + bookmark button (B)"
+      ],
+      "connects_to": [
+        "Stat row"
+      ]
+    },
+    {
+      "name": "Bookmark action",
+      "role": "save",
+      "states_shown": [
+        "on photo (A)",
+        "in CTA row (B)"
+      ],
+      "connects_to": [
+        "Footer 'Save for later'"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "large card radius",
+      "unit-bearing stat values",
+      "one black/white CTA",
+      "verified badge"
+    ],
+    "links": [
+      "The footer 'Save for later' echoes the bookmark action inside the cards.",
+      "A and B share content so differences are attributable to treatment."
+    ]
+  },
+  "build": {
+    "effort": "Low",
+    "approach": [
+      "Same component with two layout modes",
+      "Gradient overlay behind text",
+      "Standard stat row"
+    ],
+    "risks": [
+      "Overlay contrast on bright photos",
+      "Confounded comparison"
+    ]
+  },
+  "pattern": {
+    "name": "A/B presentation with a stated variable",
+    "use_when": [
+      "Communicating a design decision or comparing treatments"
+    ],
+    "avoid_when": [
+      "The variants differ in many ways and no metric is given"
+    ],
+    "must_preserve": [
+      "Identical content and framing",
+      "A stated variable and metric"
+    ],
+    "free_to_vary": [
+      "headline",
+      "layout of the post",
+      "card content"
+    ],
+    "adaptation_examples": [
+      "Pricing page test: same plans, different emphasis.",
+      "Onboarding test: same steps, different layout."
+    ],
+    "failure_modes": [
+      "Confounded variables",
+      "No success metric"
+    ]
+  },
+  "lessons": [
+    "Change one variable per variant when comparing designs.",
+    "Put the unit in the stat value ('$50/hr')."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "a-b-test",
+    "photo-overlay",
+    "comparison"
+  ],
+  "open_questions": [
+    "Creator confirmation (@ui.abraham?)",
+    "Was there a result or metric?"
+  ],
+  "related": [
+    {
+      "id": "vixen-ui-025",
+      "relation": "same stat triple (rating, earned, rate) with units"
+    },
+    {
+      "id": "vixen-ui-019",
+      "relation": "same photo-to-text overlay idea"
+    }
+  ],
+  "id": "vixen-ui-028",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F8F7F5 / #F4F4F0 / #EBEAE7 / #FDFDFC",
+        "graph-paper page and cards (~54%)"
+      ],
+      [
+        "#10100E",
+        "dark overlay and CTA (~14%)"
+      ],
+      [
+        "#594938",
+        "photo shadow brown (~11%)"
+      ],
+      [
+        "#AB3D23 / #BB8F3A",
+        "photo reds and mustard (medians)"
+      ],
+      [
+        "#060606",
+        "CTA black (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral graph-paper stage; color comes from the photo; black/white CTA flips between variants.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Title",
+        "role": "primary",
+        "bg": "#F9F9F7",
+        "fg": "#161B1D",
+        "ratio": 16.4,
+        "ratio_low": 15.16,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "A: name",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#000000",
+        "ratio": 20.71,
+        "ratio_low": 20.64,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "A: bio",
+        "role": "secondary",
+        "bg": "#FEFEFE",
+        "fg": "#4D4D4D",
+        "ratio": 8.45,
+        "ratio_low": 7.05,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "A: stat label",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#454545",
+        "ratio": 9.49,
+        "ratio_low": 7.9,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "A: CTA label",
+        "role": "primary",
+        "bg": "#060606",
+        "fg": "#FFFFFF",
+        "ratio": 20.28,
+        "ratio_low": 19.8,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "B: name",
+        "role": "primary",
+        "bg": "#141B18",
+        "fg": "#FEFFFE",
+        "ratio": 17.45,
+        "ratio_low": 17.42,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "B: bio",
+        "role": "secondary",
+        "bg": "#090A09",
+        "fg": "#D7D1CD",
+        "ratio": 13.06,
+        "ratio_low": 11.42,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "B: stat label",
+        "role": "secondary",
+        "bg": "#040604",
+        "fg": "#FFFFFF",
+        "ratio": 20.31,
+        "ratio_low": 20.31,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "B: CTA label",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#010101",
+        "ratio": 20.55,
+        "ratio_low": 19.75,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Footer \"Save for later\"",
+        "role": "secondary",
+        "bg": "#F7F6F5",
+        "fg": "#171816",
+        "ratio": 16.57,
+        "ratio_low": 14.7,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A clear comparison post built around a contact card."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Elegant staging with a serif headline and graph-paper grid; both cards read well."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Card conventions and equal framing are respected; the confounded variables are noted but do not break the card itself."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Single CTA, bookmark and stats are clear in both variants."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "A and B share structure, radii and type."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Comparison-post format is familiar; the overlay card is standard."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 15.16:1; secondary text min 7.05:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 80.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 80.0,
+    "cap_applied": false,
+    "readiness": "A",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

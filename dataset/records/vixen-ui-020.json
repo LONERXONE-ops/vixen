@@ -1,0 +1,370 @@
+{
+  "title": "Marketplace landing hero: fanned artwork cards with floating @handle chips",
+  "category": "website / landing hero",
+  "source_files": [
+    "batch-03/img-01"
+  ],
+  "attribution_visible_in_image": "Visible wordmark 'Pallet Ross' (appears to be the mockup's brand name, not confirmed as the creator).",
+  "contains_third_party_content": "Artwork thumbnails by unknown artists.",
+  "observed": {
+    "layout": "Rounded browser-like frame on a soft grey gradient. Top bar: 'Pallet Ross' logo at left; nav (Get Started, Create strategy with an icon, Pricing, Contact, Solution, E-Commerce); round user and settings icon buttons at right. Hero: two-line centered headline 'A place to display your masterpiece.'; a fanned, overlapping row of about 7 tilted artwork cards with soft shadows; two speech-bubble chips (@coplin blue, @andrea green) attached to cards; a short paragraph; a black pill 'Join for $9.99/m' and a text link 'Read more'.",
+    "hierarchy": "Headline, then the artwork fan, then the black CTA.",
+    "typography": "Large, tightly tracked grotesk headline; small regular nav and body text. Typeface unconfirmed.",
+    "iconography": "Minimal; round icon buttons.",
+    "materials": "Soft diffuse shadows; frosted white frame.",
+    "background": "Light grey gradient."
+  },
+  "interpretation": {
+    "aesthetic": "Clean gallery-marketplace landing; the neutral canvas lets the artwork carry all the color.",
+    "implementation_notes": [
+      "Fan: absolutely positioned cards with per-card rotate/translate transforms driven by CSS variables.",
+      "Chips: positioned bubbles with a tail via a pseudo-element.",
+      "Frame: large-radius container with a soft shadow."
+    ],
+    "caveat": "Inference from a static image."
+  },
+  "concept_work": {
+    "essence": "A neutral stage where the product's content is the only color, shown as a physical spread with creator attribution.",
+    "what_makes_it_work": [
+      "The headline states the value in one line.",
+      "The fan communicates variety instantly.",
+      "One dark CTA is unmistakable on a neutral page."
+    ],
+    "gaps_to_make_it_work": [
+      "The '@andrea' chip (white on mid-green) measures about 2.7-2.9:1.",
+      "Nav text is very small.",
+      "Overlap hides most of each artwork."
+    ]
+  },
+  "components": [
+    {
+      "name": "Top navigation bar",
+      "role": "site navigation (6 links plus 2 icon buttons)",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Primary CTA",
+        "Pricing page"
+      ]
+    },
+    {
+      "name": "Headline",
+      "role": "states the offer",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Artwork fan"
+      ]
+    },
+    {
+      "name": "Artwork card fan",
+      "role": "demonstrates the product with real content",
+      "states_shown": [
+        "static (spread/hover not shown)"
+      ],
+      "connects_to": [
+        "Handle chips",
+        "Primary CTA"
+      ]
+    },
+    {
+      "name": "Handle chips",
+      "role": "attribute each artwork to a creator",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Artwork card fan"
+      ]
+    },
+    {
+      "name": "Primary CTA pill",
+      "role": "conversion with price in the label",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Secondary link"
+      ]
+    },
+    {
+      "name": "Secondary text link",
+      "role": "lower-commitment path",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Primary CTA pill"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "fully rounded pills for buttons and chips",
+      "large radius on cards and the frame",
+      "one near-black action color",
+      "soft diffuse shadows"
+    ],
+    "links": [
+      "Chips tie each artwork to a creator, supporting the 'artists display' promise.",
+      "The card fan demonstrates the headline's claim.",
+      "The price in the CTA answers the headline's offer."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Transform-based fan with CSS variables and a hover spread",
+      "Pseudo-element chip tails",
+      "Responsive collapse of the fan to a carousel"
+    ],
+    "risks": [
+      "Fan collapse on small screens",
+      "Image weight and lazy loading",
+      "Overlapping hit areas"
+    ]
+  },
+  "pattern": {
+    "name": "Content-as-color hero with fanned card spread",
+    "use_when": [
+      "Marketplaces or portfolios where user visuals are the product"
+    ],
+    "avoid_when": [
+      "Content is text-heavy or low quality"
+    ],
+    "must_preserve": [
+      "Neutral canvas",
+      "One high-contrast CTA",
+      "Creator attribution on the content"
+    ],
+    "free_to_vary": [
+      "fan angle and count",
+      "chip colors",
+      "headline copy",
+      "CTA price"
+    ],
+    "adaptation_examples": [
+      "Photographer marketplace: photos in the fan, chips show photographer handles.",
+      "Template store: cards are template previews with price chips."
+    ],
+    "failure_modes": [
+      "Overlap hides content",
+      "Small white text on mid-tone chips"
+    ]
+  },
+  "lessons": [
+    "Let the content supply the color and keep the interface neutral.",
+    "Attribute visuals to creators on the hero itself."
+  ],
+  "tags": [
+    "landing",
+    "hero",
+    "marketplace",
+    "card-fan",
+    "neutral"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "Is there a motion version?"
+  ],
+  "id": "vixen-ui-020",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F6F6F6 / #F5F5F5 / #F3F3F3 / #E5E4E6",
+        "neutral page and frame (~60%)"
+      ],
+      [
+        "#8C7570",
+        "muted artwork tone (~10%)"
+      ],
+      [
+        "#BF422B / #FCCA1C / #2557CF",
+        "artwork reds, yellows, blues (saturated medians)"
+      ],
+      [
+        "#2657E9",
+        "'@coplin' chip blue (sampled)"
+      ],
+      [
+        "#67A48B",
+        "'@andrea' chip green (sampled)"
+      ],
+      [
+        "#191919",
+        "primary button (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral light canvas; all color comes from the artwork; blue and green appear only in the handle chips; near-black is the only action color.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Nav link \"Get Started\"",
+        "role": "primary",
+        "bg": "#F5F5F5",
+        "fg": "#434343",
+        "ratio": 9.05,
+        "ratio_low": 7.25,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav link \"Pricing\"",
+        "role": "primary",
+        "bg": "#F5F5F5",
+        "fg": "#4A4A4A",
+        "ratio": 8.16,
+        "ratio_low": 6.72,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Headline",
+        "role": "primary",
+        "bg": "#F5F5F5",
+        "fg": "#050505",
+        "ratio": 18.64,
+        "ratio_low": 18.08,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Body paragraph",
+        "role": "secondary",
+        "bg": "#F6F6F6",
+        "fg": "#4C4C4C",
+        "ratio": 7.99,
+        "ratio_low": 6.27,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "CTA \"Join for $9.99/m\"",
+        "role": "primary",
+        "bg": "#191919",
+        "fg": "#FAFAFA",
+        "ratio": 16.83,
+        "ratio_low": 16.46,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Link \"Read more\"",
+        "role": "primary",
+        "bg": "#F3F3F3",
+        "fg": "#555555",
+        "ratio": 6.78,
+        "ratio_low": 5.26,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Chip \"@coplin\"",
+        "role": "secondary",
+        "bg": "#2657E9",
+        "fg": "#FFFFFF",
+        "ratio": 5.78,
+        "ratio_low": 5.78,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Chip \"@andrea\"",
+        "role": "secondary",
+        "bg": "#67A48B",
+        "fg": "#F2FCF8",
+        "ratio": 2.75,
+        "ratio_low": 2.7,
+        "fg_assumed": null,
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Headline and priced CTA state the offer immediately."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Clear hierarchy and generous whitespace; artwork gives a natural focal point."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Landing-page conventions (logo, nav, headline, proof, CTA) are met."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Only the default state is shown; some nav labels ('Create strategy', 'Solution') are unclear for a gallery product."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Consistent pills, radii and shadow recipe."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Fan with creator chips goes beyond a standard hero image."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 5.26:1; secondary text min 2.7:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 75.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 75.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

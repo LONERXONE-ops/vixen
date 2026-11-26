@@ -32,7 +32,7 @@
       "Texture and glow give depth on an otherwise flat dark UI."
     ],
     "gaps_to_make_it_work": [
-      "Inactive labels sit near 4:1 and the Exchange label near 3.3:1.",
+      "Inactive labels measure about 4.0-4.3:1 and the Exchange label about 3.7-3.9:1.",
       "Cart icon for 'Markets' weakens meaning.",
       "The green marker sits at the bar's bottom edge and may collide with the system home indicator.",
       "Two glowing emphases can compete when both are on screen."
@@ -87,6 +87,7 @@
     "Is there a motion version?"
   ],
   "id": "vixen-ui-010",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -123,93 +124,115 @@
       ]
     ],
     "color_roles": "Near-black neutral surface; blue = primary action; green = current location; white = active text; mid-grey = inactive.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Markets active label",
         "role": "primary",
-        "fg": "#FEFFFE",
         "bg": "#141615",
+        "fg": "#FFFFFF",
         "ratio": 18.19,
+        "ratio_low": 17.97,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Wallet inactive label",
         "role": "primary",
-        "fg": "#787878",
-        "bg": "#0B0B0B",
-        "ratio": 4.48,
+        "bg": "#0B0B0C",
+        "fg": "#7A7A7A",
+        "ratio": 4.59,
+        "ratio_low": 4.34,
+        "fg_assumed": null,
         "near_threshold": true
       },
       {
         "element": "Home inactive label",
         "role": "primary",
-        "fg": "#767676",
         "bg": "#131313",
-        "ratio": 4.07,
-        "near_threshold": false
+        "fg": "#787878",
+        "ratio": 4.23,
+        "ratio_low": 4.0,
+        "fg_assumed": null,
+        "near_threshold": true
       },
       {
         "element": "Exchange label",
         "role": "primary",
-        "fg": "#707387",
-        "bg": "#1B2348",
-        "ratio": 3.26,
-        "near_threshold": true
+        "bg": "#16182A",
+        "fg": "#737689",
+        "ratio": 3.93,
+        "ratio_low": 3.74,
+        "fg_assumed": null,
+        "near_threshold": false
       },
       {
         "element": "Wallet icon",
         "role": "icon",
-        "fg": "#7C7C7C",
-        "bg": "#141414",
-        "ratio": 4.43,
+        "bg": "#141515",
+        "fg": "#7E7E7E",
+        "ratio": 4.52,
+        "ratio_low": 4.37,
+        "fg_assumed": null,
         "near_threshold": true
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Five clearly named tabs and one dominant action fit a trading/wallet app.",
+        "evidence": [
+          "Five clearly named tabs and one dominant action fit a trading/wallet app."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Depth from glow, grain and notch; clear focal point on the center button.",
+        "evidence": [
+          "Depth from glow, grain and notch; clear focal point on the center button."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 3,
         "weight": 20,
         "points": 12.0,
-        "evidence": "Raised-center pattern is established, but the cart icon for 'Markets' and two competing emphases weaken correctness.",
+        "evidence": [
+          "Raised-center pattern is established, but the cart icon for 'Markets' and two competing emphases weaken correctness."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 3,
         "weight": 15,
         "points": 9.0,
-        "evidence": "Active tab shown; pressed/disabled/badge states and Exchange-vs-Markets distinction are not shown.",
+        "evidence": [
+          "Active tab shown; pressed/disabled/badge states and Exchange-vs-Markets distinction are not shown."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Uniform outline icons and label style; center button intentionally different.",
+        "evidence": [
+          "Uniform outline icons and label style; center button intentionally different."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Grain texture plus glow as semantic color goes beyond the default dark tab bar.",
+        "evidence": [
+          "Grain texture plus glow as semantic color goes beyond the default dark tab bar."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -217,13 +240,14 @@
         "weight": 10,
         "points": 4.0,
         "evidence": [
-          "primary text min 3.26:1; secondary text min n/a:1; icon min 4.43:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 3.74:1; secondary text min n/a:1; icon min 4.37:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 69.0,
     "critical_failures": [],
+    "cf1_watchlist": [],
     "final_total": 69.0,
     "cap_applied": false,
     "readiness": "B",

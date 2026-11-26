@@ -31,7 +31,7 @@
       "One-hue discipline keeps focus on the white tab."
     ],
     "gaps_to_make_it_work": [
-      "Inactive white labels on mid-green measure about 3.2-3.4:1; rail icons about 2.7:1.",
+      "Inactive white labels on mid-green measure about 3.5-3.7:1; rail icons about 2.7-3.0:1.",
       "Concave joins need care at different content widths and theme changes.",
       "No hover/focus/tooltip for the collapsed rail is shown."
     ]
@@ -82,6 +82,7 @@
     "Creator and source?"
   ],
   "id": "vixen-ui-011",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -118,85 +119,105 @@
       ]
     ],
     "color_roles": "Single hue (green) gradient fading to black; white reserved for the active item and the content surface.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Measure label (inactive)",
         "role": "primary",
-        "fg": "#D5FFFF",
-        "bg": "#189679",
-        "ratio": 3.44,
+        "bg": "#189678",
+        "fg": "#FFFFFF",
+        "ratio": 3.72,
+        "ratio_low": 3.72,
+        "fg_assumed": "white",
         "near_threshold": false
       },
       {
         "element": "Reduce label (active)",
         "role": "primary",
-        "fg": "#020203",
-        "bg": "#FBFBFB",
-        "ratio": 20.0,
+        "bg": "#FBFCFC",
+        "fg": "#010001",
+        "ratio": 20.45,
+        "ratio_low": 19.78,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Home label",
         "role": "primary",
-        "fg": "#C7FFFA",
-        "bg": "#189A7A",
-        "ratio": 3.23,
-        "near_threshold": true
+        "bg": "#169A7A",
+        "fg": "#FFFFFF",
+        "ratio": 3.53,
+        "ratio_low": 3.53,
+        "fg_assumed": "white",
+        "near_threshold": false
       },
       {
         "element": "Rail icon (inactive)",
         "role": "icon",
-        "fg": "#C0FFFB",
-        "bg": "#28A88A",
-        "ratio": 2.67,
-        "near_threshold": false
+        "bg": "#27A98A",
+        "fg": "#FFFFFF",
+        "ratio": 2.95,
+        "ratio_low": 2.95,
+        "fg_assumed": "white",
+        "near_threshold": true
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Menu names read as a clear process for a measurement/reduction product.",
+        "evidence": [
+          "Menu names read as a clear process for a measurement/reduction product."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Gradient, glass capsules and white merge produce a clear hierarchy.",
+        "evidence": [
+          "Gradient, glass capsules and white merge produce a clear hierarchy."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Collapse/expand and active-state conventions are handled correctly; a back chevron is present.",
+        "evidence": [
+          "Collapse/expand and active-state conventions are handled correctly; a back chevron is present."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Both menu states shown and active item obvious; focus, hover and tooltips not shown.",
+        "evidence": [
+          "Both menu states shown and active item obvious; focus, hover and tooltips not shown."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Same capsule radius, icon chip and spacing across items and states.",
+        "evidence": [
+          "Same capsule radius, icon chip and spacing across items and states."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 5,
         "weight": 10,
         "points": 10.0,
-        "evidence": "Active tab fusing with the content surface is a rare, memorable idea that also serves orientation.",
+        "evidence": [
+          "Active tab fusing with the content surface is a rare, memorable idea that also serves orientation."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -204,13 +225,14 @@
         "weight": 10,
         "points": 4.0,
         "evidence": [
-          "primary text min 3.23:1; secondary text min n/a:1; icon min 2.67:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 3.53:1; secondary text min n/a:1; icon min 2.95:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 78.0,
     "critical_failures": [],
+    "cf1_watchlist": [],
     "final_total": 78.0,
     "cap_applied": false,
     "readiness": "B",

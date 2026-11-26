@@ -32,8 +32,8 @@
       "Loading state is part of the grid."
     ],
     "gaps_to_make_it_work": [
-      "White text on the orange Generate button measures about 2.2-2.7:1.",
-      "Slider labels about 2.3:1.",
+      "White text on the orange Generate button measures about 2.8:1.",
+      "Slider labels about 2.2-2.5:1.",
       "Very small type for a dense control set.",
       "Prompt and results do not match in the mockup."
     ]
@@ -83,6 +83,7 @@
     "Creator and source?"
   ],
   "id": "vixen-ui-017",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -123,85 +124,105 @@
       ]
     ],
     "color_roles": "Dark neutral UI; one orange accent for primary action and active tab, matching the orange tones of the generated images.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Prompt text",
         "role": "primary",
-        "fg": "#ABABAD",
         "bg": "#1E1E20",
-        "ratio": 7.21,
+        "fg": "#B7B7B9",
+        "ratio": 8.3,
+        "ratio_low": 6.77,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Slider labels",
         "role": "secondary",
-        "fg": "#58585A",
         "bg": "#1E1E20",
-        "ratio": 2.34,
+        "fg": "#5D5D5F",
+        "ratio": 2.51,
+        "ratio_low": 2.15,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Generate label",
         "role": "primary",
-        "fg": "#FFE4AF",
-        "bg": "#EC7E2A",
-        "ratio": 2.24,
-        "near_threshold": false
+        "bg": "#EC7E29",
+        "fg": "#FFFFFF",
+        "ratio": 2.76,
+        "ratio_low": 2.76,
+        "fg_assumed": "white",
+        "near_threshold": true
       },
       {
         "element": "Image caption",
         "role": "secondary",
-        "fg": "#E3BAAB",
-        "bg": "#853608",
-        "ratio": 4.68,
-        "near_threshold": true
+        "bg": "#853708",
+        "fg": "#FFFFFF",
+        "ratio": 8.27,
+        "ratio_low": 8.27,
+        "fg_assumed": "white",
+        "near_threshold": false
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Controls map to the generate workflow and results are central.",
+        "evidence": [
+          "Controls map to the generate workflow and results are central."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Palette harmony between UI and content; clear focal points.",
+        "evidence": [
+          "Palette harmony between UI and content; clear focal points."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Prompt, style and model selectors, loading tile, gallery and collections follow generation-tool conventions.",
+        "evidence": [
+          "Prompt, style and model selectors, loading tile, gallery and collections follow generation-tool conventions."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Loading state and mode tabs are shown; many small controls and no error or empty states.",
+        "evidence": [
+          "Loading state and mode tabs are shown; many small controls and no error or empty states."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 3,
         "weight": 10,
         "points": 6.0,
-        "evidence": "Consistent components, but prompt text contradicts the images shown.",
+        "evidence": [
+          "Consistent components, but prompt text contradicts the images shown."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Content-derived accent and stacked collections card go beyond a stock dark dashboard.",
+        "evidence": [
+          "Content-derived accent and stacked collections card go beyond a stock dark dashboard."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -209,22 +230,23 @@
         "weight": 10,
         "points": 2.0,
         "evidence": [
-          "primary text min 2.24:1; secondary text min 2.34:1; icon min n/a:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 2.76:1; secondary text min 2.15:1; icon min n/a:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 72.0,
     "critical_failures": [
       {
         "code": "CF1",
-        "description": "A primary text/label measures below 3:1 contrast",
-        "borderline": false,
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": true,
         "detail": [
-          "Generate label 2.24:1"
+          "Generate label: 2.76-2.76:1"
         ]
       }
     ],
+    "cf1_watchlist": [],
     "final_total": 69.0,
     "cap_applied": true,
     "readiness": "B",

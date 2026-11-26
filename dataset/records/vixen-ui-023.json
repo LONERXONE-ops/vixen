@@ -1,0 +1,403 @@
+{
+  "title": "Talent card with 'Get in Touch' arrow bar: white card and full-bleed green gradient card",
+  "category": "card / profile",
+  "source_files": [
+    "batch-03/img-04"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Illustrated avatar.",
+  "observed": {
+    "layout": "Left: white card with a rounded green gradient banner, an illustrated avatar on a cream circle overlapping the banner, name 'Olivia Rhye', handle '@Oliviar_', a black 'Follow' pill and a bookmark icon button, a divider, a three-stat row with icons (star 4.9 Rating, document 125 Posts, person 12.4K Followers), and a full-width black-to-grey gradient bar 'Get in Touch' with a white circle arrow at its left. Right: full-bleed green gradient card with the same content; Follow is an outlined pill, bookmark is filled, stats are white, and 'Get in Touch' is a white pill with a black arrow circle.",
+    "hierarchy": "Stat numbers are the largest text; the CTA bar is the widest element.",
+    "typography": "Geometric grotesk; larger stat values than the name. Unconfirmed.",
+    "iconography": "Solid glyphs beside stats; outline bookmark.",
+    "materials": "Left: flat white with gradient banner. Right: mesh-like green gradient with subtle grain.",
+    "background": "Light grey."
+  },
+  "interpretation": {
+    "aesthetic": "Fresh, friendly talent card in two skins.",
+    "implementation_notes": [
+      "Skins from one token set: surface, text and CTA colors flip.",
+      "Arrow circle is a leading icon inside the CTA.",
+      "Green mesh: layered radial gradients, optionally with noise."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A talent card whose full-bleed skin trades legibility for atmosphere.",
+    "what_makes_it_work": [
+      "Clear stat labels (Rating, Posts, Followers).",
+      "The CTA treatment inverts between skins correctly.",
+      "The illustrated avatar is distinctive."
+    ],
+    "gaps_to_make_it_work": [
+      "On the green skin, the handle and stat labels measure about 1.8-2.6:1 and the Follow label about 3.1:1.",
+      "The left CTA's gradient lightens toward the right, so the label must stay on the dark part.",
+      "Two prominent black actions (Follow and Get in Touch) compete.",
+      "Bookmark button is unlabeled."
+    ]
+  },
+  "components": [
+    {
+      "name": "Banner",
+      "role": "mood and identity",
+      "states_shown": [
+        "gradient"
+      ],
+      "connects_to": [
+        "Avatar"
+      ]
+    },
+    {
+      "name": "Avatar",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Name and handle"
+      ]
+    },
+    {
+      "name": "Name and handle",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Follow button"
+      ]
+    },
+    {
+      "name": "Follow button",
+      "role": "social action",
+      "states_shown": [
+        "filled (light skin)",
+        "outlined (green skin)"
+      ],
+      "connects_to": [
+        "Stat row"
+      ]
+    },
+    {
+      "name": "Bookmark button",
+      "role": "save profile",
+      "states_shown": [
+        "outline (light)",
+        "filled (green)"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat row",
+      "role": "Rating / Posts / Followers",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA bar"
+      ]
+    },
+    {
+      "name": "CTA bar 'Get in Touch'",
+      "role": "primary contact action",
+      "states_shown": [
+        "dark bar (light skin)",
+        "white pill (green skin)"
+      ],
+      "connects_to": [
+        "Stat row"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "large card radius",
+      "pill buttons",
+      "icon + number + label stat triples",
+      "skin-swappable surface/text/CTA colors"
+    ],
+    "links": [
+      "The stat row leads into the CTA, so proof precedes the ask.",
+      "Both skins keep the same structure so users learn it once."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Token-based skin switch",
+      "Mesh gradient with layered radial gradients",
+      "Leading-icon CTA component"
+    ],
+    "risks": [
+      "Text contrast on gradient skin",
+      "Gradient banding"
+    ]
+  },
+  "pattern": {
+    "name": "Two skins from one token set (light card vs full-bleed gradient)",
+    "use_when": [
+      "Talent or creator cards that need both a clean and an expressive look"
+    ],
+    "avoid_when": [
+      "The gradient skin cannot guarantee text contrast"
+    ],
+    "must_preserve": [
+      "CTA color inversion between skins",
+      "Label-value stat triples",
+      "One dominant action"
+    ],
+    "free_to_vary": [
+      "gradient hue",
+      "avatar style",
+      "banner art"
+    ],
+    "adaptation_examples": [
+      "Coach directory: green becomes the brand hue, Follow replaced by Book.",
+      "Dark mode: use the full-bleed skin with a darker gradient and a scrim."
+    ],
+    "failure_modes": [
+      "White text on mid-green under 3:1 for small labels",
+      "Competing dual CTAs"
+    ]
+  },
+  "lessons": [
+    "A full-bleed gradient skin needs a scrim or a solid panel behind small text.",
+    "Avoid two equally heavy actions on the same card."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "talent",
+    "gradient",
+    "two-skins",
+    "green"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "related": [
+    {
+      "id": "vixen-ui-015",
+      "relation": "same component family (talent card with stat row and contact CTA)"
+    }
+  ],
+  "id": "vixen-ui-023",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#EFEFEF / #EFEFEE",
+        "page grey (~37%)"
+      ],
+      [
+        "#FEFEFD",
+        "white card (~20%)"
+      ],
+      [
+        "#227B57",
+        "deep green gradient (~27%)"
+      ],
+      [
+        "#84C389",
+        "light green gradient (~11%)"
+      ],
+      [
+        "#2EA254 / #0E895D",
+        "saturated greens (medians)"
+      ],
+      [
+        "#030303 / #1A1A1A",
+        "black Follow pill and CTA bar (sampled)"
+      ]
+    ],
+    "color_roles": "Neutral page, green as the full-bleed skin, black for actions on the white card, white for actions on the green card.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Left name",
+        "role": "primary",
+        "bg": "#FDFEFE",
+        "fg": "#000004",
+        "ratio": 20.67,
+        "ratio_low": 20.13,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Left handle",
+        "role": "secondary",
+        "bg": "#FDFDFE",
+        "fg": "#626264",
+        "ratio": 5.98,
+        "ratio_low": 5.2,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Left Follow label",
+        "role": "primary",
+        "bg": "#020202",
+        "fg": "#DEDEDE",
+        "ratio": 15.53,
+        "ratio_low": 12.39,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Left stat label",
+        "role": "secondary",
+        "bg": "#FEFEFE",
+        "fg": "#5B5A5D",
+        "ratio": 6.74,
+        "ratio_low": 5.48,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Left CTA label",
+        "role": "primary",
+        "bg": "#1A1A1A",
+        "fg": "#FEFEFE",
+        "ratio": 17.33,
+        "ratio_low": 16.07,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Right name",
+        "role": "primary",
+        "bg": "#189855",
+        "fg": "#FFFFFF",
+        "ratio": 3.69,
+        "ratio_low": 3.69,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Right handle",
+        "role": "secondary",
+        "bg": "#57B45B",
+        "fg": "#FFFFFF",
+        "ratio": 2.6,
+        "ratio_low": 2.6,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Right stat label",
+        "role": "secondary",
+        "bg": "#95C377",
+        "fg": "#DEFDCB",
+        "ratio": 1.84,
+        "ratio_low": 1.75,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Right CTA label",
+        "role": "primary",
+        "bg": "#FFFFFF",
+        "fg": "#070707",
+        "ratio": 20.09,
+        "ratio_low": 15.39,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Right Follow label",
+        "role": "primary",
+        "bg": "#2AA753",
+        "fg": "#FFFFFF",
+        "ratio": 3.12,
+        "ratio_low": 3.12,
+        "fg_assumed": "white",
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A contact-a-creator card with clear information order."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Balanced, readable composition; the white skin is crisp and the green skin is atmospheric."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Stat labels are explicit and the CTA inverts correctly between skins."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Two black actions compete and the bookmark is unlabeled; no follow/hover states."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Both skins share structure, radii and icon treatment."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Familiar talent-card pattern with a nice arrow-bar CTA."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 3.12:1; secondary text min 1.75:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 71.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 71.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

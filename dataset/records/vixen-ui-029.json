@@ -1,0 +1,387 @@
+{
+  "title": "Social profile concept with scenic blurred backdrop, glass stats panel and sticker-decorated avatar",
+  "category": "screen / profile",
+  "source_files": [
+    "batch-03/img-10"
+  ],
+  "attribution_visible_in_image": "Captions 'Profile concept' and '2/2026' beside the phone. No creator credit visible.",
+  "contains_third_party_content": "Photos, the Figma logo and other brand logos in the subscriptions cluster.",
+  "observed": {
+    "layout": "An iPhone-style frame on a light page with captions 'Profile concept' and '2/2026'. Screen: blurred landscape photo background (sky blue to green); translucent back and more buttons; an oval avatar frame with a gradient outline, sticker-like decorations (Figma logo cluster, a sunburst, a blue sticker) and a blue '+' badge; name 'Kaia Bloom' (white), '@bloom'; chips (Bruges, Designer, July 31); a translucent green panel with two avatar clusters ('Friends +30' and 'Subscriptions +10'); tabs (Stories active, Posts, Saved, Tagged); a two-column photo grid with like counts; a floating blue '+' button with side icons at the bottom.",
+    "hierarchy": "Avatar and name, then the glass panel, then the content grid.",
+    "typography": "Neutral system-style sans; white over blur. Unconfirmed.",
+    "iconography": "Round icon buttons, stickers, brand logos.",
+    "materials": "Heavy background blur, translucent glass panels, glossy stickers.",
+    "background": "Blurred scenic photo."
+  },
+  "interpretation": {
+    "aesthetic": "Expressive, personalized profile; identity through imagery and stickers.",
+    "implementation_notes": [
+      "Backdrop: user-chosen photo with strong blur and a gradient to dark toward the content.",
+      "Stickers: layered images with rotation over the avatar.",
+      "Glass panel: low-alpha tinted fill with backdrop blur."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A profile that looks like the person, with their subscriptions and friends shown as clusters on glass.",
+    "what_makes_it_work": [
+      "Personalization through backdrop and stickers.",
+      "Friends and subscriptions summarized as avatar clusters.",
+      "Clear tab row for content types."
+    ],
+    "gaps_to_make_it_work": [
+      "The white name over light sky measures about 2.1:1 and the handle about 1.6-2.1:1.",
+      "Chip and panel labels over blur are low contrast (about 2.2-3.4:1).",
+      "The floating '+' button overlaps the content grid.",
+      "Stickers could hide the avatar face."
+    ]
+  },
+  "components": [
+    {
+      "name": "Blurred backdrop",
+      "role": "personal mood",
+      "states_shown": [
+        "photo-driven"
+      ],
+      "connects_to": [
+        "Glass panel",
+        "Name block"
+      ]
+    },
+    {
+      "name": "Avatar with stickers",
+      "role": "identity and personality",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Subscriptions cluster"
+      ]
+    },
+    {
+      "name": "Name and handle",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Chips"
+      ]
+    },
+    {
+      "name": "Info chips",
+      "role": "location, role, birthday",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Glass panel with avatar clusters",
+      "role": "friends and subscriptions",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Avatar with stickers"
+      ]
+    },
+    {
+      "name": "Tabs",
+      "role": "content filter",
+      "states_shown": [
+        "Stories active"
+      ],
+      "connects_to": [
+        "Photo grid"
+      ]
+    },
+    {
+      "name": "Photo grid with like counts",
+      "role": "content",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Tabs"
+      ]
+    },
+    {
+      "name": "Create button",
+      "role": "new content",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Photo grid"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "translucent glass for chips, panel and buttons",
+      "round shapes",
+      "one blue action color",
+      "white text over blur"
+    ],
+    "links": [
+      "The Figma logo appears both on the avatar and in the subscriptions cluster, linking identity to subscriptions.",
+      "Tabs filter the grid below.",
+      "The create button sits above the grid it adds to."
+    ]
+  },
+  "build": {
+    "effort": "High",
+    "approach": [
+      "Backdrop-filter blur on a photo background",
+      "Layered sticker images",
+      "Glass panels with translucent fills"
+    ],
+    "risks": [
+      "Text contrast over arbitrary photos",
+      "Blur performance on mobile",
+      "Sticker placement collisions"
+    ]
+  },
+  "pattern": {
+    "name": "Photo-derived backdrop with glass information panels",
+    "use_when": [
+      "Expressive social or creator profiles"
+    ],
+    "avoid_when": [
+      "Text must stay legible over unpredictable photos without a scrim"
+    ],
+    "must_preserve": [
+      "A contrast guarantee for text over the photo",
+      "Clear content tabs",
+      "Separate the primary create action from the content"
+    ],
+    "free_to_vary": [
+      "sticker set",
+      "backdrop source",
+      "panel tint"
+    ],
+    "adaptation_examples": [
+      "Music profile: backdrop from the latest album art, panel shows followers and playlists.",
+      "Travel profile: backdrop from the last trip photo, chips show places."
+    ],
+    "failure_modes": [
+      "White text on light sky near 2:1",
+      "FAB covering content",
+      "Sticker clutter"
+    ]
+  },
+  "lessons": [
+    "Text over a user-chosen photo needs a scrim or an adaptive text color.",
+    "Reuse the same logo to link identity decoration and data."
+  ],
+  "tags": [
+    "screen",
+    "profile",
+    "glass",
+    "blur",
+    "stickers",
+    "mobile"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-029",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F5F5F5",
+        "page (~74%)"
+      ],
+      [
+        "#ACB5BC",
+        "hazy sky-blue (~13%)"
+      ],
+      [
+        "#4B4C48",
+        "dark tone (~10%)"
+      ],
+      [
+        "#1E74F6",
+        "blue '+' button (median)"
+      ],
+      [
+        "#B14519",
+        "orange-red sticker (median)"
+      ],
+      [
+        "#BB1218",
+        "red accent (median)"
+      ]
+    ],
+    "color_roles": "Light page and a blurred landscape photo as the screen background; blue for the create button; stickers add small bursts of color.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Name",
+        "role": "primary",
+        "bg": "#A7B6C4",
+        "fg": "#FAFFFF",
+        "ratio": 2.06,
+        "ratio_low": 2.05,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Handle",
+        "role": "secondary",
+        "bg": "#A5B5C5",
+        "fg": "#D8E6F2",
+        "ratio": 1.65,
+        "ratio_low": 1.61,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Chip \"Bruges\"",
+        "role": "secondary",
+        "bg": "#6C7379",
+        "fg": "#D5DAE0",
+        "ratio": 3.42,
+        "ratio_low": 3.08,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Label \"Friends\"",
+        "role": "secondary",
+        "bg": "#48542C",
+        "fg": "#848E71",
+        "ratio": 2.36,
+        "ratio_low": 2.21,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Tab \"Stories\" (active)",
+        "role": "primary",
+        "bg": "#070D13",
+        "fg": "#FFFFFF",
+        "ratio": 19.5,
+        "ratio_low": 19.5,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Tab \"Posts\"",
+        "role": "primary",
+        "bg": "#080D13",
+        "fg": "#9CA0A5",
+        "ratio": 7.39,
+        "ratio_low": 6.4,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Caption \"Profile concept\"",
+        "role": "secondary",
+        "bg": "#F5F5F5",
+        "fg": "#A0A0A0",
+        "ratio": 2.41,
+        "ratio_low": 2.26,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A personalized social profile with identity, relations and content."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Rich layered composition with a clear focal point at the avatar."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Profile conventions are followed, but text over a light photo fails contrast and the FAB overlaps content."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Tabs, counts and a create action are clear; the personalization controls are not shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Glass, rounded shapes and white text are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Sticker-decorated avatar tied to subscriptions is a distinctive idea."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.05:1; secondary text min 1.61:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 67.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Name: 2.05-2.06:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 67.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

@@ -31,7 +31,7 @@
       "Tags use tint + dark text for legibility."
     ],
     "gaps_to_make_it_work": [
-      "Bio is about 4.4:1 on white.",
+      "Bio measures about 4.3-5.0:1 on white (straddles the 4.5:1 threshold).",
       "Message and bell buttons are unlabeled.",
       "An auto-generated aura could clash with avatar colors."
     ]
@@ -60,7 +60,7 @@
       "Team directory: neutral aura, Follow becomes Message."
     ],
     "failure_modes": [
-      "Bio contrast just under 4.5:1",
+      "Bio contrast near the 4.5:1 threshold",
       "Unlabeled icon buttons",
       "Aura clashing with avatar"
     ]
@@ -80,6 +80,7 @@
     "Creator and source?"
   ],
   "id": "vixen-ui-014",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -120,101 +121,125 @@
       ]
     ],
     "color_roles": "White card, soft gradient aura as the only color, black as the single strong action.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Name",
         "role": "primary",
+        "bg": "#FDFDFD",
         "fg": "#000000",
-        "bg": "#FCFCFC",
-        "ratio": 20.55,
+        "ratio": 20.59,
+        "ratio_low": 20.59,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Bio",
         "role": "secondary",
-        "fg": "#777777",
         "bg": "#FDFDFD",
-        "ratio": 4.39,
-        "near_threshold": true
+        "fg": "#6F6F6F",
+        "ratio": 4.95,
+        "ratio_low": 4.28,
+        "fg_assumed": null,
+        "near_threshold": false
       },
       {
         "element": "Tag \"Writer\"",
         "role": "secondary",
-        "fg": "#4D4F5C",
-        "bg": "#E8EAF9",
-        "ratio": 6.79,
+        "bg": "#E8E9F9",
+        "fg": "#444652",
+        "ratio": 7.75,
+        "ratio_low": 6.35,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Tag \"Golden User\"",
         "role": "secondary",
-        "fg": "#534D3B",
-        "bg": "#FBF7E5",
-        "ratio": 7.84,
+        "bg": "#FBF6E6",
+        "fg": "#514B37",
+        "ratio": 8.1,
+        "ratio_low": 6.88,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Follow label",
         "role": "primary",
-        "fg": "#FFFFFF",
         "bg": "#030303",
-        "ratio": 20.61,
+        "fg": "#FFFFFF",
+        "ratio": 20.58,
+        "ratio_low": 20.43,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Message icon",
         "role": "icon",
-        "fg": "#363636",
-        "bg": "#FCFCFC",
-        "ratio": 11.77,
+        "bg": "#FDFDFD",
+        "fg": "#313131",
+        "ratio": 12.88,
+        "ratio_low": 11.5,
+        "fg_assumed": null,
         "near_threshold": false
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Information fits a creator profile and the main action is obvious.",
+        "evidence": [
+          "Information fits a creator profile and the main action is obvious."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Balanced composition; the overlap and aura give depth with restraint.",
+        "evidence": [
+          "Balanced composition; the overlap and aura give depth with restraint."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Profile hierarchy (avatar, name, tags, bio, primary and secondary actions) follows conventions.",
+        "evidence": [
+          "Profile hierarchy (avatar, name, tags, bio, primary and secondary actions) follows conventions."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "Primary action is unmistakable; follow state, hover and message/notification meaning are not shown.",
+        "evidence": [
+          "Primary action is unmistakable; follow state, hover and message/notification meaning are not shown."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Shared radii, outline icon weight and pill shapes throughout.",
+        "evidence": [
+          "Shared radii, outline icon weight and pill shapes throughout."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 3,
         "weight": 10,
         "points": 6.0,
-        "evidence": "Gradient-header profile cards are common; execution is refined rather than novel.",
+        "evidence": [
+          "Gradient-header profile cards are common; execution is refined rather than novel."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -222,13 +247,14 @@
         "weight": 10,
         "points": 8.0,
         "evidence": [
-          "primary text min 20.55:1; secondary text min 4.39:1; icon min 11.77:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 20.43:1; secondary text min 4.28:1; icon min 11.5:1; non-color state cue: True. Using best-estimate values the score would be 5; the measurement is within error of a threshold."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 78.0,
     "critical_failures": [],
+    "cf1_watchlist": [],
     "final_total": 78.0,
     "cap_applied": false,
     "readiness": "B",

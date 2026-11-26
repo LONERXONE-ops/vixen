@@ -32,7 +32,7 @@
     "gaps_to_make_it_work": [
       "Stat value/label pairs are ambiguous.",
       "On the red card, small light labels over saturated red measure about 2.5:1.",
-      "Left role text is about 3.3:1.",
+      "Left role text is about 3.1-3.3:1.",
       "Bookmark button purpose is unclear without a label."
     ]
   },
@@ -82,6 +82,7 @@
     "Is the Figma file available?"
   ],
   "id": "vixen-ui-015",
+  "schema_version": "2.0",
   "type": "concept",
   "discipline": "ui-design",
   "creator": null,
@@ -126,109 +127,135 @@
       ]
     ],
     "color_roles": "Dark neutral page; saturated red/blue only inside the right card; white CTA is the highest-contrast element in both.",
-    "contrast_method": "Estimated from the compressed image: background = dominant color in the measured box, foreground = mean of the most distant ~4% of pixels, ratio = WCAG relative-luminance contrast. Thin or anti-aliased text biases toward lower ratios; values within 0.3 of a threshold (3.0 or 4.5) are marked near_threshold and should be verified in the source file.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
     "contrast_samples": [
       {
         "element": "Left name",
         "role": "primary",
-        "fg": "#FEFEFE",
         "bg": "#191919",
-        "ratio": 17.56,
+        "fg": "#FFFFFF",
+        "ratio": 17.55,
+        "ratio_low": 17.37,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Left role",
         "role": "secondary",
-        "fg": "#6A6A6A",
-        "bg": "#191919",
-        "ratio": 3.25,
+        "bg": "#1A1A1A",
+        "fg": "#6C6C6C",
+        "ratio": 3.34,
+        "ratio_low": 3.13,
+        "fg_assumed": null,
         "near_threshold": true
       },
       {
         "element": "Left stat label",
         "role": "secondary",
-        "fg": "#DCDCDC",
-        "bg": "#191919",
-        "ratio": 12.77,
+        "bg": "#1A1A1A",
+        "fg": "#E1E1E1",
+        "ratio": 13.39,
+        "ratio_low": 12.23,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Right name",
         "role": "primary",
-        "fg": "#FFFAF6",
-        "bg": "#341717",
-        "ratio": 15.76,
+        "bg": "#341716",
+        "fg": "#FFFFFF",
+        "ratio": 16.43,
+        "ratio_low": 16.43,
+        "fg_assumed": "white",
         "near_threshold": false
       },
       {
         "element": "Right role",
         "role": "secondary",
-        "fg": "#F67987",
-        "bg": "#341716",
-        "ratio": 6.23,
+        "bg": "#341616",
+        "fg": "#F97F8C",
+        "ratio": 6.61,
+        "ratio_low": 5.99,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "Right stat label",
         "role": "secondary",
-        "fg": "#FF8193",
-        "bg": "#C70A26",
-        "ratio": 2.52,
+        "bg": "#C80A26",
+        "fg": "#FF8394",
+        "ratio": 2.54,
+        "ratio_low": 2.41,
+        "fg_assumed": null,
         "near_threshold": false
       },
       {
         "element": "CTA label",
         "role": "primary",
-        "fg": "#070707",
         "bg": "#FEFEFE",
-        "ratio": 19.89,
+        "fg": "#030303",
+        "ratio": 20.49,
+        "ratio_low": 19.38,
+        "fg_assumed": null,
         "near_threshold": false
       }
     ]
   },
   "evaluation": {
-    "rubric_version": "1.0",
+    "rubric_version": "1.1",
     "scores": {
       "purpose": {
         "score": 4,
         "weight": 15,
         "points": 12.0,
-        "evidence": "A hire/contact card with a clear CTA and credentials.",
+        "evidence": [
+          "A hire/contact card with a clear CTA and credentials."
+        ],
         "basis": "judged"
       },
       "visual": {
         "score": 4,
         "weight": 20,
         "points": 16.0,
-        "evidence": "Strong contrast between the two skins and consistent structure.",
+        "evidence": [
+          "Strong contrast between the two skins and consistent structure."
+        ],
         "basis": "judged"
       },
       "discipline": {
         "score": 3,
         "weight": 20,
         "points": 12.0,
-        "evidence": "Card conventions are followed, but stat labels are ambiguous or inverted, which hurts semantic correctness.",
+        "evidence": [
+          "Card conventions are followed, but stat labels are ambiguous or inverted, which hurts semantic correctness."
+        ],
         "basis": "judged"
       },
       "usability": {
         "score": 3,
         "weight": 15,
         "points": 9.0,
-        "evidence": "One CTA is clear; bookmark and chip behavior are unspecified; no hover/disabled states.",
+        "evidence": [
+          "One CTA is clear; bookmark and chip behavior are unspecified; no hover/disabled states."
+        ],
         "basis": "judged"
       },
       "consistency": {
         "score": 4,
         "weight": 10,
         "points": 8.0,
-        "evidence": "Both cards share the same spacing, radii and component layout.",
+        "evidence": [
+          "Both cards share the same spacing, radii and component layout."
+        ],
         "basis": "judged"
       },
       "originality": {
         "score": 3,
         "weight": 10,
         "points": 6.0,
-        "evidence": "Two skins on one structure is useful but the card patterns themselves are familiar.",
+        "evidence": [
+          "Two skins on one structure is useful but the card patterns themselves are familiar."
+        ],
         "basis": "judged"
       },
       "accessibility": {
@@ -236,13 +263,14 @@
         "weight": 10,
         "points": 6.0,
         "evidence": [
-          "primary text min 15.76:1; secondary text min 2.52:1; icon min n/a:1; non-color state cue: True."
+          "Scored on conservative values: primary text min 16.43:1; secondary text min 2.41:1; icon min n/a:1; non-color state cue: True."
         ],
-        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion, screen-reader support are not assessable from a static image)"
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
       }
     },
     "raw_total": 69.0,
     "critical_failures": [],
+    "cf1_watchlist": [],
     "final_total": 69.0,
     "cap_applied": false,
     "readiness": "B",

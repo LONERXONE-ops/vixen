@@ -1,0 +1,432 @@
+{
+  "title": "Mobile profile screen in dark and light themes with activity feed and avatar tab (Whop)",
+  "category": "screen / profile",
+  "source_files": [
+    "batch-03/img-05"
+  ],
+  "attribution_visible_in_image": "In-mockup content shows 'Whop' as the product and 'Ilya Miskov @ilyamiskov' as the profile. Not confirmed as the creator.",
+  "contains_third_party_content": "Product name and logo (Whop), photos, profile avatar.",
+  "observed": {
+    "layout": "Two phone screens: dark (left) and light (right), same structure. Top: header art (canyon in dark, pale dunes in light), back button, share and settings icon buttons, an 'Edit profile' pill. Avatar with a green online dot; name 'Ilya Miskov' with an orange badge; handle; bio 'Human interface designer at Whop'; meta rows (location, join date, Links link, birthday); two outlined stat chips ('3 whops owned', '23 whops joined'); 'Activity' header with a 'Sort' dropdown; a feed item (author, views 1,483, time 45m, breadcrumb 'in Design Cave / Photos', title 'Whop Sign in flow', subtitle) with a large media preview. Bottom tab bar: home, search, chat, bell with a '2' badge, cube, and the user's avatar as a highlighted tab.",
+    "hierarchy": "Avatar and name, then stat chips, then the feed.",
+    "typography": "Neutral sans with medium-weight titles and small grey meta text. Unconfirmed.",
+    "iconography": "Consistent outline icons.",
+    "materials": "Dark: near-black with soft highlights. Light: white with soft shadows and a gradient fade under the header art.",
+    "background": "Pale blue-grey page."
+  },
+  "interpretation": {
+    "aesthetic": "Polished community-app profile with strong theme parity.",
+    "implementation_notes": [
+      "Theme parity through tokens: surface, text, border and header art swap.",
+      "Header art fades into the surface with a gradient mask.",
+      "Avatar-as-tab: the profile tab shows the user's own image and a highlighted tile."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A complete profile screen that behaves the same in light and dark and ties identity to community activity.",
+    "what_makes_it_work": [
+      "Breadcrumb context on feed items links activity to communities.",
+      "Stat chips summarize membership at a glance.",
+      "The avatar tab connects navigation to this screen."
+    ],
+    "gaps_to_make_it_work": [
+      "Handle and location/date meta text measure about 2.6-3.5:1 in both themes.",
+      "Inactive tab icons measure about 3.7-4.1:1.",
+      "No loading, empty or error states shown."
+    ]
+  },
+  "components": [
+    {
+      "name": "Header art with icon buttons",
+      "role": "identity and quick actions",
+      "states_shown": [
+        "dark",
+        "light"
+      ],
+      "connects_to": [
+        "Avatar"
+      ]
+    },
+    {
+      "name": "Avatar with status dot",
+      "role": "identity and availability",
+      "states_shown": [
+        "online"
+      ],
+      "connects_to": [
+        "Name and badge",
+        "Tab bar avatar tab"
+      ]
+    },
+    {
+      "name": "Name, badge, handle, bio",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat chips"
+      ]
+    },
+    {
+      "name": "Meta rows",
+      "role": "location, join date, links, birthday",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat chips",
+      "role": "membership summary",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Activity feed"
+      ]
+    },
+    {
+      "name": "Activity header with Sort",
+      "role": "controls the feed",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Feed item"
+      ]
+    },
+    {
+      "name": "Feed item",
+      "role": "content with breadcrumb context",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat chips"
+      ]
+    },
+    {
+      "name": "Tab bar",
+      "role": "global navigation",
+      "states_shown": [
+        "badge on bell",
+        "avatar tab highlighted"
+      ],
+      "connects_to": [
+        "Avatar with status dot"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "theme-swappable surface and text tokens",
+      "outlined chips with large radius",
+      "one icon style",
+      "orange badge and indigo counts as small accents"
+    ],
+    "links": [
+      "The 'whops owned / joined' chips and the feed breadcrumbs both point to communities.",
+      "The avatar tab mirrors the avatar on the screen, linking navigation and profile.",
+      "The bell badge links to notifications elsewhere in the app."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Theme tokens via CSS variables",
+      "Gradient mask under the header art",
+      "Standard list and tab bar components"
+    ],
+    "risks": [
+      "Header art loading",
+      "Dark/light contrast for meta text"
+    ]
+  },
+  "pattern": {
+    "name": "Profile screen: identity header, stat chips, activity feed, avatar-as-active-tab",
+    "use_when": [
+      "Community or social apps with membership and content"
+    ],
+    "avoid_when": [
+      "Single-purpose apps without profiles"
+    ],
+    "must_preserve": [
+      "Identical structure in both themes",
+      "Breadcrumb context on feed items",
+      "Avatar tab as the active indicator"
+    ],
+    "free_to_vary": [
+      "header art",
+      "chip content",
+      "accent colors"
+    ],
+    "adaptation_examples": [
+      "Marketplace seller profile: chips become 'products' and 'sales', feed becomes listings.",
+      "Learning platform: chips show courses, feed shows lessons."
+    ],
+    "failure_modes": [
+      "Low-contrast meta text",
+      "Missing empty and loading states"
+    ]
+  },
+  "lessons": [
+    "Theme parity means the same structure with only tokens changing.",
+    "Link feed items to the communities that contain them."
+  ],
+  "tags": [
+    "screen",
+    "profile",
+    "dark-light",
+    "feed",
+    "tab-bar",
+    "mobile"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "Is a prototype available?"
+  ],
+  "id": "vixen-ui-024",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#0B0808",
+        "dark theme surface (~33%)"
+      ],
+      [
+        "#E0E5EB / #FAFAFA / #E3E5E8",
+        "light theme surfaces (~50%)"
+      ],
+      [
+        "#7E7878",
+        "dark theme mid-grey"
+      ],
+      [
+        "#A64D24 / #FBA017",
+        "orange from the header art and the name badge (medians)"
+      ],
+      [
+        "#9E1D52",
+        "magenta in the dark header art"
+      ],
+      [
+        "approx indigo",
+        "notification count badge (not sampled)"
+      ],
+      [
+        "approx green",
+        "online status dot (not sampled)"
+      ]
+    ],
+    "color_roles": "Neutral surfaces in both themes; orange appears in header art and the badge; indigo marks counts and links; green marks status.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Dark: name",
+        "role": "primary",
+        "bg": "#060505",
+        "fg": "#FBFBF7",
+        "ratio": 19.56,
+        "ratio_low": 18.43,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark: handle",
+        "role": "secondary",
+        "bg": "#060606",
+        "fg": "#666666",
+        "ratio": 3.52,
+        "ratio_low": 3.07,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark: bio",
+        "role": "primary",
+        "bg": "#060606",
+        "fg": "#D4D4D4",
+        "ratio": 13.7,
+        "ratio_low": 12.09,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark: meta \"Tallinn\"",
+        "role": "secondary",
+        "bg": "#060606",
+        "fg": "#626262",
+        "ratio": 3.34,
+        "ratio_low": 2.94,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Dark: chip label",
+        "role": "primary",
+        "bg": "#1B1B1B",
+        "fg": "#D3D3D3",
+        "ratio": 11.47,
+        "ratio_low": 9.66,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Dark: nav icon",
+        "role": "icon",
+        "bg": "#131313",
+        "fg": "#777777",
+        "ratio": 4.13,
+        "ratio_low": 3.86,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Light: name",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#111111",
+        "ratio": 18.66,
+        "ratio_low": 17.24,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Light: handle",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#959595",
+        "ratio": 2.97,
+        "ratio_low": 2.67,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Light: bio",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#383838",
+        "ratio": 11.62,
+        "ratio_low": 9.46,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Light: meta \"Tallinn\"",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#959595",
+        "ratio": 2.97,
+        "ratio_low": 2.64,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Light: chip label",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#424242",
+        "ratio": 9.92,
+        "ratio_low": 7.79,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Light: nav icon",
+        "role": "icon",
+        "bg": "#EBE9E7",
+        "fg": "#736F68",
+        "ratio": 4.12,
+        "ratio_low": 3.74,
+        "fg_assumed": null,
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A clear community profile with identity, membership and activity."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Balanced hierarchy and refined surfaces in both themes."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Profile and tab-bar conventions are followed closely, including badges and status."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Sort control, badges, status dot and active tab are shown; loading and empty states are not."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "Light and dark share structure, spacing, icon weight and component styling exactly."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A well-executed but conventional social profile."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 7.79:1; secondary text min 2.64:1; icon min 3.74:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 78.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 78.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

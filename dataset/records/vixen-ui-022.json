@@ -1,0 +1,357 @@
+{
+  "title": "Profile card with experience meter and social row (bar layout vs ring layout)",
+  "category": "card / profile",
+  "source_files": [
+    "batch-03/img-03"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "3D-style cartoon avatar; cloud photo header; social platform icons (Instagram, X, Threads).",
+  "observed": {
+    "layout": "Two cards side by side. Left: cloud-photo header with a 'Follow +' pill at top-right, circular avatar overlapping with a thin outline, an 'exp.' label with a segmented gradient bar fading to empty ticks, name 'Noah Thompson', two-line bio, three stat columns with dividers (72.9K Likes, 828 Posts, 342.9K Views), and a footer row of three equal social-icon cells. Right: same content centered; the avatar has a rainbow progress ring, the top-right button is a '+' circle, stats sit in an inset rounded panel, and social icons are bare icons centered below.",
+    "hierarchy": "Name, then stat numbers, then bio.",
+    "typography": "Neutral grotesk; medium name, bold stat numbers, light-grey bio. Unconfirmed.",
+    "iconography": "Simple line icons for socials; plus icon.",
+    "materials": "Soft white cards with a gentle shadow; photographic header.",
+    "background": "Light grey."
+  },
+  "interpretation": {
+    "aesthetic": "Clean, friendly profile card; the experience metric adds a game-like touch.",
+    "implementation_notes": [
+      "Segmented bar: repeated tick elements or a mask over a gradient.",
+      "Ring: conic-gradient or SVG stroke around the avatar.",
+      "Stat columns: three-column grid with dividers; inset-panel variant uses a tinted background."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "One profile, two ways to encode a level metric (bar or ring).",
+    "what_makes_it_work": [
+      "Stats are labeled and easy to scan.",
+      "Equal social cells give a tidy footer.",
+      "Both layouts keep the same content."
+    ],
+    "gaps_to_make_it_work": [
+      "The 'exp.' meter has no value or explanation.",
+      "The ring has no label, so it can read as decoration.",
+      "Bio and stat labels measure about 4.0-4.9:1, near the 4.5:1 threshold.",
+      "'Follow +' and '+' differ in meaning between variants."
+    ]
+  },
+  "components": [
+    {
+      "name": "Header image",
+      "role": "identity and mood",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Avatar"
+      ]
+    },
+    {
+      "name": "Avatar with experience encoding",
+      "role": "identity plus a level metric (bar or ring)",
+      "states_shown": [
+        "bar variant",
+        "ring variant"
+      ],
+      "connects_to": [
+        "Experience bar",
+        "Stat trio"
+      ]
+    },
+    {
+      "name": "Follow / plus button",
+      "role": "primary social action",
+      "states_shown": [
+        "default (not followed)"
+      ],
+      "connects_to": [
+        "Stat trio"
+      ]
+    },
+    {
+      "name": "Name and bio",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat trio",
+      "role": "Likes / Posts / Views with labels",
+      "states_shown": [
+        "dividers variant",
+        "inset panel variant"
+      ],
+      "connects_to": [
+        "Social row"
+      ]
+    },
+    {
+      "name": "Social row",
+      "role": "links to external profiles",
+      "states_shown": [
+        "cells variant",
+        "bare icons variant"
+      ],
+      "connects_to": [
+        "Stat trio"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "large card radius",
+      "one neutral palette",
+      "bold-number, light-label stat pairs",
+      "single gradient reserved for the metric"
+    ],
+    "links": [
+      "The experience bar and the avatar ring encode the same metric, so the avatar and the metric are linked.",
+      "Stats and social row sit in a consistent footer region in both layouts."
+    ]
+  },
+  "build": {
+    "effort": "Low",
+    "approach": [
+      "Grid for the stat trio",
+      "Conic-gradient ring or segmented bar",
+      "Standard card layout"
+    ],
+    "risks": [
+      "Unexplained metric",
+      "Gradient accessibility (color-only meaning)"
+    ]
+  },
+  "pattern": {
+    "name": "Same data, two encodings (bar vs avatar ring)",
+    "use_when": [
+      "Profiles that show a level, progress or reputation metric"
+    ],
+    "avoid_when": [
+      "The metric means nothing to viewers"
+    ],
+    "must_preserve": [
+      "A label or tooltip for the metric",
+      "Label-value stat pairs"
+    ],
+    "free_to_vary": [
+      "bar vs ring",
+      "dividers vs inset panel",
+      "button style",
+      "header image"
+    ],
+    "adaptation_examples": [
+      "Learning app: ring shows course progress.",
+      "Creator platform: bar shows reputation level."
+    ],
+    "failure_modes": [
+      "Unlabeled ring",
+      "Gradient meter without a numeric value"
+    ]
+  },
+  "lessons": [
+    "Give every novel metric a label or legend.",
+    "Show the same data in two encodings to compare which communicates better."
+  ],
+  "tags": [
+    "card",
+    "profile",
+    "stats",
+    "progress-ring",
+    "light"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-022",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F5F5F5 / #F1F1F0 / #FCFCFC",
+        "page and card whites (~83%)"
+      ],
+      [
+        "#C9CCD0",
+        "sky grey-blue header (~15%)"
+      ],
+      [
+        "#000000",
+        "text (sampled)"
+      ],
+      [
+        "#737373",
+        "stat labels (sampled)"
+      ],
+      [
+        "multi-hue gradient",
+        "experience bar and avatar ring (purple, green, yellow, orange); not sampled precisely"
+      ],
+      [
+        "#A25228",
+        "avatar skin and bag tones (saturated median)"
+      ]
+    ],
+    "color_roles": "Neutral white cards; color only in the avatar and the experience meter.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Name",
+        "role": "primary",
+        "bg": "#FBFBFB",
+        "fg": "#000000",
+        "ratio": 20.38,
+        "ratio_low": 20.32,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Bio",
+        "role": "secondary",
+        "bg": "#FCFCFC",
+        "fg": "#6F6F6F",
+        "ratio": 4.86,
+        "ratio_low": 4.2,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Stat number",
+        "role": "primary",
+        "bg": "#FBFBFB",
+        "fg": "#000000",
+        "ratio": 20.32,
+        "ratio_low": 20.1,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label",
+        "role": "secondary",
+        "bg": "#FBFBFB",
+        "fg": "#727272",
+        "ratio": 4.67,
+        "ratio_low": 4.26,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Follow label",
+        "role": "primary",
+        "bg": "#ECECEC",
+        "fg": "#09090A",
+        "ratio": 16.79,
+        "ratio_low": 15.3,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "exp. label",
+        "role": "secondary",
+        "bg": "#FBFBFB",
+        "fg": "#737373",
+        "ratio": 4.62,
+        "ratio_low": 3.99,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Social icon",
+        "role": "icon",
+        "bg": "#F7F7F7",
+        "fg": "#0C0C0C",
+        "ratio": 18.3,
+        "ratio_low": 16.56,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A creator profile with the key signals up front."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Clean hierarchy with a pleasant photographic header."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Stat trios are unambiguous and conventionally structured."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Follow is clear, but the metric is unexplained and no followed state is shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Both layouts share content, spacing and radii, though the metric meaning is unclear."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "An experience meter and an alternative ring encoding add something beyond a stock profile card."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 15.3:1; secondary text min 3.99:1; icon min 16.56:1; non-color state cue: True. Using best-estimate values the score would be 5; the measurement is within error of a threshold."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 77.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 77.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}
