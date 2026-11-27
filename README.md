@@ -1,74 +1,153 @@
-# VIXEN: Universal Design Intelligence
+<div align="center">
 
-VIXEN is a design-intelligence system for AI agents. The goal is that an agent using VIXEN understands *why* designs work and can adapt those principles to a new project, instead of producing one generic style.
+# VIXEN
 
-It is not a UI kit, a prompt pack or a screenshot gallery. It is an evidence base (a dataset of analyzed concept designs), a measurement and evaluation method, and, later, an installable Agent Skill built from that evidence.
+**Universal design intelligence for AI agents**
 
-> **Status: dataset phase, pre-release.** A first `SKILL.md` exists, but the skill has not been tested in any agent and the install command below is unverified. See [Roadmap](#roadmap).
+Pick patterns by need. Adapt, don't copy. Measure the result.
 
-## What exists today
+![status](https://img.shields.io/badge/status-pre--release-orange)
+![records](https://img.shields.io/badge/dataset-46%20records-blue)
+![rubric](https://img.shields.io/badge/rubric-v1.1-informational)
+![schema](https://img.shields.io/badge/schema-2.1-informational)
+![license](https://img.shields.io/badge/license-not%20chosen-lightgrey)
 
-| Part | State |
+[What it is](#what-it-is) · [Install](#install) · [How it works](#how-it-works) · [The dataset](#the-dataset) · [Tools](#tools) · [Layout](#repository-layout) · [Roadmap](#roadmap)
+
+</div>
+
+---
+
+## What it is
+
+VIXEN helps an AI agent understand *why* designs work, so the result fits the project instead of one generic style.
+
+It is **not** a UI kit, a prompt pack or a screenshot gallery. It has three parts:
+
+| Part | What it does |
 |---|---|
-| Concept dataset (`dataset/records/`) | Batches 1 to 4 collected: 46 records, `vixen-ui-001` to `vixen-ui-046`. Records are being brought to one schema (see below). |
-| Evaluation rubric (`evaluation/concept-rubric.md`) | v1.1, in use |
-| Tools (`tools/`) | Contrast measurement, evaluation builder, record generator, validator |
-| Family pages (`dataset/families/`) | Draft: profile / talent card |
-| `SKILL.md` | First version, written from the dataset guidelines and rubric. Untested. |
-| `core/`, `knowledge/`, `workflows/` | **Not written yet.** They will be derived from the dataset. |
-| License | **Not chosen yet** (see [License](#license)) |
+| **Dataset** | Analyzed concept designs, each with measured contrast, scores, components, build effort and failure modes |
+| **Method** | An agent protocol: classify, retrieve by need, compare, adapt, build from shared tokens, self-evaluate |
+| **Skill** | `SKILL.md`, the entry point that teaches an agent the method and points it at the dataset |
 
-### Dataset schema status
-| Records | Schema |
-|---|---|
-| `001` to `009` | v1 (no scores, no components) |
-| `010` to `019` | v2.0 (scored) |
-| `020` to `046` | v2.1 (current) |
+> **Status: pre-release.** The dataset is the focus. `SKILL.md` is a first version and has not been tested in an agent. See [Roadmap](#roadmap).
 
-The older records are being upgraded to schema 2.1. Run the validator for the exact current counts:
+---
 
-```
-python tools/validate_records.py dataset/records
-```
-
-## How a record works
-
-Each record turns one concept design into structured evidence:
-
-- **measured**: palette and contrast ratios taken from the image
-- **observed**: visible facts only
-- **interpretation**: inferences, kept separate from facts
-- **concept_work**: what makes it work, and what is missing
-- **components** and **system**: the parts and how they connect
-- **build**: effort (Low / Medium / High) and risks
-- **pattern**: `use_when`, `avoid_when`, `must_preserve`, `free_to_vary`, `failure_modes`
-- **evaluation**: scored with the rubric, with critical failures reported separately
-
-Full schema and the agent decision protocol: [`dataset/dataset-guidelines.md`](dataset/dataset-guidelines.md).
-Scoring rules: [`evaluation/concept-rubric.md`](evaluation/concept-rubric.md).
-
-## Install (unverified)
-
-The planned install command is:
+## Install
 
 ```
 npx skills add LONERXONE-ops/vixen
 ```
 
-This has not been tested. If it fails, use the manual route below.
+| Step | Result |
+|---|---|
+| Source is found and cloned | Verified |
+| The skill `vixen` is detected and its description is read | Verified |
+| Installing into an agent | Not yet tested |
+| An agent actually using the skill on a real task | Not yet tested |
 
-## Using the dataset manually
+If the installer fails for you, use the manual route:
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/LONERXONE-ops/vixen.git
-   ```
-2. Point your agent at `dataset/dataset-guidelines.md` first, then let it search `dataset/records/` by each record's `pattern.use_when` and `pattern.avoid_when`.
-3. For comparing several records of the same component, use `dataset/families/`.
+```
+git clone https://github.com/LONERXONE-ops/vixen.git
+```
 
-The guidelines tell the agent to adapt patterns, never to copy a source design's surface (layout, art, logos).
+Then point your agent at `SKILL.md` and `dataset/dataset-guidelines.md`.
 
-## Using the tools
+---
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[Classify the request] --> B[Retrieve records by need]
+    B --> C[Compare candidates]
+    C --> D[Adapt, never copy]
+    D --> E[Build from shared tokens]
+    E --> F[Self-evaluate with the rubric]
+    F --> G[Log what was learned]
+    F -. critical failure .-> D
+```
+
+1. **Classify** what is being built, for whom, under which constraints. No style yet.
+2. **Retrieve by need, not by look.** Match the request against each record's `use_when` and `avoid_when`.
+3. **Compare** candidates by score, `failure_modes` and build effort.
+4. **Adapt.** Keep `must_preserve`, change `free_to_vary`. Never reproduce a source design's surface.
+5. **Build from one token set** so all components feel like one product.
+6. **Self-evaluate** with the rubric, including measured contrast. Fix critical failures.
+7. **Log** real adaptations so the owner can promote lessons into the dataset.
+
+The full protocol is in [`dataset/dataset-guidelines.md`](dataset/dataset-guidelines.md).
+
+---
+
+## The dataset
+
+46 records, `vixen-ui-001` to `vixen-ui-046`, from four batches of concept designs.
+
+| Records | Schema | State |
+|---|---|---|
+| `001` to `009` | v1 | No scores or components. Being upgraded. |
+| `010` to `019` | v2.0 | Scored. Being upgraded. |
+| `020` to `046` | v2.1 | Current standard |
+
+Concepts so far cover navigation, profile and talent cards, landing and hero pages, dashboards, onboarding, widgets and product pages.
+
+### What a record holds
+
+```
+measured          palette, contrast ratios sampled from the image
+observed          visible facts only
+interpretation    inferences, kept apart from facts
+concept_work      what makes it work, what is missing
+components        parts and what each connects to
+system            shared tokens and the links between components
+build             effort (Low / Medium / High) and risks
+pattern           use_when, avoid_when, must_preserve, free_to_vary, failure_modes
+evaluation        rubric scores, critical failures, readiness
+```
+
+### Families
+
+Records of the same component are compared in `dataset/families/`:
+
+- `profile-card.md`
+- `landing-hero.md`
+
+Family pages are drafts until reviewed. Treat their guidance as hypotheses.
+
+### Integrity rules
+
+- Observed facts stay separate from interpretation. Design intent is never invented.
+- `creator`, `source` and `publication_date` are `null`, and `license` is `"unknown"`, until evidence is supplied. Text visible in an image is not proof of authorship.
+- Third-party content (logos, characters, photos, brands) is listed per record.
+- Accessibility is measured from the image, never estimated. Values within 0.4 of a threshold are flagged `near_threshold`.
+- Source images are **not** stored in this repository.
+
+---
+
+## Evaluation
+
+Every record is scored with [`evaluation/concept-rubric.md`](evaluation/concept-rubric.md) (v1.1).
+
+| Category | Weight | Basis |
+|---|---|---|
+| Purpose and requirements | 15 | judged |
+| Visual quality and composition | 20 | judged |
+| Discipline-specific correctness | 20 | judged |
+| Usability and functionality | 15 | judged |
+| Consistency and coherence | 10 | judged |
+| Originality and creative direction | 10 | judged |
+| Accessibility and inclusivity | 10 | **measured** |
+
+Readiness: **A** is 80 or more, **B** is 60 to 79, **C** is below 60. Any critical failure caps the total at 69. Scores describe a concept as shown in a static image. Behavior and states that are not shown are not scored.
+
+---
+
+## Tools
+
+Used to build the dataset. You do not need them to use it.
 
 Requires Python 3 with `numpy` and `Pillow`:
 
@@ -78,59 +157,55 @@ pip install numpy pillow
 
 | Tool | Purpose |
 |---|---|
-| `tools/contrast.py` | Measures text and icon contrast from boxes you define, and draws a verification montage |
-| `tools/evaluate.py` | Builds the evaluation block (scores, accessibility rule, critical failures, readiness) |
+| `tools/contrast.py` | Measure contrast from boxes drawn on an image; draws a verification montage |
+| `tools/evaluate.py` | Build the evaluation block |
 | `tools/gen_example.py` | Template for generating records |
-| `tools/validate_records.py` | Checks every record for completeness and consistency |
+| `tools/validate_records.py` | Check every record for completeness and consistency |
 
-See [`tools/README.md`](tools/README.md) for details.
+Details: [`tools/README.md`](tools/README.md).
+
+---
 
 ## Repository layout
 
 ```
+SKILL.md                     agent skill entry point
+README.md
+CHANGELOG.md                 project changes
 dataset/
   dataset-guidelines.md      schema, agent protocol, learning loop
-  records/                   one JSON record per concept, plus INDEX.md
-  families/                  comparisons of records of the same component
+  records/                   one JSON per concept, plus INDEX.md
+  families/                  comparisons of records of one component
   learning/                  template for logging real adaptations
 evaluation/
-  concept-rubric.md          scoring rubric
+  concept-rubric.md          scoring rules
   CHANGELOG.md               rubric changes
-tools/                       measurement, evaluation and validation scripts
-SKILL.md                     agent skill entry point
-CHANGELOG.md                 project changes
+  PROPOSALS.md               proposals (see file)
+tools/                       measurement, evaluation, validation
 ```
 
-Source images are **not** stored in this repository (`raw-designs/`, `*.psd` and `*.fig` are git-ignored). Records hold analysis and, when known, a source link.
-
-## Dataset integrity rules
-
-- Observed facts are kept separate from interpretation. Design intent is never invented.
-- `creator`, `source` and `publication_date` stay `null`, and `license` stays `"unknown"`, until evidence is supplied. Text visible in an image is recorded as `attribution_visible_in_image` and is not proof of authorship.
-- Third-party content (logos, characters, photos, brand names) is listed in `contains_third_party_content`.
-- Accessibility is measured from the image, never estimated. Contrast values within 0.4 of a threshold are flagged `near_threshold` and need checking in the source file.
+---
 
 ## Roadmap
 
-1. Repository and identity (done)
-2. Dataset: collect and analyze concepts (in progress: 46 of a planned 100+)
-3. Upgrade all records to schema 2.1
-4. Derive `knowledge/` from the dataset (color, typography, composition, spacing, accessibility, design languages)
-5. Derive `core/` (philosophy, reasoning, adaptation) and `workflows/`
-6. Rewrite `SKILL.md` from `knowledge/` and `core/` and verify the install process
-7. Test the skill across agents
-8. First public release
+- [x] Repository and identity
+- [x] Dataset batches 1 to 4 (46 records)
+- [x] First `SKILL.md`
+- [ ] Upgrade records `001` to `019` to schema 2.1
+- [ ] Grow the dataset toward 100+ concepts
+- [ ] Derive `knowledge/` from the dataset (color, typography, composition, spacing, accessibility)
+- [ ] Derive `core/` (philosophy, reasoning, adaptation) and `workflows/`
+- [ ] Rewrite `SKILL.md` from `knowledge/` and `core/`
+- [ ] Test the install and the skill in real agents
+- [ ] First public release
+
+---
 
 ## Contributing
 
-Concepts are reviewed by a person before entering the dataset. A good candidate:
+Concepts are reviewed by a person before entering the dataset. A strong candidate shows an idea beyond a stock pattern, shows more than one state or theme, has a known creator and source, and belongs to a component family. Weaker or flawed concepts are welcome too, because the dataset should also teach what fails. Include the creator and source when you know them.
 
-- shows an idea beyond a stock pattern
-- shows more than one state or theme
-- has a known creator and source
-- belongs to a component family, so it can be compared with other records
-
-Weaker or flawed concepts are welcome too, because the dataset should also teach what fails. When you submit a concept, include its creator and source if you know them.
+---
 
 ## License
 

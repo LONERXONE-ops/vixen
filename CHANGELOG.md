@@ -12,7 +12,7 @@ Project changes. Rubric changes are logged separately in `evaluation/CHANGELOG.m
 - Adaptation log template (`dataset/learning/README.md`).
 - Tools for contrast measurement, evaluation, record generation and validation (`tools/`).
 - Project README.
-- First `SKILL.md` (untested).
+- First `SKILL.md` (untested in agents). `npx skills add LONERXONE-ops/vixen` detects the skill; installing into an agent is not yet tested.
 
 ### Pending
 - Upgrade of records `001` to `019` to schema 2.1.
