@@ -67,7 +67,7 @@ If no text is present, score from icons: 4 if I >= 3 and Cue, otherwise 3 or low
 ### Measurement method (v1.1)
 - Draw a box around each text element; background = dominant color in the box.
 - `ratio_low` (conservative) = contrast using the mean of the most distant ~4% of pixels as the text color.
-- `ratio` (best estimate) = contrast using the mean of the most distant ~1.5%. If the text sits on a saturated background (HSV saturation >= 0.4) and its color appears near-white (all channels >= 170) or near-black (all <= 60), the text is assumed to be pure white or black, because anti-aliasing of small text otherwise understates contrast. In that case `ratio_low` equals `ratio`.
+- `ratio` (best estimate) = contrast using the mean of the most distant ~1.5%. If the text sits on a saturated background (HSV saturation >= 0.4) and its peak pixels (the most distant ~0.5%, at least 3 pixels) appear near-white (all channels >= 170) or near-black (all <= 60), the text is assumed to be pure white or black, because anti-aliasing of small text otherwise understates contrast. In that case `ratio_low` equals `ratio`.
 - Gradient and photo backgrounds are measured one text line at a time.
 - Scores use `ratio_low`. A score is reported with a note when the best estimate would give a different score.
 - Values within 0.4 of a threshold (3.0 or 4.5) are `near_threshold` and must be re-checked in the source file or code before being treated as failures.

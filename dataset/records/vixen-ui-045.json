@@ -1,0 +1,426 @@
+{
+  "title": "Real-estate landing hero: search-first with a scooped corner",
+  "category": "landing page / hero",
+  "source_files": [
+    "batch-04/img-15"
+  ],
+  "attribution_visible_in_image": "'My Home' logo in the mockup; no creator credit visible.",
+  "contains_third_party_content": "Airbnb, Cisco, eBay and Microsoft logos; a building photograph; a phone number appears in the image.",
+  "observed": {
+    "layout": "Grey page with a white rounded frame. A dark slate hero with a building photo at the right. Nav: 'My Home' logo, Home (active, orange underline dot), Properties, Members, Pages, Blogs, Log in, an outlined 'Sign Up' pill. Headline 'Choose Your Best Happy Land', sub 'Real Estate & Properties For Sale Or Rent In 12+ Country'. A white search bar: Property type (Show all), Price range (Any price), a purple 'Search' button; then 'Buy a home' and 'Rent a home' toggles. A coral label 'Our Special Service' over a carousel of dark cards ('Comfortable' with 'Facebook Ads, Google Ads, Linkedin Ads,'; 'Luxury...' cut off). The hero's bottom edge has a scooped corner that meets a white strip: a property card (Jakarta Barat, Indonesia, 4 bed, 10x10 m, $5,200,000, a green 'Book Now' tag) and four logo chips. Small white text with a lime link at the bottom right of the photo ('Give us a Call ...').",
+    "hierarchy": "Headline, then the search bar.",
+    "typography": "Bold geometric headline; small sans nav and copy. Typeface unconfirmed.",
+    "iconography": "Small outline icons in the search fields.",
+    "materials": "Dark hero with a scooped corner, white search bar, translucent dark cards.",
+    "background": "Grey page."
+  },
+  "interpretation": {
+    "aesthetic": "Friendly proptech.",
+    "implementation_notes": [
+      "Scooped corner via a masked or pseudo-element cut-out.",
+      "Carousel of service cards cropped by the container."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Search directly under the headline, plus an instant proof strip.",
+    "what_makes_it_work": [
+      "The search form is the first thing under the headline.",
+      "The scooped corner links hero and strip.",
+      "A sample property card and partner logos give instant proof."
+    ],
+    "gaps_to_make_it_work": [
+      "The 'special service' cards list ad platforms, not property services; the logos are tech brands, not real-estate partners.",
+      "The headline wording is odd.",
+      "'Our Special Service' label measures about 2.22-2.31:1; card copy about 2.95-3.23:1.",
+      "Many accents (orange, coral, lime, purple, green); 'Book Now' looks like a second primary action."
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav",
+      "role": "site navigation",
+      "states_shown": [
+        "Home active"
+      ],
+      "connects_to": [
+        "Sign Up"
+      ]
+    },
+    {
+      "name": "Headline and sub",
+      "role": "states the offer",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Search bar"
+      ]
+    },
+    {
+      "name": "Search bar",
+      "role": "primary task",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Property card"
+      ]
+    },
+    {
+      "name": "Buy/Rent toggles",
+      "role": "mode",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Search bar"
+      ]
+    },
+    {
+      "name": "Service carousel",
+      "role": "features",
+      "states_shown": [
+        "cropped"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Property card",
+      "role": "sample listing",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Book Now tag"
+      ]
+    },
+    {
+      "name": "Logo chips",
+      "role": "proof",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Contact note",
+      "role": "phone and plans link",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "slate",
+      "purple",
+      "white",
+      "large radius",
+      "scoop corner"
+    ],
+    "links": [
+      "The purple Search button is the primary action.",
+      "The 'Book Now' tag competes as a second primary-looking action."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Scooped-corner container",
+      "Search form component",
+      "Carousel"
+    ],
+    "risks": [
+      "Placeholder content breaking trust",
+      "Too many accent colors"
+    ]
+  },
+  "pattern": {
+    "name": "Search-first hero with a scoop transition",
+    "use_when": [
+      "Marketplaces where search is the core action"
+    ],
+    "avoid_when": [
+      "The content is unreviewed (placeholder copy breaks trust)"
+    ],
+    "must_preserve": [
+      "Search directly under the headline",
+      "One primary action color"
+    ],
+    "free_to_vary": [
+      "hero image",
+      "scoop shape",
+      "proof row"
+    ],
+    "adaptation_examples": [
+      "Car marketplace: same search-first hero with make and price range.",
+      "Job board: role and location fields."
+    ],
+    "failure_modes": [
+      "Placeholder or off-topic copy",
+      "Too many accents",
+      "Small text on photos"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-032",
+      "relation": "scooped / notched hero"
+    },
+    {
+      "id": "vixen-ui-039",
+      "relation": "concave-corner container"
+    },
+    {
+      "id": "vixen-ui-020",
+      "relation": "marketplace hero"
+    }
+  ],
+  "lessons": [
+    "Review placeholder copy and logos so they match the product.",
+    "Limit the accent palette to one action color."
+  ],
+  "tags": [
+    "landing",
+    "hero",
+    "real-estate",
+    "search",
+    "scoop"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-045",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#85858F",
+        "dominant (~48%)"
+      ],
+      [
+        "#282C35",
+        "dominant (~23%)"
+      ],
+      [
+        "#E5E3E3",
+        "dominant (~15%)"
+      ],
+      [
+        "#444955",
+        "dominant (~8%)"
+      ],
+      [
+        "#92858C",
+        "dominant (~2%)"
+      ],
+      [
+        "#4937A9",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#D26517",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Dark slate hero, white search bar, purple action; coral, lime and green appear as extra accents.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Nav 'Home' (active)",
+        "role": "primary",
+        "bg": "#2D343D",
+        "fg": "#C0A5A8",
+        "ratio": 5.47,
+        "ratio_low": 5.0,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'Properties'",
+        "role": "primary",
+        "bg": "#2D333E",
+        "fg": "#CED3DD",
+        "ratio": 8.4,
+        "ratio_low": 7.6,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Headline 'Choose Your'",
+        "role": "primary",
+        "bg": "#2D343D",
+        "fg": "#FEFFFF",
+        "ratio": 12.54,
+        "ratio_low": 12.52,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Subline 'Real Estate & Properties'",
+        "role": "secondary",
+        "bg": "#2D343E",
+        "fg": "#B2B7C1",
+        "ratio": 6.21,
+        "ratio_low": 5.51,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button 'Search'",
+        "role": "primary",
+        "bg": "#4937A6",
+        "fg": "#FFFFFF",
+        "ratio": 8.8,
+        "ratio_low": 8.8,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Label 'Our Special Service'",
+        "role": "primary",
+        "bg": "#D68882",
+        "fg": "#FFE7E1",
+        "ratio": 2.31,
+        "ratio_low": 2.22,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card title 'Comfortable'",
+        "role": "primary",
+        "bg": "#4A525C",
+        "fg": "#FDFFFF",
+        "ratio": 7.85,
+        "ratio_low": 7.83,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card copy 'Facebook Ads...'",
+        "role": "secondary",
+        "bg": "#4B525D",
+        "fg": "#9FA6B2",
+        "ratio": 3.23,
+        "ratio_low": 2.95,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Contact note",
+        "role": "secondary",
+        "bg": "#333843",
+        "fg": "#DAE6EC",
+        "ratio": 9.18,
+        "ratio_low": 8.23,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Price '$5,200,000'",
+        "role": "primary",
+        "bg": "#FEFEFD",
+        "fg": "#535253",
+        "ratio": 7.67,
+        "ratio_low": 5.83,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "The search-first structure is clear, but copy and logos do not match the product."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Competent hero but busy, with many accent colors."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Hero and search conventions are met; the mismatched service cards and partner logos break content correctness."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Search is easy to find; the Buy/Rent toggles' relation to search is unclear."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Radii and type are consistent but accents are not."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A familiar real-estate hero with a scoop transition."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.22:1; secondary text min 2.95:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 56.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Label 'Our Special Service': 2.22-2.31:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 56.0,
+    "cap_applied": false,
+    "readiness": "C",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

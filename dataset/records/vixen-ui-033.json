@@ -1,0 +1,384 @@
+{
+  "title": "Hiking route card: photo with scrim, one action, unit-bearing stats and a route thumbnail",
+  "category": "card / place",
+  "source_files": [
+    "batch-04/img-03"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Mountain photograph (origin unknown); place names appear fictional.",
+  "observed": {
+    "layout": "A white outer card holds an inner photo card of a golden-hour mountain. Bottom-left on the photo: 'Embercrest Ridge' (white, semibold) and 'Silverpine Mountains' (lighter). Bottom-right: a wide frosted dark pill 'Directions'. Under the photo: 'Hard', the line '1886 by Helen Rowe & Elias Mendez', a hairline, then three stats with units inside the values (12.4km, 870m, 4h 45m) and small grey labels (Distance, Elevation, Duration). Right: a light rounded tile with a looped route line and a dot.",
+    "hierarchy": "Photo, then title, then the 'Directions' action, then the stats.",
+    "typography": "Neutral grotesque; semibold title, light-grey labels. Typeface unconfirmed.",
+    "iconography": "Route silhouette thumbnail.",
+    "materials": "Photo with a dark gradient scrim at its base; frosted translucent button; concentric radii.",
+    "background": "Light grey page."
+  },
+  "interpretation": {
+    "aesthetic": "Calm, premium outdoor; nested concentric radii (outer card, photo card, button, tile).",
+    "implementation_notes": [
+      "Linear-gradient scrim over the photo base.",
+      "Frosted button via backdrop-filter and a low-alpha fill.",
+      "Stat row as a three-column grid."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "The photo carries the emotion; units inside the values make the facts unambiguous.",
+    "what_makes_it_work": [
+      "A scrim keeps overlaid text readable.",
+      "Units sit inside values (12.4km, 870m, 4h 45m).",
+      "The route thumbnail answers 'what shape is this hike'.",
+      "One dominant action."
+    ],
+    "gaps_to_make_it_work": [
+      "'Hard' has no scale.",
+      "'1886 by ...' is ambiguous (first ascent? first mapped?).",
+      "Stat labels measure about 2.06-2.41:1 (small light grey on white).",
+      "No states are shown."
+    ]
+  },
+  "components": [
+    {
+      "name": "Photo header with scrim",
+      "role": "place and mood",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Title block"
+      ]
+    },
+    {
+      "name": "Title block",
+      "role": "name and region",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Directions button"
+      ]
+    },
+    {
+      "name": "Directions button",
+      "role": "single action",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Route tile"
+      ]
+    },
+    {
+      "name": "Difficulty label",
+      "role": "effort level",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat row"
+      ]
+    },
+    {
+      "name": "Attribution line",
+      "role": "history",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Stat row",
+      "role": "Distance / Elevation / Duration",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Route tile"
+      ]
+    },
+    {
+      "name": "Route tile",
+      "role": "route shape",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat row"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "concentric radius",
+      "scrim",
+      "three-up stat row with units in values",
+      "hairline divider"
+    ],
+    "links": [
+      "The route tile and the stat row describe the same route.",
+      "The Directions button leads from the card to navigation."
+    ]
+  },
+  "build": {
+    "effort": "Low",
+    "approach": [
+      "Photo with gradient scrim",
+      "Frosted button",
+      "Three-column stat grid"
+    ],
+    "risks": [
+      "Photo weight",
+      "Legibility of the frosted button over varied photos"
+    ]
+  },
+  "pattern": {
+    "name": "Place card with stat strip",
+    "use_when": [
+      "Trails, venues and listings with a few hard facts"
+    ],
+    "avoid_when": [
+      "No quantitative facts exist"
+    ],
+    "must_preserve": [
+      "Units inside values",
+      "Scrim under overlaid text",
+      "One dominant action"
+    ],
+    "free_to_vary": [
+      "stat set",
+      "route thumbnail style",
+      "photo treatment"
+    ],
+    "adaptation_examples": [
+      "Cycling route card: distance, climb, time, with a map tile.",
+      "Restaurant card: price band, wait, rating."
+    ],
+    "failure_modes": [
+      "Unscaled difficulty label",
+      "Light-grey tiny labels on white"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-028",
+      "relation": "photo-top card with unit-bearing stats"
+    },
+    {
+      "id": "vixen-ui-022",
+      "relation": "header photo with a stat trio"
+    }
+  ],
+  "lessons": [
+    "Put units inside stat values and give every rating a scale.",
+    "Pair overlaid text with a scrim."
+  ],
+  "tags": [
+    "card",
+    "place",
+    "stats",
+    "photo",
+    "scrim"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-033",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F2F2F2",
+        "dominant (~34%)"
+      ],
+      [
+        "#4A4235",
+        "dominant (~21%)"
+      ],
+      [
+        "#E5DBD4",
+        "dominant (~15%)"
+      ],
+      [
+        "#FBFBFB",
+        "dominant (~14%)"
+      ],
+      [
+        "#F2F2F0",
+        "dominant (~10%)"
+      ],
+      [
+        "#814E29",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Warm photo against a cold-white UI; the only UI colors are white, black and grey.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Title 'Embercrest Ridge'",
+        "role": "primary",
+        "bg": "#18170B",
+        "fg": "#FFFFFF",
+        "ratio": 17.99,
+        "ratio_low": 17.99,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Subtitle 'Silverpine Mountains'",
+        "role": "secondary",
+        "bg": "#16160B",
+        "fg": "#7B7B70",
+        "ratio": 4.27,
+        "ratio_low": 3.78,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Button 'Directions'",
+        "role": "primary",
+        "bg": "#464944",
+        "fg": "#EAECE8",
+        "ratio": 7.7,
+        "ratio_low": 7.04,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Label 'Hard'",
+        "role": "primary",
+        "bg": "#FAFAFA",
+        "fg": "#4A4A4A",
+        "ratio": 8.56,
+        "ratio_low": 6.94,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Line '1886 by Helen Rowe'",
+        "role": "secondary",
+        "bg": "#FCFCFC",
+        "fg": "#ADADAD",
+        "ratio": 2.19,
+        "ratio_low": 1.98,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat value '12.4km'",
+        "role": "primary",
+        "bg": "#FBFBFB",
+        "fg": "#3A3A3A",
+        "ratio": 10.94,
+        "ratio_low": 8.03,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label 'Distance'",
+        "role": "secondary",
+        "bg": "#FCFCFC",
+        "fg": "#ABABAB",
+        "ratio": 2.24,
+        "ratio_low": 2.06,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label 'Elevation'",
+        "role": "secondary",
+        "bg": "#FBFBFB",
+        "fg": "#A4A4A4",
+        "ratio": 2.41,
+        "ratio_low": 2.12,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A place card whose job and action are obvious."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "The photo and clean white UI are well balanced."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Units are inside values, but 'Hard' has no scale and the attribution line is ambiguous."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "One clear action; no active, loading or error states shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Concentric radii and spacing are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A well-made but familiar card pattern."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 6.94:1; secondary text min 1.98:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 69.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 69.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

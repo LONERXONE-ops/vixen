@@ -1,0 +1,373 @@
+{
+  "title": "Anime character hero with an occluded wordmark and a one-hue orange panel",
+  "category": "landing page / hero",
+  "source_files": [
+    "batch-04/img-06"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Anime character from a licensed series (copyrighted).",
+  "observed": {
+    "layout": "Peach page with an offset orange panel and a soft shadow. Giant condensed cream capitals spell the character's name behind the figure, which stands in front and hides letters so it reads 'BAK_OU'. The figure wears an orange T-shirt printed 'A BAND' (close to the panel color), dark sleeves and spiky blonde hair, and holds drumsticks. Left stack: HOME (bold white), ABOUT, CONTACT, GALLERY (lighter). Top-left menu glyph; top-right '05' over a vertical bar; bottom-right 'Scroll Down' underlined. A thin circle halo sits behind the figure.",
+    "hierarchy": "Figure, then the giant name, then the nav.",
+    "typography": "Condensed all-caps wordmark; small sans nav. Typeface unconfirmed.",
+    "iconography": "Menu glyph only.",
+    "materials": "Flat panel with a soft shadow; layered text behind a cut-out figure.",
+    "background": "Peach."
+  },
+  "interpretation": {
+    "aesthetic": "Monochrome warm, music-poster feel; the shirt color matches the panel so the figure feels sewn into the page.",
+    "implementation_notes": [
+      "Text-behind-subject: the wordmark sits on a layer below a transparent cut-out figure.",
+      "Counter '05' and 'Scroll Down' imply a vertical carousel."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Depth from occlusion, calm from a single hue.",
+    "what_makes_it_work": [
+      "The figure overlapping the name creates depth.",
+      "One hue family keeps the page calm.",
+      "Dark sleeves and hair carry the silhouette.",
+      "The '05' counter signals a series."
+    ],
+    "gaps_to_make_it_work": [
+      "Nav labels measure about 1.45-2.24:1 (HOME to GALLERY).",
+      "'Scroll Down' and the counter measure about 2.18:1.",
+      "The site's purpose is unclear: no offer or action beyond scrolling.",
+      "The hidden letters make the name unreadable as content."
+    ]
+  },
+  "components": [
+    {
+      "name": "Menu glyph",
+      "role": "opens the menu",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Vertical nav"
+      ]
+    },
+    {
+      "name": "Vertical nav",
+      "role": "site navigation",
+      "states_shown": [
+        "HOME emphasized"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Wordmark",
+      "role": "title behind the figure",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero figure"
+      ]
+    },
+    {
+      "name": "Hero figure",
+      "role": "focal subject",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Wordmark"
+      ]
+    },
+    {
+      "name": "Counter '05'",
+      "role": "position in a series",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Scroll cue"
+      ]
+    },
+    {
+      "name": "Scroll cue",
+      "role": "next hero",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Counter '05'"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "one-hue panel",
+      "occluding text",
+      "halo ring",
+      "condensed capitals"
+    ],
+    "links": [
+      "The counter and scroll cue imply a vertical carousel.",
+      "The shirt color ties the figure to the panel."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Layered divs: wordmark below a transparent cut-out",
+      "One-hue token set",
+      "Carousel logic for the counter"
+    ],
+    "risks": [
+      "Cut-out quality",
+      "Responsive behavior of the wordmark"
+    ]
+  },
+  "pattern": {
+    "name": "Occluded wordmark hero",
+    "use_when": [
+      "A person or character is the product (artists, athletes, characters)"
+    ],
+    "avoid_when": [
+      "The name must stay readable"
+    ],
+    "must_preserve": [
+      "Subject in front of the text",
+      "Subject clothing tied to the panel color",
+      "Silhouette separated by darker values"
+    ],
+    "free_to_vary": [
+      "hue",
+      "wordmark width",
+      "counter style"
+    ],
+    "adaptation_examples": [
+      "Athlete profile hero in team colors.",
+      "Musician site: stage name behind a cut-out portrait."
+    ],
+    "failure_modes": [
+      "Pale nav on a mid-tone panel",
+      "No action"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-034",
+      "relation": "single-idea hero"
+    },
+    {
+      "id": "vixen-ui-039",
+      "relation": "anime-themed art-led page"
+    },
+    {
+      "id": "vixen-ui-046",
+      "relation": "character-colored layout"
+    }
+  ],
+  "lessons": [
+    "Tie the subject's clothing to the panel color to integrate a cut-out.",
+    "Check pale nav items on mid-tone fields."
+  ],
+  "tags": [
+    "landing",
+    "hero",
+    "occlusion",
+    "anime",
+    "orange"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-036",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F19D55",
+        "dominant (~39%)"
+      ],
+      [
+        "#FDE5CD",
+        "dominant (~31%)"
+      ],
+      [
+        "#F1CBA9",
+        "dominant (~8%)"
+      ],
+      [
+        "#C27840",
+        "dominant (~7%)"
+      ],
+      [
+        "#EB9F5C",
+        "dominant (~6%)"
+      ],
+      [
+        "#ED974D",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#EA9D4A",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "One warm hue family: peach page, orange panel, cream lettering; darks only in the figure's sleeves and hair.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Nav 'HOME'",
+        "role": "primary",
+        "bg": "#EA9C58",
+        "fg": "#FFFFFF",
+        "ratio": 2.24,
+        "ratio_low": 2.24,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'ABOUT'",
+        "role": "primary",
+        "bg": "#E99C58",
+        "fg": "#FFFFFF",
+        "ratio": 2.25,
+        "ratio_low": 2.25,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'CONTACT'",
+        "role": "primary",
+        "bg": "#E99C57",
+        "fg": "#FFC791",
+        "ratio": 1.48,
+        "ratio_low": 1.45,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'GALLERY'",
+        "role": "primary",
+        "bg": "#E99B57",
+        "fg": "#FFC792",
+        "ratio": 1.48,
+        "ratio_low": 1.46,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Cue 'Scroll Down'",
+        "role": "secondary",
+        "bg": "#F19C54",
+        "fg": "#FFFFFF",
+        "ratio": 2.18,
+        "ratio_low": 2.18,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Counter '05'",
+        "role": "secondary",
+        "bg": "#EB9C59",
+        "fg": "#FFFFFF",
+        "ratio": 2.22,
+        "ratio_low": 2.22,
+        "fg_assumed": "white",
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "It is clear who the page is about, but the site's offer or action is not."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong depth and a calm one-hue palette."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Hero and nav conventions are met, but pale nav labels and no action weaken correctness."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "No states shown; only a scroll cue as an action."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "One hue, one wordmark style and consistent nav."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Text-behind-subject is a known technique executed well."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 1.45:1; secondary text min 2.18:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 59.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Nav 'HOME': 2.24-2.24:1",
+          "Nav 'ABOUT': 2.25-2.25:1",
+          "Nav 'CONTACT': 1.45-1.48:1",
+          "Nav 'GALLERY': 1.46-1.48:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 59.0,
+    "cap_applied": false,
+    "readiness": "C",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

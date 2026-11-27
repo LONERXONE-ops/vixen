@@ -1,0 +1,335 @@
+{
+  "title": "Nintendo Switch game store: fan of character-colored cards (low resolution)",
+  "category": "landing page / store",
+  "source_files": [
+    "batch-04/img-13"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Nintendo Switch logo and character art (Mario, Kirby, a Pokemon, Splatoon, Fortnite).",
+  "observed": {
+    "layout": "A near-black rounded window on grey. Top bar: Games (active), Store, search, the centered Switch logo, a coin counter, small dots and an avatar. Center text: 'Fun Games Nintendo Switch'. Below: five tilted, overlapping cards, each colored to its character (purple, red, blue-teal center with Kirby, green, yellow-blue). The center card is the largest and highest, with a rating pill (4.7); outer cards tilt and drop. Small floating character icons sit at the corners. The image is 447 px wide, so small text is hard to read.",
+    "hierarchy": "Headline, then the card fan with its center peak.",
+    "typography": "Bold sans headline; tiny grey subtitle. Typeface unconfirmed.",
+    "iconography": "Floating character icons; Switch logo.",
+    "materials": "Dark ground; vivid per-card color; tilt steps.",
+    "background": "Near-black."
+  },
+  "interpretation": {
+    "aesthetic": "Dark stage with playful color; each card's color is the game's color.",
+    "implementation_notes": [
+      "Transforms with rotation steps and a scaled center card; carousel logic likely."
+    ],
+    "caveat": "Inference; small text could not be verified at this resolution."
+  },
+  "concept_work": {
+    "essence": "A fan of cards where each item's own color does the browsing work.",
+    "what_makes_it_work": [
+      "The fan creates a clear focal peak.",
+      "Per-card color works without labels.",
+      "Rating pills add a small data layer."
+    ],
+    "gaps_to_make_it_work": [
+      "Nav 'Store' measures about 1.93-2.13:1 and the subtitle about 1.52-1.58:1 (small text in a low-resolution image; verify in the source).",
+      "The fan hides the lower parts of the cards, including titles.",
+      "No hover or selected state beyond the center scale."
+    ]
+  },
+  "components": [
+    {
+      "name": "Top bar",
+      "role": "navigation and account",
+      "states_shown": [
+        "Games active"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Headline",
+      "role": "title",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Card fan"
+      ]
+    },
+    {
+      "name": "Fan cards",
+      "role": "browse games",
+      "states_shown": [
+        "center enlarged"
+      ],
+      "connects_to": [
+        "Rating pill"
+      ]
+    },
+    {
+      "name": "Rating pill",
+      "role": "score",
+      "states_shown": [
+        "4.7 on the center card"
+      ],
+      "connects_to": [
+        "Fan cards"
+      ]
+    },
+    {
+      "name": "Floating icons",
+      "role": "decoration",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "near-black",
+      "vivid per-card color",
+      "rotation steps",
+      "radius"
+    ],
+    "links": [
+      "Card color equals the game's palette.",
+      "The center scale marks the current selection."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "CSS transforms and a carousel",
+      "Per-item accent color"
+    ],
+    "risks": [
+      "Hidden titles",
+      "Low-resolution source art"
+    ]
+  },
+  "pattern": {
+    "name": "Fan-of-cards hero",
+    "use_when": [
+      "A small set of items, each with a strong identity color"
+    ],
+    "avoid_when": [
+      "Items need visible titles or detailed comparison"
+    ],
+    "must_preserve": [
+      "One centered, enlarged item",
+      "Tilt steps",
+      "Accent from content"
+    ],
+    "free_to_vary": [
+      "count",
+      "tilt angle",
+      "background"
+    ],
+    "adaptation_examples": [
+      "Streaming service: fan of genre cards.",
+      "Course platform: fan of tracks colored by subject."
+    ],
+    "failure_modes": [
+      "Overlap hiding titles",
+      "Tiny grey text on black"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-020",
+      "relation": "fanned cards"
+    },
+    {
+      "id": "vixen-ui-042",
+      "relation": "game store"
+    },
+    {
+      "id": "vixen-ui-031",
+      "relation": "art-led index"
+    }
+  ],
+  "lessons": [
+    "Do not let a fan hide the card titles.",
+    "Use each item's identity color to carry browsing."
+  ],
+  "tags": [
+    "landing",
+    "store",
+    "card-fan",
+    "dark",
+    "low-resolution"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "A higher-resolution source?"
+  ],
+  "id": "vixen-ui-043",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#0E0E14",
+        "dominant (~32%)"
+      ],
+      [
+        "#5F5F67",
+        "dominant (~32%)"
+      ],
+      [
+        "#5F5F65",
+        "dominant (~15%)"
+      ],
+      [
+        "#81B0BE",
+        "dominant (~9%)"
+      ],
+      [
+        "#B25FA0",
+        "dominant (~4%)"
+      ],
+      [
+        "#3ECBF2",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#33DEC1",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Near-black ground; each card takes the game's color; the largest card is centered.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Headline 'Fun Games'",
+        "role": "primary",
+        "bg": "#070709",
+        "fg": "#FFFFFF",
+        "ratio": 20.18,
+        "ratio_low": 20.16,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'Games' (active)",
+        "role": "primary",
+        "bg": "#0E0D13",
+        "fg": "#BCBBC1",
+        "ratio": 10.12,
+        "ratio_low": 7.68,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'Store'",
+        "role": "primary",
+        "bg": "#100F15",
+        "fg": "#4A494F",
+        "ratio": 2.13,
+        "ratio_low": 1.93,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Subtitle line",
+        "role": "secondary",
+        "bg": "#100F15",
+        "fg": "#37363C",
+        "ratio": 1.58,
+        "ratio_low": 1.52,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "It reads as a game store landing, but its purpose beyond browsing is unclear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "A clear focal peak and vivid color on a dark stage."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Store/hero conventions are partly met; titles are hidden by overlap."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "No hover or selection states beyond the scale."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Cards, tilt and ground are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "The fan device is familiar; the per-card color is well used."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 1.93:1; secondary text min 1.52:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 59.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Nav 'Store': 1.93-2.13:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 59.0,
+    "cap_applied": false,
+    "readiness": "C",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

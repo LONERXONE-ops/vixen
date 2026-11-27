@@ -1,0 +1,409 @@
+{
+  "title": "Three-column social feed dashboard with one interactive blue (CozMeet)",
+  "category": "dashboard / social feed",
+  "source_files": [
+    "batch-04/img-07"
+  ],
+  "attribution_visible_in_image": "Brand name 'CozMeet' in the mockup; no creator credit visible.",
+  "contains_third_party_content": "Profile photos, a street-art mural photograph, 'Dribbble Pro' and 'Behance Creative' shortcut logos.",
+  "observed": {
+    "layout": "Grey page with a white app frame. Top bar: 'CozMeet' logo, pill search, five nav icons with 'Home' active (blue tint and label), user name and a blue 'Switch' link. Left: profile card (cover photo, avatar with yellow ring, name, handle, stats 250 Post / 2022 Followers / 590 Following, blue 'My Profile' button) and a 'Your shortcuts' list. Center: composer ('Share something...' with emoji, Image / Video / Poll, a 'Public' selector, 'Sort by: Recent') and a post card (user, time, blue hashtags, large mural photo, like 320k, comment 120, bookmark 148, share icon, comment field); the next post peeks in. Right: 'Activity' (a Follow link) and 'Suggested For you' with 'Followed' (grey) vs 'Follow' (blue) text actions.",
+    "hierarchy": "The post image is the largest element; blue marks what is clickable.",
+    "typography": "Rounded geometric sans, small metadata in grey. Typeface unconfirmed.",
+    "iconography": "Outline nav icons; icon-only nav beyond the active Home.",
+    "materials": "White cards with soft radii on grey.",
+    "background": "Light grey."
+  },
+  "interpretation": {
+    "aesthetic": "Clean, neutral, content-first.",
+    "implementation_notes": [
+      "Three-column CSS grid with sticky side columns.",
+      "Follow/Followed state shown by text color, not by a button shape."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A well-known three-column shell where blue is the only interactive color.",
+    "what_makes_it_work": [
+      "Clear card containment on grey.",
+      "The post image gives the feed a focal point.",
+      "Follow and Followed states are distinguishable."
+    ],
+    "gaps_to_make_it_work": [
+      "The active 'Home' label measures about 2.18-2.41:1 and the activity 'Follow' link about 2.38-2.64:1.",
+      "Handle 2.0-2.15:1, timestamps 2.15-2.63:1 and stat labels 2.13-2.36:1.",
+      "The hashtag '#photopgraphy' is misspelled as shown.",
+      "'Switch' is ambiguous (account or mode?); nav icons beyond Home are icon-only."
+    ]
+  },
+  "components": [
+    {
+      "name": "Top bar with nav",
+      "role": "global navigation and search",
+      "states_shown": [
+        "Home active"
+      ],
+      "connects_to": [
+        "Profile card"
+      ]
+    },
+    {
+      "name": "Profile card",
+      "role": "identity and stats",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Follow actions"
+      ]
+    },
+    {
+      "name": "Shortcut list",
+      "role": "quick links",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Composer",
+      "role": "create a post",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Post card"
+      ]
+    },
+    {
+      "name": "Post card",
+      "role": "content with engagement actions",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Comment field"
+      ]
+    },
+    {
+      "name": "Activity list",
+      "role": "recent events",
+      "states_shown": [
+        "Follow available"
+      ],
+      "connects_to": [
+        "Profile card"
+      ]
+    },
+    {
+      "name": "Suggestion list",
+      "role": "who to follow",
+      "states_shown": [
+        "Follow",
+        "Followed"
+      ],
+      "connects_to": [
+        "Profile card"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "white cards on grey",
+      "one interactive blue",
+      "avatar with ring",
+      "grey metadata"
+    ],
+    "links": [
+      "Stat counts in the profile card relate to the Follow actions on the right.",
+      "The composer feeds the post list.",
+      "Blue means interactive or current throughout."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Three-column grid",
+      "Shared card component",
+      "Follow state across lists"
+    ],
+    "risks": [
+      "Follow state sync across lists",
+      "Contrast of the blue accent"
+    ]
+  },
+  "pattern": {
+    "name": "Three-column social shell",
+    "use_when": [
+      "Community feeds and creator networks"
+    ],
+    "avoid_when": [
+      "The feed is not the main task (use a single column)"
+    ],
+    "must_preserve": [
+      "Card containment",
+      "One interactive color",
+      "Visible current-location nav"
+    ],
+    "free_to_vary": [
+      "column widths",
+      "density",
+      "avatar style"
+    ],
+    "adaptation_examples": [
+      "Photo community: larger media, same shell.",
+      "Team intranet: shortcuts become projects."
+    ],
+    "failure_modes": [
+      "Light interactive blue on white under 3:1",
+      "Typos in visible content",
+      "Icon-only nav"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-024",
+      "relation": "social profile screen"
+    },
+    {
+      "id": "vixen-ui-029",
+      "relation": "profile concept"
+    }
+  ],
+  "lessons": [
+    "A light interactive blue on white often falls below 3:1; check the accent itself.",
+    "Proofread visible user content in mockups."
+  ],
+  "tags": [
+    "dashboard",
+    "social",
+    "feed",
+    "three-column",
+    "blue"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-037",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#FFFFFF",
+        "dominant (~27%)"
+      ],
+      [
+        "#D9D9D9",
+        "dominant (~26%)"
+      ],
+      [
+        "#F9F9F9",
+        "dominant (~24%)"
+      ],
+      [
+        "#90959C",
+        "dominant (~11%)"
+      ],
+      [
+        "#FFFEFD",
+        "dominant (~7%)"
+      ],
+      [
+        "#2892FF",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#2893FA",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "White cards on grey; photos supply color; one blue marks the actionable and the current item.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Logo 'CozMeet'",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#000000",
+        "ratio": 20.73,
+        "ratio_low": 20.73,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'Home'",
+        "role": "primary",
+        "bg": "#F7FAFD",
+        "fg": "#7DA8C5",
+        "ratio": 2.41,
+        "ratio_low": 2.18,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Name 'Reinhard Van Zry'",
+        "role": "primary",
+        "bg": "#FDFDFD",
+        "fg": "#1D1D1D",
+        "ratio": 16.57,
+        "ratio_low": 13.0,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Handle '@Reinhard_'",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#B0B0B0",
+        "ratio": 2.15,
+        "ratio_low": 2.0,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label 'Followers'",
+        "role": "secondary",
+        "bg": "#FBFBFB",
+        "fg": "#A6A6A6",
+        "ratio": 2.36,
+        "ratio_low": 2.13,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button 'My Profile'",
+        "role": "primary",
+        "bg": "#2894FC",
+        "fg": "#FFFFFF",
+        "ratio": 3.12,
+        "ratio_low": 3.12,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Meta '12 minutes ago'",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#9E9E9E",
+        "ratio": 2.63,
+        "ratio_low": 2.15,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Link 'Follow' (activity)",
+        "role": "primary",
+        "bg": "#FDFEFD",
+        "fg": "#84A3B9",
+        "ratio": 2.64,
+        "ratio_low": 2.38,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Action 'Followed' (grey)",
+        "role": "secondary",
+        "bg": "#FDFDFD",
+        "fg": "#9A9A9A",
+        "ratio": 2.75,
+        "ratio_low": 2.49,
+        "fg_assumed": null,
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A familiar social feed whose parts are clearly purposed."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Clear card hierarchy; the photo anchors the page."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Three-column shell conventions are followed; a hashtag typo and inconsistent capitalization are minor."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Active nav, Follow/Followed, composer and sort are shown; error and empty states are not."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Cards, radii and spacing are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A conventional social layout."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.18:1; secondary text min 2.0:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 72.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Nav 'Home': 2.18-2.41:1",
+          "Link 'Follow' (activity): 2.38-2.64:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 69.0,
+    "cap_applied": true,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "title": "Web3 infrastructure hero: one glow, big proof numbers and notched tiles (NixtNode)",
+  "category": "landing page / hero",
+  "source_files": [
+    "batch-04/img-02"
+  ],
+  "attribution_visible_in_image": "Brand name 'NixtNode' in the mockup; no creator credit visible.",
+  "contains_third_party_content": "Chain/token logos and portrait photos in the avatar row.",
+  "observed": {
+    "layout": "Lavender page with a large rounded dark container. A radial glow runs from pale lavender (center) to near-black (edges). Top: mono-font logo and uppercase mono nav (Services 7, Team 9, Networks We Support 35) with tiny superscript counts. Headline '} NixtNode / Is a Premier Web3 Infrastructure Provider' in a right-aligned stack, with the 'o' of 'Provider' drawn as two overlapping rings tied to a thin orbit ellipse crossing the composition. Right: a short mono paragraph and a black pill 'GET IN TOUCH'. Bottom: dark tiles with concave corner cut-outs merging into the frame, two huge lavender numerals ('192k Assets under management', '34 Unique delegators'), connector lines with end dots, and a row of chain logos and avatars.",
+    "hierarchy": "Headline, then the two proof numerals, then the CTA.",
+    "typography": "Large grotesque headline in dark ink; monospace for logo, nav and body. Typeface unconfirmed.",
+    "iconography": "Chain logos and avatars as small circles.",
+    "materials": "Radial gradient glow, dark rounded container, inverse-corner tiles, thin orbit line.",
+    "background": "Lavender."
+  },
+  "interpretation": {
+    "aesthetic": "Soft-tech 'ethereal infrastructure': mono type and tiny counts say engineer; glow and orbit say network.",
+    "implementation_notes": [
+      "Radial gradients for the glow; SVG for the orbit ellipse and the ring 'o'.",
+      "Notched/inverse-corner tiles via masks or pseudo-elements."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "One glow for focus, huge proof numbers as the second read, one action.",
+    "what_makes_it_work": [
+      "Glow gives depth with no image.",
+      "The stats are the biggest type after the headline, so proof is unmissable.",
+      "Merged tiles make the footer part of the frame.",
+      "The ring 'o' ties the headline to the orbit graphic."
+    ],
+    "gaps_to_make_it_work": [
+      "Mono body copy measures about 3.24-3.35:1 on the glow.",
+      "Stat labels measure about 7.6-9.65:1 (small white on dark).",
+      "Text color flips between white on dark corners and dark ink on the light glow, so transition zones need checking.",
+      "The orbit line crosses text; no states are shown."
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav",
+      "role": "site navigation with counts",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA pill"
+      ]
+    },
+    {
+      "name": "Headline with ring 'o'",
+      "role": "states the offer",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Orbit line"
+      ]
+    },
+    {
+      "name": "Body paragraph",
+      "role": "one-sentence proof of expertise",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "CTA pill"
+      ]
+    },
+    {
+      "name": "CTA pill 'GET IN TOUCH'",
+      "role": "single action",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat tiles"
+      ]
+    },
+    {
+      "name": "Stat tiles",
+      "role": "proof numbers",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Connector lines"
+      ]
+    },
+    {
+      "name": "Chain logo and avatar row",
+      "role": "trust",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat tiles"
+      ]
+    },
+    {
+      "name": "Connector lines",
+      "role": "tie tiles together",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Stat tiles"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "lavender ramp",
+      "ink and near-black",
+      "mono plus grotesque type pair",
+      "large corner radius and inverse-corner notch"
+    ],
+    "links": [
+      "Tile numerals reuse the glow's lavender.",
+      "Connector dots link the two stat tiles.",
+      "The ring 'o' belongs to the orbit line that crosses the whole composition."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Radial gradients plus an SVG orbit",
+      "Masked or notched tile container",
+      "Light/dark text swap by region"
+    ],
+    "risks": [
+      "The notch geometry",
+      "Contrast across the glow's transition zones"
+    ]
+  },
+  "pattern": {
+    "name": "Glow hero with proof tiles",
+    "use_when": [
+      "B2B infrastructure or finance-adjacent offers that need trust numbers"
+    ],
+    "avoid_when": [
+      "The audience reads on low-brightness or high-glare screens without checking the light/dark text swap"
+    ],
+    "must_preserve": [
+      "One focal glow",
+      "One CTA",
+      "Large proof numbers"
+    ],
+    "free_to_vary": [
+      "hue",
+      "orbit motif",
+      "stat count"
+    ],
+    "adaptation_examples": [
+      "Fintech: glow in brand green, stats for transactions and uptime.",
+      "Dev tool: glow in blue, stats for GitHub stars and users."
+    ],
+    "failure_modes": [
+      "Small mono text on the glow",
+      "Orbit line over text"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-039",
+      "relation": "notched / inverse-corner containers"
+    },
+    {
+      "id": "vixen-ui-045",
+      "relation": "scooped-corner hero"
+    },
+    {
+      "id": "vixen-ui-011",
+      "relation": "merged container with concave corners"
+    }
+  ],
+  "lessons": [
+    "Make proof numbers the second-largest element of a B2B hero.",
+    "Check text color where it swaps between light and dark regions."
+  ],
+  "tags": [
+    "landing",
+    "hero",
+    "glow",
+    "stats",
+    "notched",
+    "b2b"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-032",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#141415",
+        "dominant (~23%)"
+      ],
+      [
+        "#C7BCEE",
+        "dominant (~20%)"
+      ],
+      [
+        "#917DBF",
+        "dominant (~12%)"
+      ],
+      [
+        "#2F2841",
+        "dominant (~11%)"
+      ],
+      [
+        "#E9DFFC",
+        "dominant (~11%)"
+      ],
+      [
+        "#251C9C",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#C3323E",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Lavender page and glow, near-black container, ink headline on the light glow, white or lavender text on dark.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Nav 'SERVICES'",
+        "role": "primary",
+        "bg": "#1B1924",
+        "fg": "#CCCAD4",
+        "ratio": 10.74,
+        "ratio_low": 9.04,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'NETWORKS WE SUPPORT'",
+        "role": "primary",
+        "bg": "#161516",
+        "fg": "#C9C9CA",
+        "ratio": 11.04,
+        "ratio_low": 9.74,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Headline line 2",
+        "role": "primary",
+        "bg": "#DAC7FA",
+        "fg": "#080111",
+        "ratio": 13.23,
+        "ratio_low": 12.98,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Body paragraph",
+        "role": "secondary",
+        "bg": "#C6A8F5",
+        "fg": "#675583",
+        "ratio": 3.24,
+        "ratio_low": 3.35,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "CTA 'GET IN TOUCH'",
+        "role": "primary",
+        "bg": "#151515",
+        "fg": "#B3B0C0",
+        "ratio": 8.59,
+        "ratio_low": 7.42,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label 'Assets under management'",
+        "role": "secondary",
+        "bg": "#161616",
+        "fg": "#BDBDBD",
+        "ratio": 9.65,
+        "ratio_low": 7.98,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat label 'Unique delegators'",
+        "role": "secondary",
+        "bg": "#141414",
+        "fg": "#B4B4B5",
+        "ratio": 8.91,
+        "ratio_low": 7.6,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Offer, proof and one action are clear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "One focal glow, strong type scale, restrained palette."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Landing conventions (headline states the offer, one CTA, proof) are met."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Only the default state is shown; small text and tiny superscript counts."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Mono and grotesque pair, radii and lavender ramp are applied throughout."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "The ring 'o' tied to an orbit line and notched proof tiles are distinctive."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 7.42:1; secondary text min 3.35:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 77.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 77.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

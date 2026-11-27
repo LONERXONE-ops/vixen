@@ -1,0 +1,425 @@
+{
+  "title": "Anime/manga platform: art-led bento panels with inverse corners",
+  "category": "landing page / media platform",
+  "source_files": [
+    "batch-04/img-09"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Anime artwork (a red-haired character close-up), a thumbnail with anime characters, Instagram and YouTube logos, a dog photo.",
+  "observed": {
+    "layout": "A taupe frame over a blurred ground. A large central rounded panel holds a close-up of a red-haired anime face. A notched tab at the top center carries ANIME / MANGA / CHAT. A frosted top-right tile 'NEW EPISODE 8 MAR'. Left column of separate rounded containers: icon rail (logo, home, star, award), avatar 'PROFILE', chat tile (dog avatar with a mic badge, 'CHAT', red circle with a down arrow), socials (Instagram, YouTube) with EN / RU toggles. Bottom right: a 'CONTINUE' button and a video thumbnail with a play button. Two red circular down-arrow buttons.",
+    "hierarchy": "The hero image first; tile sizes reflect importance.",
+    "typography": "Small sans labels in light grey. Typeface unconfirmed.",
+    "iconography": "Icon-only rail; round arrow buttons.",
+    "materials": "Concave-corner panels, frosted overlays, blur over art.",
+    "background": "Blurred taupe ground."
+  },
+  "interpretation": {
+    "aesthetic": "Cinematic, moody bento.",
+    "implementation_notes": [
+      "Concave corners via masks or pseudo-elements.",
+      "Frosted tiles via backdrop-filter over the art."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Everything else is a dark frame around one image, and the accent comes from that image.",
+    "what_makes_it_work": [
+      "Notched corners make panels look carved from one slab.",
+      "Crimson appears only on actions, tying controls to the art.",
+      "Tile size reflects importance."
+    ],
+    "gaps_to_make_it_work": [
+      "The left rail is icon-only.",
+      "Labels 'PROFILE', 'CHAT', 'EN' measure about 4.01-4.57, 3.48-4.21 and 3.44-3.94:1.",
+      "'CHAT' appears both as a top tab and as a tile.",
+      "Two identical red arrows have unclear targets; 'NEW EPISODE 8 MAR' has no title or action."
+    ]
+  },
+  "components": [
+    {
+      "name": "Icon rail",
+      "role": "primary navigation",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero panel"
+      ]
+    },
+    {
+      "name": "Profile tile",
+      "role": "account",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Chat tile",
+      "role": "chat entry",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Top notch tab"
+      ]
+    },
+    {
+      "name": "Socials and language tile",
+      "role": "external links and locale",
+      "states_shown": [
+        "EN/RU"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Top notch tab",
+      "role": "ANIME / MANGA / CHAT",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero panel"
+      ]
+    },
+    {
+      "name": "Hero panel",
+      "role": "one image sells the page",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Release tile"
+      ]
+    },
+    {
+      "name": "Release tile",
+      "role": "new episode date",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero panel"
+      ]
+    },
+    {
+      "name": "Continue tile",
+      "role": "resume watching",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero panel"
+      ]
+    },
+    {
+      "name": "Scroll buttons",
+      "role": "advance",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Hero panel"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "taupe panels",
+      "one concave corner radius",
+      "art-derived accent",
+      "frosted overlay"
+    ],
+    "links": [
+      "The red accent marks scroll and continue actions.",
+      "Frosted tiles sit over the art as overlays."
+    ]
+  },
+  "build": {
+    "effort": "High",
+    "approach": [
+      "Concave-corner masks",
+      "Backdrop blur over large art",
+      "Image-heavy layout"
+    ],
+    "risks": [
+      "Mask complexity",
+      "Blur cost",
+      "Image weight"
+    ]
+  },
+  "pattern": {
+    "name": "Art-led bento shell with a notched tab",
+    "use_when": [
+      "Media or entertainment where one image sells the page"
+    ],
+    "avoid_when": [
+      "Tasks need text-heavy navigation"
+    ],
+    "must_preserve": [
+      "One hero image",
+      "Accent derived from it",
+      "One concave radius throughout"
+    ],
+    "free_to_vary": [
+      "tile count",
+      "rail content",
+      "hue"
+    ],
+    "adaptation_examples": [
+      "Game launcher: hero is the featured game, accent from its key art.",
+      "Music app: hero is the current album, accent from the cover."
+    ],
+    "failure_modes": [
+      "Icon-only navigation",
+      "Duplicate entries",
+      "Tiny labels"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-032",
+      "relation": "notched / inverse-corner containers"
+    },
+    {
+      "id": "vixen-ui-045",
+      "relation": "scooped-corner hero"
+    },
+    {
+      "id": "vixen-ui-042",
+      "relation": "dark art-led store shell"
+    },
+    {
+      "id": "vixen-ui-006",
+      "relation": "dark glass navigation"
+    }
+  ],
+  "lessons": [
+    "Derive the accent color from the hero image.",
+    "Avoid duplicating an entry as both a tab and a tile."
+  ],
+  "tags": [
+    "landing",
+    "media",
+    "bento",
+    "notched",
+    "dark",
+    "anime"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-039",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#312A2A",
+        "dominant (~23%)"
+      ],
+      [
+        "#383232",
+        "dominant (~17%)"
+      ],
+      [
+        "#614244",
+        "dominant (~16%)"
+      ],
+      [
+        "#221618",
+        "dominant (~12%)"
+      ],
+      [
+        "#9E6A6D",
+        "dominant (~10%)"
+      ],
+      [
+        "#B52E39",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#962F2C",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Warm dark taupe panels around one hero image; the crimson accent is taken from the hair in the art and appears only on actions.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Tab 'ANIME'",
+        "role": "primary",
+        "bg": "#322C2C",
+        "fg": "#A6A0A0",
+        "ratio": 5.29,
+        "ratio_low": 4.59,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Tab 'MANGA'",
+        "role": "primary",
+        "bg": "#322C2C",
+        "fg": "#A39D9D",
+        "ratio": 5.15,
+        "ratio_low": 4.69,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Label 'NEW EPISODE'",
+        "role": "secondary",
+        "bg": "#281819",
+        "fg": "#9C8D8D",
+        "ratio": 5.36,
+        "ratio_low": 4.45,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Date 'MAR'",
+        "role": "primary",
+        "bg": "#29191B",
+        "fg": "#E6E0E0",
+        "ratio": 12.9,
+        "ratio_low": 12.56,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Label 'PROFILE'",
+        "role": "secondary",
+        "bg": "#322C2C",
+        "fg": "#999393",
+        "ratio": 4.57,
+        "ratio_low": 4.01,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Label 'CHAT'",
+        "role": "secondary",
+        "bg": "#312B2B",
+        "fg": "#928C8C",
+        "ratio": 4.21,
+        "ratio_low": 3.48,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Button 'CONTINUE'",
+        "role": "primary",
+        "bg": "#312B2B",
+        "fg": "#9C9696",
+        "ratio": 4.74,
+        "ratio_low": 4.07,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Toggle 'EN'",
+        "role": "secondary",
+        "bg": "#4D4543",
+        "fg": "#AEA6A4",
+        "ratio": 3.94,
+        "ratio_low": 3.44,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Rail icon (home)",
+        "role": "icon",
+        "bg": "#312C2D",
+        "fg": "#E6E1E3",
+        "ratio": 10.66,
+        "ratio_low": 10.19,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "A media platform home, but the main action is unclear beyond the arrows."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong hero, cohesive frame and an accent drawn from the art."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Bento and notch conventions are met; duplicate 'CHAT' and ambiguous arrows weaken correctness."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "No tab states or arrow targets are shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Panels, corner radius and accent are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "The notched bento with art-derived accent is distinctive."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 4.07:1; secondary text min 3.44:1; icon min 10.19:1; non-color state cue: True. Using best-estimate values the score would be 3; the measurement is within error of a threshold."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 63.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 63.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

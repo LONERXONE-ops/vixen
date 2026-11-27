@@ -1,5 +1,10 @@
 # Rubric changelog
 
+## v1.1 clarification (batch 4)
+- The white/black assumption is now triggered by the peak pixels (top ~0.5%, at least 3) instead of the top ~1.5% mean. Small white text on a saturated button was being missed by the old trigger (for example white on bright blue measured 2.3:1 instead of 3.1:1).
+- Re-measured batches 02 and 03 with the clarified trigger: **no sample changed**, so no existing score or critical-failure flag changed.
+- `tools/contrast.py` gained `--sheet`, which writes contact sheets of every measured crop so a box that misses its text is caught.
+
 ## v1.1
 - Contrast measurement now reports `ratio_low` (conservative) and `ratio` (best estimate). v1.0 used a single value that tended to understate contrast for small text on colored backgrounds.
 - Accessibility scores use `ratio_low`; CF1 uses `ratio`. A `cf1_watchlist` records primary text that is below 3:1 conservatively but above it by best estimate.

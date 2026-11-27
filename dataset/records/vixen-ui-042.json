@@ -1,0 +1,418 @@
+{
+  "title": "Dark game-store dashboard with a breakout featured card (Steam redesign)",
+  "category": "dashboard / store",
+  "source_files": [
+    "batch-04/img-12"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Steam name and logo; game art and titles (Ghost of Tsushima, F1 22, Call of Duty: Modern Warfare, FIFA 22, GTA V, Death Stranding); platform icons; portraits.",
+  "observed": {
+    "layout": "Near-black window on a blue-grey backdrop. Left sidebar: logo, Home, Store (active, blue left bar, expanded with Featured highlighted, Categories, Discover, Wishlist), Library, Friends, Community, Settings pinned at the bottom. Top: search, mail icon, user with dropdown. Main: a featured card with game art pops out of the grid (shadow, overlap, platform icons, a '+ 45 Friends' strip) and covers the left edge of the info panel, so the text reads 'host of Tsushima' and 'ucker Punch Productions'; then tags (Role playing, Action, Shooter) and a blue '$69.99 Purchase' button. Rows: 'Most Popular' (F1 22 and Call of Duty with category tags) with a FIFA 22 card floating over the end; 'Wishlist' (GTA V, Death Stranding); 'Friends' (Playing GTA V with a 'Join the game' link; 'Last played 2 hours ago').",
+    "hierarchy": "Featured card first, then the rows.",
+    "typography": "Neutral sans; small grey tags and labels. Typeface unconfirmed.",
+    "iconography": "Outline sidebar icons; platform icons on the featured art.",
+    "materials": "Dark panels, shadowed breakout cards over the grid.",
+    "background": "Blue-grey backdrop."
+  },
+  "interpretation": {
+    "aesthetic": "Dark, content-lit store shell.",
+    "implementation_notes": [
+      "Breakout cards use overlap and z-index with a shadow.",
+      "Sidebar shows the active section and its sub-pages."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A neutral dark shell lets varied key art sit side by side; one feature breaks the grid for emphasis.",
+    "what_makes_it_work": [
+      "One blue for current section, tags and the buy action.",
+      "Breakout cards add depth and a sense of 'featured'.",
+      "The sidebar shows both the active section and its sub-pages."
+    ],
+    "gaps_to_make_it_work": [
+      "The overlap clips the title and developer text.",
+      "'Shooter' as a tag for Ghost of Tsushima is questionable content.",
+      "Active 'Store' label measures about 2.61-2.87:1 and inactive items about 4.16-4.75:1.",
+      "'See all' links measure about 2.76-3.24:1.",
+      "The floating FIFA card hides part of its neighbor."
+    ]
+  },
+  "components": [
+    {
+      "name": "Sidebar",
+      "role": "navigation with sub-pages",
+      "states_shown": [
+        "Store active, Featured highlighted"
+      ],
+      "connects_to": [
+        "Main content"
+      ]
+    },
+    {
+      "name": "Top bar",
+      "role": "search, mail, user menu",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Featured card",
+      "role": "key art with friends strip",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Info panel"
+      ]
+    },
+    {
+      "name": "Info panel",
+      "role": "title, tags, purchase",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Purchase button"
+      ]
+    },
+    {
+      "name": "Purchase button",
+      "role": "primary action",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Featured card"
+      ]
+    },
+    {
+      "name": "Game card",
+      "role": "browse",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Wishlist row"
+      ]
+    },
+    {
+      "name": "Wishlist row",
+      "role": "saved titles",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Friends panel",
+      "role": "social activity",
+      "states_shown": [
+        "Join the game"
+      ],
+      "connects_to": [
+        "Game card"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "dark neutral stack",
+      "one blue accent",
+      "16 px radius",
+      "shadow for breakout cards"
+    ],
+    "links": [
+      "Blue marks the active nav item and the primary buy action.",
+      "Friends activity links to library titles."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Grid with overlapping cards (z-index)",
+      "Sidebar state",
+      "Art-heavy images"
+    ],
+    "risks": [
+      "Overlap hiding text",
+      "Image weight"
+    ]
+  },
+  "pattern": {
+    "name": "Dark store shell with a breakout feature",
+    "use_when": [
+      "Media catalogs"
+    ],
+    "avoid_when": [
+      "The breakout would cover text or controls"
+    ],
+    "must_preserve": [
+      "Neutral shell",
+      "One accent",
+      "Uniform card sizes except one feature"
+    ],
+    "free_to_vary": [
+      "how far the feature breaks the grid",
+      "accent color",
+      "row types"
+    ],
+    "adaptation_examples": [
+      "Streaming store: featured movie breaks the grid.",
+      "App store: featured app card over the shelf."
+    ],
+    "failure_modes": [
+      "Overlap clipping text",
+      "Mid-grey labels on dark"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-039",
+      "relation": "dark art-led shell"
+    },
+    {
+      "id": "vixen-ui-043",
+      "relation": "game store landing"
+    },
+    {
+      "id": "vixen-ui-006",
+      "relation": "dark glass sidebar"
+    }
+  ],
+  "lessons": [
+    "Let a breakout overlap only decorative regions, never text.",
+    "Check tag accuracy against the content."
+  ],
+  "tags": [
+    "dashboard",
+    "store",
+    "dark",
+    "breakout-card",
+    "sidebar"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-042",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#18181A",
+        "dominant (~27%)"
+      ],
+      [
+        "#5A5D68",
+        "dominant (~15%)"
+      ],
+      [
+        "#2F2829",
+        "dominant (~13%)"
+      ],
+      [
+        "#DDD5CE",
+        "dominant (~12%)"
+      ],
+      [
+        "#7A7D8A",
+        "dominant (~11%)"
+      ],
+      [
+        "#175DE7",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#A42A1A",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "A neutral dark stack; game art supplies the color; blue is the only UI color.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Sidebar 'Home'",
+        "role": "primary",
+        "bg": "#17161A",
+        "fg": "#818085",
+        "ratio": 4.57,
+        "ratio_low": 4.16,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Sidebar 'Store' (active)",
+        "role": "primary",
+        "bg": "#181819",
+        "fg": "#476194",
+        "ratio": 2.87,
+        "ratio_low": 2.61,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Sidebar 'Categories'",
+        "role": "primary",
+        "bg": "#18171B",
+        "fg": "#848388",
+        "ratio": 4.75,
+        "ratio_low": 4.21,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Sidebar 'Library'",
+        "role": "primary",
+        "bg": "#17171A",
+        "fg": "#848387",
+        "ratio": 4.75,
+        "ratio_low": 4.23,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Heading 'Most Popular'",
+        "role": "primary",
+        "bg": "#17171A",
+        "fg": "#F6F6F7",
+        "ratio": 16.58,
+        "ratio_low": 15.26,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Link 'See all'",
+        "role": "secondary",
+        "bg": "#18171A",
+        "fg": "#5A6989",
+        "ratio": 3.24,
+        "ratio_low": 2.76,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Button 'Purchase'",
+        "role": "primary",
+        "bg": "#175CEA",
+        "fg": "#FFFFFF",
+        "ratio": 5.6,
+        "ratio_low": 5.6,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Tag 'Role playing'",
+        "role": "secondary",
+        "bg": "#434349",
+        "fg": "#C1C0C6",
+        "ratio": 5.44,
+        "ratio_low": 4.87,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Friend 'Playing GTA V'",
+        "role": "secondary",
+        "bg": "#27282B",
+        "fg": "#56927E",
+        "ratio": 4.1,
+        "ratio_low": 2.85,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A game store whose structure and primary action are clear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong, art-led dark composition with a single accent."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Store conventions are followed, but the overlap clips the title and developer and a tag is questionable."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Active nav and purchase are clear; the overlap hides content; no hover states."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Cards, radii and the single blue are consistent."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "A breakout featured card is a distinctive emphasis device."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.61:1; secondary text min 2.76:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 67.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": true,
+        "detail": [
+          "Sidebar 'Store' (active): 2.61-2.87:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 67.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

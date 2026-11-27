@@ -1,0 +1,339 @@
+{
+  "title": "Portfolio contents index: six staggered chapter panels with art-derived tag colors",
+  "category": "portfolio / content index",
+  "source_files": [
+    "batch-04/img-01"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Artwork of unknown authorship in six styles; 'Nike Ad Film' is a brand title.",
+  "observed": {
+    "layout": "Near-black page with a brush-script italic heading 'Content' (white) at top-left and six tall, narrow portrait panels in a row with equal gaps. Panels 1, 3, 5 sit high and panels 2, 4, 6 start lower, so the tops zigzag. Under each panel: an italic 'Chapter N' tag in a thin outlined rectangle, a bold title (Koal Panic, Nike Ad Film, Exploring 3D, Kal-Yug, Udaipur Dairies, Revival of Him) and a grey discipline line (Comic Book, 2d Animation, Environment Design, Storyboarding, Illustrative Book, 2d Animation). Tag outlines are cream, red, green, grey, blue and violet.",
+    "hierarchy": "Heading, then the artwork panels, then the captions.",
+    "typography": "Brush-script italic heading; small sans titles and grey lines. Typeface unconfirmed.",
+    "iconography": "None.",
+    "materials": "Flat dark page; artworks in manga ink, warm 2D animation, 3D render, pencil storyboard, blue-line architecture and indigo painting.",
+    "background": "Near-black."
+  },
+  "interpretation": {
+    "aesthetic": "Dark gallery wall; the neutral ground lets six different art styles read as one curated portfolio.",
+    "implementation_notes": [
+      "CSS grid with alternating translateY on even panels.",
+      "Tag outline color is either set by hand per panel or extracted from the artwork's dominant hue."
+    ],
+    "caveat": "Inference from a static image."
+  },
+  "concept_work": {
+    "essence": "A rigid frame (same width, gap and label structure) that makes very different work feel like one portfolio.",
+    "what_makes_it_work": [
+      "Equal panel width and gap keep six styles coherent.",
+      "The zigzag adds rhythm without breaking the grid.",
+      "Tag color links each label to its art without adding a palette.",
+      "The discipline line shows the range of skills at a glance."
+    ],
+    "gaps_to_make_it_work": [
+      "Discipline lines measure about 5.26-6.03:1 and 6.03-8.07:1.",
+      "No hover, selected or link state is shown, so it is not clear the panels are clickable.",
+      "Staggered panels give two label baselines."
+    ]
+  },
+  "components": [
+    {
+      "name": "Page title",
+      "role": "names the index",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Chapter panels"
+      ]
+    },
+    {
+      "name": "Chapter panel",
+      "role": "art plus tag, title and discipline",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Chapter tag"
+      ]
+    },
+    {
+      "name": "Chapter tag",
+      "role": "order and accent",
+      "states_shown": [
+        "outline color per panel"
+      ],
+      "connects_to": [
+        "Chapter panel"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "one panel width and gap",
+      "outlined tag style",
+      "caption type scale",
+      "accent derived from the artwork"
+    ],
+    "links": [
+      "Tag color equals the panel's dominant color, linking label to art.",
+      "Chapter numbers set the reading order."
+    ]
+  },
+  "build": {
+    "effort": "Low",
+    "approach": [
+      "CSS grid with alternating translateY",
+      "Per-panel accent via a CSS variable"
+    ],
+    "risks": [
+      "Dominant-color extraction if automatic",
+      "Responsive reflow of the stagger"
+    ]
+  },
+  "pattern": {
+    "name": "Heterogeneous-work index",
+    "use_when": [
+      "Varied work that should feel curated",
+      "A table of contents for a portfolio or case-study book"
+    ],
+    "avoid_when": [
+      "Items must be compared like products"
+    ],
+    "must_preserve": [
+      "One frame for all items",
+      "Neutral ground",
+      "Accent derived from each item"
+    ],
+    "free_to_vary": [
+      "panel count",
+      "orientation",
+      "stagger amount",
+      "label form"
+    ],
+    "adaptation_examples": [
+      "Photographer's series index with a color tag per series.",
+      "Course catalogue: each chapter panel carries its topic image and color."
+    ],
+    "failure_modes": [
+      "No click affordance",
+      "Small grey captions on dark"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-020",
+      "relation": "art-led marketplace hero with a neutral ground"
+    },
+    {
+      "id": "vixen-ui-041",
+      "relation": "portfolio system board"
+    }
+  ],
+  "lessons": [
+    "Derive each item's accent from the item itself instead of picking a brand color.",
+    "Show a click affordance on index items."
+  ],
+  "tags": [
+    "portfolio",
+    "index",
+    "stagger",
+    "dark",
+    "accent-from-content"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-031",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#0D0D0D",
+        "dominant (~36%)"
+      ],
+      [
+        "#94948B",
+        "dominant (~24%)"
+      ],
+      [
+        "#1C1920",
+        "dominant (~18%)"
+      ],
+      [
+        "#0D0D0F",
+        "dominant (~14%)"
+      ],
+      [
+        "#0A0A0A",
+        "dominant (~3%)"
+      ],
+      [
+        "#A14020",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#22678D",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Near-black neutral page; all color comes from the six artworks; each chapter tag outline takes a color from its panel.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Title 'Content'",
+        "role": "primary",
+        "bg": "#0B0B0B",
+        "fg": "#FFFFFF",
+        "ratio": 19.68,
+        "ratio_low": 19.68,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Title 'Koal Panic'",
+        "role": "primary",
+        "bg": "#0A0A0A",
+        "fg": "#CFCFCF",
+        "ratio": 12.72,
+        "ratio_low": 10.39,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Title 'Nike Ad Film'",
+        "role": "primary",
+        "bg": "#090909",
+        "fg": "#D7D7D7",
+        "ratio": 13.83,
+        "ratio_low": 11.1,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Discipline 'Comic Book'",
+        "role": "secondary",
+        "bg": "#0A0A0A",
+        "fg": "#8E8E8E",
+        "ratio": 6.03,
+        "ratio_low": 5.26,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Discipline '2d Animation'",
+        "role": "secondary",
+        "bg": "#0A0A0A",
+        "fg": "#A5A5A5",
+        "ratio": 8.07,
+        "ratio_low": 6.03,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Tag 'Chapter 4'",
+        "role": "secondary",
+        "bg": "#151618",
+        "fg": "#FAFAFA",
+        "ratio": 17.29,
+        "ratio_low": 15.47,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Title 'Revival of Him'",
+        "role": "primary",
+        "bg": "#090909",
+        "fg": "#CBCBCB",
+        "ratio": 12.33,
+        "ratio_low": 10.58,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "The page's job (index of work) is obvious at once."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Consistent frame, strong rhythm, art supplies the color."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Index conventions are met, but there is no call to action or link affordance."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "No hover, selected or link state is shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Same panel width, gap and label structure throughout."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Staggered tops and art-derived tag colors go beyond a plain thumbnail row."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 10.39:1; secondary text min 5.26:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 72.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 72.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

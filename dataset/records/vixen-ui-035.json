@@ -1,0 +1,416 @@
+{
+  "title": "Design class landing page: one highlight color, repeated inline pill and class cards",
+  "category": "landing page",
+  "source_files": [
+    "batch-04/img-05"
+  ],
+  "attribution_visible_in_image": "Visible text: 'Defri Muhammad Fahrul Habiebi, Ruang Edit Founder' (a quote attribution), 'Copyright RE Production', 'Vivi Alfiani · 2024'. Not confirmed as the creator.",
+  "contains_third_party_content": "3D icon art and a character (origin unknown).",
+  "observed": {
+    "layout": "Warm off-white page with large soft blobs, blue asterisks and a lime sparkle. Slim nav (HOME, STORE, ABOUT US left; CLASS and an outlined lime pill 'CONTACT US' right). Bold all-caps headline 'LEVEL UP YOUR DESIGN [lime pill with arrow] WITH OUR DESIGN CLASS'. Left: 'With more than 2K+ MEMBERS, 500+ TUTORIALS'. Right: outlined lime 'Join us' with a circular lime arrow. A row of five rounded tiles (blue, charcoal, blue with a 3D character in the tallest center tile, charcoal, blue). A bordered container 'Our Classes' with three cards (Beginner, Expert, Employee), each with an arrow circle, divider, one line of copy and a 3D scene; the middle card is filled blue with a lime arrow. Closing statement 'KEEP [CREATING] UNTIL YOU FIND YOUR OWN AUDIENCE.' and footer.",
+    "hierarchy": "Headline, then the tile row with its center peak, then the class cards.",
+    "typography": "Bold geometric all-caps headline; clean sans body. Typeface unconfirmed.",
+    "iconography": "Glossy 3D icons, asterisk and sparkle glyphs.",
+    "materials": "Flat color blocks with glossy 3D assets; pill outlines.",
+    "background": "Warm off-white with soft blobs."
+  },
+  "interpretation": {
+    "aesthetic": "Friendly, toy-like creator-economy look.",
+    "implementation_notes": [
+      "Inline pill-with-arrow inside the headline is repeated three times as a brand motif.",
+      "The middle class card is differentiated by fill to signal a recommended class."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A three-color system with lime reserved for action, and one repeated inline motif.",
+    "what_makes_it_work": [
+      "Lime always means highlight or act.",
+      "The symmetrical tile row builds a clear focal peak.",
+      "A featured card is differentiated by fill."
+    ],
+    "gaps_to_make_it_work": [
+      "Two competing top-level actions (Contact Us and Join us) share the same pill style.",
+      "'Employee Class' wording is unclear.",
+      "Small grey copy on white measures about 4.29-5.21:1; footer text about 4.29-5.13:1.",
+      "Lime on off-white is a weak boundary."
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav",
+      "role": "site navigation",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Contact pill"
+      ]
+    },
+    {
+      "name": "Headline with inline pill",
+      "role": "states the offer",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Join us"
+      ]
+    },
+    {
+      "name": "Stat line",
+      "role": "social proof",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Join us"
+      ]
+    },
+    {
+      "name": "CTA group (Contact, Join us)",
+      "role": "actions",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Class cards"
+      ]
+    },
+    {
+      "name": "Icon tile row",
+      "role": "product preview",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Headline"
+      ]
+    },
+    {
+      "name": "Class cards",
+      "role": "choose a class",
+      "states_shown": [
+        "default",
+        "featured (filled)"
+      ],
+      "connects_to": [
+        "CTA group"
+      ]
+    },
+    {
+      "name": "Closing statement",
+      "role": "brand line",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Footer",
+      "role": "legal and credit",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "cobalt, charcoal, lime, off-white",
+      "pill radius",
+      "asterisk glyph",
+      "3D asset style"
+    ],
+    "links": [
+      "Lime marks action across the nav pill, headline pill, CTAs and featured card.",
+      "Blue marks structure (tiles, cards).",
+      "The inline pill motif repeats in the closing statement."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Standard sections with token colors",
+      "Inline pill via inline-flex",
+      "3D assets as images"
+    ],
+    "risks": [
+      "3D asset production",
+      "Two competing CTAs"
+    ]
+  },
+  "pattern": {
+    "name": "Playful conversion page with one highlight color",
+    "use_when": [
+      "Courses, creator tools and communities"
+    ],
+    "avoid_when": [
+      "Serious or regulated audiences"
+    ],
+    "must_preserve": [
+      "Highlight color reserved for actions",
+      "One repeated inline motif",
+      "One featured card differentiated by fill"
+    ],
+    "free_to_vary": [
+      "hues",
+      "asset style",
+      "card count"
+    ],
+    "adaptation_examples": [
+      "Coding bootcamp: lime to brand orange, cards become tracks.",
+      "Photography workshops: charcoal base with a yellow highlight."
+    ],
+    "failure_modes": [
+      "Equal-weight competing CTAs",
+      "Light outline on light ground"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-020",
+      "relation": "marketplace hero with a single dark action"
+    },
+    {
+      "id": "vixen-ui-036",
+      "relation": "single hue family with reserved highlight"
+    }
+  ],
+  "lessons": [
+    "Reserve one color for action and use it everywhere an action appears.",
+    "Do not give two top-level actions the same visual weight."
+  ],
+  "tags": [
+    "landing",
+    "courses",
+    "highlight-color",
+    "3d-icons",
+    "pill"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-035",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#EFEBE8",
+        "dominant (~43%)"
+      ],
+      [
+        "#33325B",
+        "dominant (~26%)"
+      ],
+      [
+        "#F6F2EF",
+        "dominant (~14%)"
+      ],
+      [
+        "#A9A9BA",
+        "dominant (~8%)"
+      ],
+      [
+        "#F0EBEA",
+        "dominant (~4%)"
+      ],
+      [
+        "#3F38E6",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#2F54C6",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Cobalt for structure, charcoal for contrast, lime reserved for 'highlight / act here', warm off-white ground.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Nav 'HOME'",
+        "role": "primary",
+        "bg": "#F9F5F3",
+        "fg": "#605F5D",
+        "ratio": 5.88,
+        "ratio_low": 4.42,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Nav 'CONTACT US'",
+        "role": "primary",
+        "bg": "#F7F5E9",
+        "fg": "#67665F",
+        "ratio": 5.28,
+        "ratio_low": 4.36,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Headline line 1",
+        "role": "primary",
+        "bg": "#EDEAE7",
+        "fg": "#20201B",
+        "ratio": 13.67,
+        "ratio_low": 13.02,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat intro 'With more than'",
+        "role": "secondary",
+        "bg": "#ECE8E6",
+        "fg": "#635F5D",
+        "ratio": 5.21,
+        "ratio_low": 4.29,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Stat '2K+ MEMBERS'",
+        "role": "primary",
+        "bg": "#ECE9E5",
+        "fg": "#14130F",
+        "ratio": 15.36,
+        "ratio_low": 14.64,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Button 'Join us'",
+        "role": "primary",
+        "bg": "#ECE9E4",
+        "fg": "#1E1C19",
+        "ratio": 14.08,
+        "ratio_low": 12.56,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card title 'Beginner Class'",
+        "role": "primary",
+        "bg": "#F9F6F3",
+        "fg": "#13110E",
+        "ratio": 17.43,
+        "ratio_low": 16.32,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card copy (light card)",
+        "role": "secondary",
+        "bg": "#F9F6F4",
+        "fg": "#45413F",
+        "ratio": 9.31,
+        "ratio_low": 7.61,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Card copy (blue card)",
+        "role": "secondary",
+        "bg": "#4139E7",
+        "fg": "#FFFFFF",
+        "ratio": 7.11,
+        "ratio_low": 7.11,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Footer 'Copyright RE Production'",
+        "role": "secondary",
+        "bg": "#EDE9E6",
+        "fg": "#65615E",
+        "ratio": 5.13,
+        "ratio_low": 4.29,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "Offer, proof and class choices are clear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "A strong focal peak, controlled palette and playful assets."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Landing conventions are met: the headline states the offer and the sections are in a sensible order."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Two equal pills compete; 'Employee Class' is unclear; no hover or focus states shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Colors, pills and cards are applied consistently."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "Toy-like 3D with a single highlight color is well executed but familiar for creator landing pages."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 2,
+        "weight": 10,
+        "points": 4.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 4.36:1; secondary text min 4.29:1; icon min n/a:1; non-color state cue: True. Using best-estimate values the score would be 5; the measurement is within error of a threshold."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 71.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 71.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

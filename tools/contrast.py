@@ -2,7 +2,7 @@
 """VIXEN contrast measurement (rubric v1.1).
 
 Usage:
-  python contrast.py boxes.json [--out contrast_final.json] [--montage montage.png]
+  python contrast.py boxes.json [--out contrast_final.json] [--montage montage.png] [--sheet sheet]
 
 boxes.json format:
 {
@@ -50,17 +50,41 @@ def measure(imarr, box, pad=3):
     lo_n = max(6, int(n * 0.04)); hi_n = max(3, int(n * 0.015))
     fg_low = p[order[-lo_n:]].mean(0)                          # conservative: top ~4% most distant pixels
     fg_est = p[order[-hi_n:]].mean(0)                          # best estimate: top ~1.5%
+    fg_pk = p[order[-max(3, int(n * 0.005)):]].mean(0)         # peak pixels: top ~0.5% (at least 3), used only to trigger the white/black assumption
     assumed = None
     sat = (bg.max() - bg.min()) / max(bg.max(), 1)
-    if sat >= 0.4 and fg_est.min() >= 170 and lum(fg_est) > lum(bg):
+    if sat >= 0.4 and fg_pk.min() >= 170 and lum(fg_pk) > lum(bg):
         fg_est = np.array([255., 255, 255]); assumed = 'white'   # small white text on saturated bg
-    elif sat >= 0.4 and fg_est.max() <= 60 and lum(fg_est) < lum(bg):
+    elif sat >= 0.4 and fg_pk.max() <= 60 and lum(fg_pk) < lum(bg):
         fg_est = np.array([0., 0, 0]); assumed = 'black'
     r_low = round(float(cr(fg_low, bg)), 2)
     r_est = round(float(cr(fg_est, bg)), 2)
     if assumed:
         r_low = r_est                                           # when assumed, both values are equal
     return hx(bg), hx(fg_est), r_low, r_est, assumed
+
+def contact_sheet(cfg_path, res_path, sheet_path, per_sheet=40):
+    """Writes sheet_path-1.png, -2.png ...: the actual crop of every box with its measured values.
+    Use it to confirm that each box really contains its text before trusting the numbers."""
+    cfg = json.load(open(cfg_path)); res = json.load(open(res_path)); base = cfg.get('image_dir', '.').rstrip('/\\')
+    cells = []
+    for key, spec in cfg['images'].items():
+        im = Image.open(f"{base}/{spec['file']}").convert('RGB')
+        for b, o in zip(spec['boxes'], res[key]):
+            x0, y0, x1, y1 = b['box']; c = im.crop((max(0, x0 - 6), max(0, y0 - 6), x1 + 6, y1 + 6))
+            sc = min(3, 230 / max(c.size[0], 1)); c = c.resize((max(1, int(c.size[0] * sc)), max(1, int(c.size[1] * sc))), Image.LANCZOS)
+            if c.size[1] > 120: c = c.crop((0, 0, c.size[0], 120))
+            cell = Image.new('RGB', (240, 150), (60, 60, 60)); cell.paste(c, (4, 16))
+            ImageDraw.Draw(cell).text((3, 2), f"{key} {o['element'][:26]}", fill=(255, 255, 0))
+            ImageDraw.Draw(cell).text((3, 138), f"low {o['ratio_low']} est {o['ratio']}", fill=(0, 255, 255))
+            cells.append(cell)
+    n = 0
+    for i in range(0, len(cells), per_sheet):
+        chunk = cells[i:i + per_sheet]; cols = 5; rows = (len(chunk) + cols - 1) // cols
+        S = Image.new('RGB', (cols * 240, rows * 150), (30, 30, 30))
+        for j, c in enumerate(chunk): S.paste(c, ((j % cols) * 240, (j // cols) * 150))
+        n += 1; S.save(f"{sheet_path}-{n}.png")
+    return n
 
 def run(cfg_path, out_path, montage_path=None):
     cfg = json.load(open(cfg_path))
@@ -91,9 +115,10 @@ def run(cfg_path, out_path, montage_path=None):
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('config'); ap.add_argument('--out', default='contrast_final.json'); ap.add_argument('--montage')
+    ap.add_argument('config'); ap.add_argument('--out', default='contrast_final.json'); ap.add_argument('--montage'); ap.add_argument('--sheet', help='prefix for contact sheets of every measured crop')
     a = ap.parse_args()
     res = run(a.config, a.out, a.montage)
+    if a.sheet: print('contact sheets:', contact_sheet(a.config, a.out, a.sheet))
     for k, v in res.items():
         for o in v:
             flag = ' <-- below 3' if o['ratio'] < 3 else ''

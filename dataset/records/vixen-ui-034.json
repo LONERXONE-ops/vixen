@@ -1,0 +1,341 @@
+{
+  "title": "'The art of thinking': illustrated statement hero with a design-history timeline footer",
+  "category": "landing page / editorial hero",
+  "source_files": [
+    "batch-04/img-04"
+  ],
+  "attribution_visible_in_image": null,
+  "contains_third_party_content": "Names of architects and designers appear as text (Adolf Loos, Marcel Breuer, Gerrit Rietveld, Alvar Aalto, Max Bill, Verner Panton, Jasper Morrison); the sneakers resemble real athletic shoe designs.",
+  "observed": {
+    "layout": "Full-bleed cornflower blue. Right half: a flat vector illustration of legs and sneakers on a skateboard whose deck is a yellow baguette, with a diagonal dark-blue shadow. Left: a huge, heavy geometric headline 'The art of thinking' in white. Tiny captions top-left, a rotated caption on the far left, a hamburger icon top-right. Bottom: six design-history entries (object, designer, year) on hairlines.",
+    "hierarchy": "Headline, then the illustration, then the caption row.",
+    "typography": "Heavy geometric display headline; tiny sans captions. Typeface unconfirmed.",
+    "iconography": "Hamburger icon only.",
+    "materials": "Flat vector with a hard diagonal shadow.",
+    "background": "Cornflower blue."
+  },
+  "interpretation": {
+    "aesthetic": "Playful modernist: three hues and a visual pun (bread plus skateboard) for 'thinking differently'.",
+    "implementation_notes": [
+      "The illustration is a custom asset; layout is standard.",
+      "The shadow is a flat shape that directs the eye toward the headline."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "A single idea (a pun) carried by one illustration, one huge headline and a calm structured counterweight.",
+    "what_makes_it_work": [
+      "Blue against yellow gives a hard focal point.",
+      "The shadow diagonal pulls the eye to the headline.",
+      "The timeline footer balances the loud illustration."
+    ],
+    "gaps_to_make_it_work": [
+      "The white headline on blue measures about 2.79:1.",
+      "Captions and years measure about 2.79:1.",
+      "The link between the pun and the design-history captions is unclear.",
+      "There is no offer or CTA; navigation is a hamburger only."
+    ]
+  },
+  "components": [
+    {
+      "name": "Hamburger menu",
+      "role": "only navigation",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Headline",
+      "role": "statement",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Illustration"
+      ]
+    },
+    {
+      "name": "Illustration with shadow shape",
+      "role": "focal point",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Headline"
+      ]
+    },
+    {
+      "name": "Caption row",
+      "role": "design-history timeline",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Rotated side caption",
+      "role": "editorial detail",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "one dominant background hue",
+      "flat shadow shape",
+      "heavy display face",
+      "hairline rule"
+    ],
+    "links": [
+      "The shadow diagonal leads the eye toward the headline.",
+      "Timeline years progress left to right."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Custom illustration asset",
+      "Standard layout for headline and caption row"
+    ],
+    "risks": [
+      "Illustration production",
+      "Caption legibility"
+    ]
+  },
+  "pattern": {
+    "name": "Illustrated statement hero",
+    "use_when": [
+      "Brand or editorial pages where mood matters more than a transaction"
+    ],
+    "avoid_when": [
+      "The page must convert"
+    ],
+    "must_preserve": [
+      "One huge headline",
+      "One strong complementary accent",
+      "A calm structured footer"
+    ],
+    "free_to_vary": [
+      "illustration subject",
+      "hue",
+      "caption content"
+    ],
+    "adaptation_examples": [
+      "Museum exhibition page: object illustration with a dated catalogue row.",
+      "Newsletter landing: pun illustration and issue list."
+    ],
+    "failure_modes": [
+      "White display type on mid-blue",
+      "Unexplained concept",
+      "No action"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-031",
+      "relation": "art-led editorial page"
+    },
+    {
+      "id": "vixen-ui-040",
+      "relation": "concept-driven hero"
+    }
+  ],
+  "lessons": [
+    "Large display text still needs contrast: white on mid-blue falls just under 3:1.",
+    "A pun needs one extra layer of meaning for the brand."
+  ],
+  "tags": [
+    "landing",
+    "editorial",
+    "illustration",
+    "statement",
+    "blue"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-034",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#529CFF",
+        "dominant (~32%)"
+      ],
+      [
+        "#BFD2D8",
+        "dominant (~17%)"
+      ],
+      [
+        "#364EA8",
+        "dominant (~11%)"
+      ],
+      [
+        "#8BA6B1",
+        "dominant (~10%)"
+      ],
+      [
+        "#669CD4",
+        "dominant (~9%)"
+      ],
+      [
+        "#529CFF",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#FEB201",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "One cornflower-blue field, a yellow object as the single complement, pink and navy for the figure and shadow, white type.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Headline 'The art'",
+        "role": "primary",
+        "bg": "#529CFD",
+        "fg": "#FFFFFF",
+        "ratio": 2.79,
+        "ratio_low": 2.79,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Top-left caption",
+        "role": "secondary",
+        "bg": "#539CFD",
+        "fg": "#FFFFFF",
+        "ratio": 2.79,
+        "ratio_low": 2.79,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Caption '35. Armchair'",
+        "role": "secondary",
+        "bg": "#539CFD",
+        "fg": "#FFFFFF",
+        "ratio": 2.79,
+        "ratio_low": 2.79,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Year '1922'",
+        "role": "secondary",
+        "bg": "#529CFD",
+        "fg": "#FFFFFF",
+        "ratio": 2.79,
+        "ratio_low": 2.79,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Caption '37. Chair 69'",
+        "role": "secondary",
+        "bg": "#539CFC",
+        "fg": "#FFFFFF",
+        "ratio": 2.8,
+        "ratio_low": 2.8,
+        "fg_assumed": "white",
+        "near_threshold": true
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Mood is clear but there is no offer or action, so purpose is only partly readable."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong focal point, scale contrast and restrained palette."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Editorial conventions are met, but a hamburger-only navigation and no CTA leave the page without an action path."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 2,
+        "weight": 15,
+        "points": 6.0,
+        "evidence": [
+          "No states, no CTA, hamburger-only menu."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Consistent hue, type and hairline treatment."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "A visual pun carried through illustration and layout is distinctive."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 2.79:1; secondary text min 2.79:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 61.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": true,
+        "detail": [
+          "Headline 'The art': 2.79-2.79:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 61.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

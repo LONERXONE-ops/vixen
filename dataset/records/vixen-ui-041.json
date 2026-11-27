@@ -1,0 +1,368 @@
+{
+  "title": "Personality-first portfolio system: one concept across ten screens",
+  "category": "portfolio website / multi-screen board",
+  "source_files": [
+    "batch-04/img-11"
+  ],
+  "attribution_visible_in_image": "The name 'Robin' appears as the portfolio owner in the mockup. Not confirmed as the creator.",
+  "contains_third_party_content": "Brand logos in a 'Trusted by' row (DJI, Formula 1, Nike, Honda, Porsche and others), stock-looking photos and 3D objects.",
+  "observed": {
+    "layout": "A grey board with a white grid holds ten desktop screens in a shared frame: lined-paper background, a slim nav of small colored pill tabs (HOME in yellow when active, ABOUT, CASE STUDY, PLAYGROUND, CONTACT) and colored dots. Hero: 'ROBIN' in a red selection box with handles, floating pastel stickers, 'I design software that gets out of your way.' with a green circle and pink asterisk inline, a black 'CONTACT ME' button. Playground: a collage of tilted, taped images and 3D objects. About (two screens): a handwriting-style bio, a taped polaroid, colored skill tags; a pixel-font 'ABOUT' with an outlined bio box. Featured works: pixel-font title and two project cards with date chips; then an angled black/yellow overlapping project layout with 'VIEW PROJECT'. Case study: pixel-font title, pastel metadata stickers (role, timeline, team), a large phone photo. Results: stickers with 47% and -55% beside two photos. Trusted by and Let's talk: logos on pastel tags, a smiley. Contact: a selection-framed 'CONTACT', a yellow sticky note, taped polaroids.",
+    "hierarchy": "One pixel headline per screen; the black button is the action.",
+    "typography": "Pixel display font, handwriting font and a plain sans. Typeface unconfirmed.",
+    "iconography": "Stickers, tape, polaroids, selection handles.",
+    "materials": "Paper lines, tape, sticky notes, pastel tags.",
+    "background": "Lined off-white paper."
+  },
+  "interpretation": {
+    "aesthetic": "Designer's desk meets design tool; warm, human, with a wink.",
+    "implementation_notes": [
+      "Many rotated, layered items per screen; assets are images and CSS transforms.",
+      "Small token set repeated on every screen."
+    ],
+    "caveat": "Body text is unreadable at this resolution, so only large headings were measured."
+  },
+  "concept_work": {
+    "essence": "A small token set (paper, tape, pastels, one pixel headline, one black button) applied to ten layouts so they read as one site.",
+    "what_makes_it_work": [
+      "The selection-box device turns the name into a tool object, saying 'software designer'.",
+      "The board covers every portfolio section in a story order: hello, who, what, proof, trust, contact.",
+      "Sticker colors map to meaning (role, time, team, stats)."
+    ],
+    "gaps_to_make_it_work": [
+      "Body text cannot be read at this resolution, so its contrast and copy cannot be verified.",
+      "The handwriting font for bio text may hurt legibility.",
+      "Nav pills are tiny; many rotated and layered items risk clutter on small screens.",
+      "No states beyond the active tab."
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav pills",
+      "role": "site navigation",
+      "states_shown": [
+        "HOME active (yellow)"
+      ],
+      "connects_to": [
+        "Every screen"
+      ]
+    },
+    {
+      "name": "Hero with selection box",
+      "role": "identity",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Contact button"
+      ]
+    },
+    {
+      "name": "Sticker/tag",
+      "role": "metadata and skills",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Project cards"
+      ]
+    },
+    {
+      "name": "Polaroid",
+      "role": "personal touch",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Project card",
+      "role": "case study entry",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Case study screen"
+      ]
+    },
+    {
+      "name": "Metadata stickers",
+      "role": "role, timeline, team",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Project card"
+      ]
+    },
+    {
+      "name": "Stat stickers",
+      "role": "results",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Logo tags",
+      "role": "trust",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Contact note",
+      "role": "contact",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "paper lines",
+      "tape",
+      "four pastels",
+      "black buttons",
+      "pixel plus handwriting plus sans type trio",
+      "selection-box frame"
+    ],
+    "links": [
+      "The active nav pill is yellow on every screen.",
+      "Sticker colors map to meaning across screens (role, time, team, stats)."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Token-based screens",
+      "Layered images with CSS transforms",
+      "Responsive restack of rotated items"
+    ],
+    "risks": [
+      "Clutter on small screens",
+      "Many assets",
+      "Handwriting legibility"
+    ]
+  },
+  "pattern": {
+    "name": "Personality-first portfolio system",
+    "use_when": [
+      "Individual designers and studios with a human voice"
+    ],
+    "avoid_when": [
+      "Formal or enterprise audiences"
+    ],
+    "must_preserve": [
+      "One repeated material metaphor",
+      "One pixel headline per screen",
+      "A single button style"
+    ],
+    "free_to_vary": [
+      "sticker palette",
+      "metaphor (desk, blueprint, notebook)",
+      "font trio"
+    ],
+    "adaptation_examples": [
+      "Architect portfolio with blueprint paper and stamps.",
+      "Illustrator portfolio with a sketchbook metaphor."
+    ],
+    "failure_modes": [
+      "Illegible handwriting body text",
+      "Clutter at small sizes"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-031",
+      "relation": "portfolio index"
+    },
+    {
+      "id": "vixen-ui-034",
+      "relation": "concept-driven hero"
+    },
+    {
+      "id": "vixen-ui-020",
+      "relation": "content-led hero"
+    }
+  ],
+  "lessons": [
+    "One material metaphor repeated on every screen unifies different layouts.",
+    "Show every section of a portfolio in story order."
+  ],
+  "tags": [
+    "portfolio",
+    "multi-screen",
+    "stickers",
+    "pixel-type",
+    "board"
+  ],
+  "open_questions": [
+    "Creator and source?",
+    "Higher-resolution source to verify body text?"
+  ],
+  "id": "vixen-ui-041",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F4F3F1",
+        "dominant (~22%)"
+      ],
+      [
+        "#8A8C8B",
+        "dominant (~20%)"
+      ],
+      [
+        "#BDB4A0",
+        "dominant (~12%)"
+      ],
+      [
+        "#F5F5F1",
+        "dominant (~11%)"
+      ],
+      [
+        "#352424",
+        "dominant (~10%)"
+      ],
+      [
+        "#F0C346",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#B4151D",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Lined-paper off-white ground, four pastels for stickers, black buttons, photos for color.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Hero 'ROBIN'",
+        "role": "primary",
+        "bg": "#FAF7F5",
+        "fg": "#030000",
+        "ratio": 19.62,
+        "ratio_low": 19.38,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Hero tagline",
+        "role": "primary",
+        "bg": "#F7F6F4",
+        "fg": "#0E0D0B",
+        "ratio": 18.02,
+        "ratio_low": 16.07,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Heading 'FEATURED WORKS'",
+        "role": "primary",
+        "bg": "#F9F8F6",
+        "fg": "#030100",
+        "ratio": 19.68,
+        "ratio_low": 19.3,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Heading 'ABOUT'",
+        "role": "primary",
+        "bg": "#F8F7F5",
+        "fg": "#050301",
+        "ratio": 19.27,
+        "ratio_low": 18.85,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "The board shows a portfolio's full story and its purpose is obvious."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "A strong, coherent look from a small token set."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Section order and conventions of a portfolio are followed; small body text could not be verified."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Only the active nav state is shown; interactions are not."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "The same tokens are applied across ten screens."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "The selection-box and desk metaphor are distinctive and serve the brand."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 5,
+        "weight": 10,
+        "points": 10.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 16.07:1; secondary text min n/a:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 79.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 79.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

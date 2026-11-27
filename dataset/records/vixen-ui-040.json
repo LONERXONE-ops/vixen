@@ -1,0 +1,402 @@
+{
+  "title": "CoolDock: a second Mac dock with live widgets shown on a calm landscape",
+  "category": "product page / widget UI",
+  "source_files": [
+    "batch-04/img-10"
+  ],
+  "attribution_visible_in_image": "Apple glyph and 'Your smart second Dock' (mockup copy); no creator credit visible.",
+  "contains_third_party_content": "Apple logo, system-style app icons (Safari, Music and others), a landscape photograph that looks generated or stock, artist name 'Dake'.",
+  "observed": {
+    "layout": "Hazy green-hills photo. Small Apple glyph and 'Your smart second Dock'. Massive black headline 'A useful Dock for live widgets.' Along the bottom, a long dark translucent dock with five modules: a clock '10:42 Wed, Jun 17'; weather '26° Today' with three forecast columns that each read 'Thu / 30°'; a 2x2 app icon block; a green ring meter reading '57'; a music player (album art, 'Music name / Dake', progress bar, previous / play / next).",
+    "hierarchy": "Headline first, then the dock.",
+    "typography": "Heavy black grotesque headline; small white module text. Typeface unconfirmed.",
+    "iconography": "System-style app icons and playback glyphs.",
+    "materials": "Dark translucent modules over a photo; equal heights and radii.",
+    "background": "Bright landscape photo."
+  },
+  "interpretation": {
+    "aesthetic": "Apple-adjacent, airy.",
+    "implementation_notes": [
+      "Modules share height, radius and tint; the bar is a flex row.",
+      "Real implementation needs live data and system integration."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "The product mock is the page's base, so the visual proves the claim.",
+    "what_makes_it_work": [
+      "Modules are the same height and radius, so the bar reads as one system.",
+      "Dark modules on a light ground give strong figure/ground.",
+      "The headline is the largest thing and the dock is second."
+    ],
+    "gaps_to_make_it_work": [
+      "The three forecast columns all read 'Thu' and '30°'; the ring reads '57' with no unit or label; a dated 'Wed, Jun 17' sits beside 'Thu' days.",
+      "Secondary module text measures about 3.37-4.53:1.",
+      "No offer or CTA is shown; the Apple logo implies a relationship that is not shown."
+    ]
+  },
+  "components": [
+    {
+      "name": "Headline",
+      "role": "states the product",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Dock bar"
+      ]
+    },
+    {
+      "name": "Dock bar",
+      "role": "container for modules",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Modules"
+      ]
+    },
+    {
+      "name": "Clock module",
+      "role": "time and date",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Weather module",
+      "role": "today plus three-day forecast",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "App block",
+      "role": "launchers",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Ring meter",
+      "role": "a single metric",
+      "states_shown": [
+        "57"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Music player",
+      "role": "playback",
+      "states_shown": [
+        "playing"
+      ],
+      "connects_to": []
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "dark translucent module",
+      "20-ish radius",
+      "one green accent",
+      "single sans"
+    ],
+    "links": [
+      "Modules share height, radius and tint so the bar is one system.",
+      "The green ring echoes the landscape."
+    ]
+  },
+  "build": {
+    "effort": "High",
+    "approach": [
+      "Backdrop-filter modules",
+      "Live data per module",
+      "Native integration for a real dock"
+    ],
+    "risks": [
+      "Platform APIs",
+      "Blur over photos",
+      "Real data states"
+    ]
+  },
+  "pattern": {
+    "name": "Product bar mock on a calm photo",
+    "use_when": [
+      "Showing a utility surface in context"
+    ],
+    "avoid_when": [
+      "The product cannot be shown truthfully"
+    ],
+    "must_preserve": [
+      "Uniform module size",
+      "One accent",
+      "Dark modules on a light ground"
+    ],
+    "free_to_vary": [
+      "module types",
+      "ground image",
+      "accent"
+    ],
+    "adaptation_examples": [
+      "Status bar widget for a dev tool over a landscape hero.",
+      "Car dashboard mock over a road photo."
+    ],
+    "failure_modes": [
+      "Placeholder data errors (repeated Thu 30°)",
+      "Unlabeled metric"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-009",
+      "relation": "edge-docked widget concept"
+    },
+    {
+      "id": "vixen-ui-013",
+      "relation": "dock navigation"
+    },
+    {
+      "id": "vixen-ui-034",
+      "relation": "concept-driven hero"
+    }
+  ],
+  "lessons": [
+    "Proofread placeholder data: repeated values undermine a product mock.",
+    "Label every metric (unit or name)."
+  ],
+  "tags": [
+    "product-page",
+    "dock",
+    "widgets",
+    "dark-modules",
+    "hero"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-040",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#F4F2EC",
+        "dominant (~16%)"
+      ],
+      [
+        "#35352C",
+        "dominant (~16%)"
+      ],
+      [
+        "#F1ECE5",
+        "dominant (~14%)"
+      ],
+      [
+        "#EAE9E7",
+        "dominant (~12%)"
+      ],
+      [
+        "#FCF9EE",
+        "dominant (~12%)"
+      ],
+      [
+        "#EB2951",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#3EC664",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "Dark translucent modules on a bright landscape; green ring is the single color accent.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Headline",
+        "role": "primary",
+        "bg": "#F5F3ED",
+        "fg": "#000000",
+        "ratio": 18.97,
+        "ratio_low": 18.97,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Eyebrow 'Your smart second Dock'",
+        "role": "primary",
+        "bg": "#EDECE9",
+        "fg": "#010000",
+        "ratio": 17.69,
+        "ratio_low": 17.68,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Clock '10:42'",
+        "role": "primary",
+        "bg": "#282824",
+        "fg": "#FFFFFD",
+        "ratio": 14.83,
+        "ratio_low": 14.83,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Date 'Wed, Jun 17'",
+        "role": "secondary",
+        "bg": "#252422",
+        "fg": "#8B8B89",
+        "ratio": 4.53,
+        "ratio_low": 3.97,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Weather '26°'",
+        "role": "primary",
+        "bg": "#2A2925",
+        "fg": "#FFFFFC",
+        "ratio": 14.54,
+        "ratio_low": 14.53,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Weather 'Today'",
+        "role": "secondary",
+        "bg": "#282723",
+        "fg": "#959490",
+        "ratio": 4.89,
+        "ratio_low": 4.32,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Forecast 'Thu'",
+        "role": "secondary",
+        "bg": "#292824",
+        "fg": "#83827E",
+        "ratio": 3.86,
+        "ratio_low": 3.22,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Player 'Music name'",
+        "role": "primary",
+        "bg": "#282723",
+        "fg": "#EAEAE8",
+        "ratio": 12.42,
+        "ratio_low": 10.81,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Player 'Dake'",
+        "role": "secondary",
+        "bg": "#282724",
+        "fg": "#7F7E7A",
+        "ratio": 3.69,
+        "ratio_low": 3.37,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Ring value '57'",
+        "role": "primary",
+        "bg": "#2B2A26",
+        "fg": "#FEFEFA",
+        "ratio": 14.17,
+        "ratio_low": 12.87,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "The product and its claim are clear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong figure/ground and a clean, airy composition."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Product-page conventions are met, but repeated placeholder data and an unlabeled ring weaken content correctness."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "No offer or CTA; module states are not shown."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Modules share size, radius and tint."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A familiar dock-style mockup."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 10.81:1; secondary text min 3.22:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 71.0,
+    "critical_failures": [],
+    "cf1_watchlist": [],
+    "final_total": 71.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}

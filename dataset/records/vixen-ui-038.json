@@ -1,0 +1,438 @@
+{
+  "title": "Swimwear shopping app: home and category grid with a sticky cart bar",
+  "category": "mobile e-commerce",
+  "source_files": [
+    "batch-04/img-08"
+  ],
+  "attribution_visible_in_image": "Visible: '@uix.vikram' (credit badge; also the username shown on screen). Not confirmed as the creator.",
+  "contains_third_party_content": "Product photos of swimwear and goggles (may show brands).",
+  "observed": {
+    "layout": "Two phones on a pale blue gradient. Home: greeting 'Welcome Back uix.vikram', avatar, cart button with a red dot; search 'What's on your list?' with a filter button; chips (All Products active and filled blue, Swimming, Goggles, Sw... cut off); a blue gradient promo 'Get 30% OFF on Swimwear! Limited time offer. Shop now!' with a yellow 'Shop Now' pill and carousel dots; 'Featured Products' cards (photo, blue price pill over the image, red heart, red '15 Stocks Left', 4.5 (201), name); bottom tabs Home (active, blue), Orders, Favorites, Profile. Category: back button, search 'Men's Fashion' with a 'Men' dropdown, a horizontally scrolling filter row (Filter, Rating, Size, Color, Brand), icon tiles (Goggles active, T-Shirts, Trunks, Swim Bag, Kick...), a two-column product grid with the same card anatomy and a sticky blue bar 'View your cart 3x $256.00'.",
+    "hierarchy": "Promo banner and product cards; the sticky cart bar on the second screen.",
+    "typography": "Rounded sans; bold names and prices, small grey metadata. Typeface unconfirmed.",
+    "iconography": "Icon plus label tabs; filled heart icons.",
+    "materials": "White cards, blue gradient banner and cart bar, price pill over photos.",
+    "background": "Pale blue gradient."
+  },
+  "interpretation": {
+    "aesthetic": "Soft, glossy commerce.",
+    "implementation_notes": [
+      "Horizontal-scroll chip and filter rows; sticky bottom bar.",
+      "Uniform card anatomy: image, price pill, heart, stock note, rating, name."
+    ],
+    "caveat": "Inference."
+  },
+  "concept_work": {
+    "essence": "Uniform card anatomy and one active-state blue make a catalog easy to scan.",
+    "what_makes_it_work": [
+      "Every product card has the same anatomy.",
+      "Blue consistently means active, selected, price or cart.",
+      "The sticky cart bar keeps count and total in view.",
+      "Yellow isolates the single promo action."
+    ],
+    "gaps_to_make_it_work": [
+      "The second featured card shows a T-shirt named 'FORM Smart Swim Goggles 2' (duplicate name).",
+      "The search says 'Men's Fashion' in a store whose categories are swimming gear.",
+      "Every heart looks filled, so favorite state cannot be read.",
+      "Inactive 'Orders' tab label measures about 1.73-1.82:1 and the search placeholder about 2.04-2.27:1."
+    ]
+  },
+  "components": [
+    {
+      "name": "Header with cart button",
+      "role": "identity and cart access",
+      "states_shown": [
+        "red dot"
+      ],
+      "connects_to": [
+        "Sticky cart bar"
+      ]
+    },
+    {
+      "name": "Search with filter",
+      "role": "find products",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Filter row"
+      ]
+    },
+    {
+      "name": "Category chips and tiles",
+      "role": "narrow the catalog",
+      "states_shown": [
+        "active (filled)"
+      ],
+      "connects_to": [
+        "Product grid"
+      ]
+    },
+    {
+      "name": "Promo carousel",
+      "role": "feature an offer",
+      "states_shown": [
+        "dots"
+      ],
+      "connects_to": [
+        "Shop Now"
+      ]
+    },
+    {
+      "name": "Product card",
+      "role": "browse and favorite",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Sticky cart bar"
+      ]
+    },
+    {
+      "name": "Filter row",
+      "role": "refine results",
+      "states_shown": [
+        "default"
+      ],
+      "connects_to": [
+        "Product grid"
+      ]
+    },
+    {
+      "name": "Tab bar",
+      "role": "global navigation",
+      "states_shown": [
+        "Home active"
+      ],
+      "connects_to": []
+    },
+    {
+      "name": "Sticky cart bar",
+      "role": "count and total",
+      "states_shown": [
+        "3x $256.00"
+      ],
+      "connects_to": [
+        "Header with cart button"
+      ]
+    }
+  ],
+  "system": {
+    "shared_tokens": [
+      "blue gradient",
+      "white cards",
+      "16-20 px radius",
+      "price pill",
+      "red for urgency and favorites"
+    ],
+    "links": [
+      "The cart dot, the '3x' count and the total connect the header to the sticky bar.",
+      "Blue active state ties chips, tiles, tabs and price pills together."
+    ]
+  },
+  "build": {
+    "effort": "Medium",
+    "approach": [
+      "Carousel, sticky bar and horizontal-scroll rows",
+      "Shared product card component"
+    ],
+    "risks": [
+      "Content/data consistency (names, categories)",
+      "Favorite state design"
+    ]
+  },
+  "pattern": {
+    "name": "Commerce home plus grid with a sticky cart bar",
+    "use_when": [
+      "Catalog apps with filtering"
+    ],
+    "avoid_when": [
+      "Single-product or service sales"
+    ],
+    "must_preserve": [
+      "Uniform card anatomy",
+      "Active-state fill",
+      "Sticky cart summary",
+      "Price legible on images"
+    ],
+    "free_to_vary": [
+      "hue",
+      "card density",
+      "promo style"
+    ],
+    "adaptation_examples": [
+      "Grocery app: price pill becomes unit price; cart bar shows delivery slot.",
+      "Ticket app: cards become events."
+    ],
+    "failure_modes": [
+      "Placeholder content that contradicts the store",
+      "Unreadable favorite state",
+      "Light inactive labels"
+    ]
+  },
+  "related": [
+    {
+      "id": "vixen-ui-012",
+      "relation": "bottom navigation bar"
+    },
+    {
+      "id": "vixen-ui-002",
+      "relation": "bottom navigation with active state"
+    }
+  ],
+  "lessons": [
+    "Check that product names, images and category scope agree before presenting a mockup.",
+    "Make the favorite on and off states visibly different."
+  ],
+  "tags": [
+    "mobile",
+    "e-commerce",
+    "product-card",
+    "sticky-bar",
+    "blue"
+  ],
+  "open_questions": [
+    "Creator and source?"
+  ],
+  "id": "vixen-ui-038",
+  "schema_version": "2.1",
+  "type": "concept",
+  "discipline": "ui-design",
+  "creator": null,
+  "source": null,
+  "publication_date": null,
+  "license": "unknown",
+  "attribution_status": "needs-user-input",
+  "measured": {
+    "palette_method": "Median-cut quantization of the supplied image plus saturated-pixel hue medians. Approximate (JPEG). Items marked 'approx' were judged by eye.",
+    "palette": [
+      [
+        "#FCFCFE",
+        "dominant (~28%)"
+      ],
+      [
+        "#D2E3FD",
+        "dominant (~20%)"
+      ],
+      [
+        "#445FA1",
+        "dominant (~12%)"
+      ],
+      [
+        "#E1E9F5",
+        "dominant (~12%)"
+      ],
+      [
+        "#F6F7F8",
+        "dominant (~11%)"
+      ],
+      [
+        "#2F5ECE",
+        "saturated-pixel median (accent)"
+      ],
+      [
+        "#F7E041",
+        "saturated-pixel median (accent)"
+      ]
+    ],
+    "color_roles": "White cards on a pale blue ground; one saturated blue for active, selected, price and cart; yellow used once for the promo action; red for urgency and favorites.",
+    "contrast_method": "Estimated from compressed images. Background = dominant color in a box around the text. ratio_low = conservative estimate (mean of the most distant ~4% of pixels). ratio = best estimate (mean of the most distant ~1.5% of pixels; for text on a saturated background that appears near-white or near-black, the text is assumed pure white or black, because anti-aliasing of small text otherwise understates the contrast). Accessibility scores use ratio_low; critical failure CF1 uses ratio. Gradient or photo backgrounds are measured one text line at a time. Values within 0.4 of a threshold are borderline and should be verified in the source file.",
+    "contrast_samples": [
+      {
+        "element": "Greeting 'Welcome Back'",
+        "role": "secondary",
+        "bg": "#F9F9FC",
+        "fg": "#949599",
+        "ratio": 2.84,
+        "ratio_low": 2.51,
+        "fg_assumed": null,
+        "near_threshold": true
+      },
+      {
+        "element": "Username 'uix.vikram'",
+        "role": "primary",
+        "bg": "#F9F9FC",
+        "fg": "#1C1C20",
+        "ratio": 16.26,
+        "ratio_low": 13.72,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Search placeholder",
+        "role": "secondary",
+        "bg": "#FCFCFC",
+        "fg": "#AAAAAA",
+        "ratio": 2.27,
+        "ratio_low": 2.04,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Chip 'All Products' (active)",
+        "role": "primary",
+        "bg": "#FAFAFB",
+        "fg": "#164199",
+        "ratio": 8.98,
+        "ratio_low": 8.6,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Promo headline",
+        "role": "primary",
+        "bg": "#4977E9",
+        "fg": "#FFFFFF",
+        "ratio": 4.12,
+        "ratio_low": 4.12,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Promo subline",
+        "role": "secondary",
+        "bg": "#4676E9",
+        "fg": "#FFFFFF",
+        "ratio": 4.18,
+        "ratio_low": 4.18,
+        "fg_assumed": "white",
+        "near_threshold": true
+      },
+      {
+        "element": "Button 'Shop Now'",
+        "role": "primary",
+        "bg": "#FBEA45",
+        "fg": "#524600",
+        "ratio": 7.58,
+        "ratio_low": 6.04,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Tab 'Home' (active)",
+        "role": "primary",
+        "bg": "#FAFCFA",
+        "fg": "#435563",
+        "ratio": 7.48,
+        "ratio_low": 5.71,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Tab 'Orders' (inactive)",
+        "role": "primary",
+        "bg": "#FBFBFB",
+        "fg": "#BDBDBD",
+        "ratio": 1.82,
+        "ratio_low": 1.73,
+        "fg_assumed": null,
+        "near_threshold": false
+      },
+      {
+        "element": "Cart bar 'View your cart'",
+        "role": "primary",
+        "bg": "#2657C9",
+        "fg": "#FFFFFF",
+        "ratio": 6.38,
+        "ratio_low": 6.38,
+        "fg_assumed": "white",
+        "near_threshold": false
+      },
+      {
+        "element": "Stock note '15 Stocks Left'",
+        "role": "secondary",
+        "bg": "#FDFBFB",
+        "fg": "#8C7C7D",
+        "ratio": 3.87,
+        "ratio_low": 3.3,
+        "fg_assumed": null,
+        "near_threshold": false
+      }
+    ]
+  },
+  "evaluation": {
+    "rubric_version": "1.1",
+    "scores": {
+      "purpose": {
+        "score": 4,
+        "weight": 15,
+        "points": 12.0,
+        "evidence": [
+          "A catalog shopping flow whose parts are clear."
+        ],
+        "basis": "judged"
+      },
+      "visual": {
+        "score": 4,
+        "weight": 20,
+        "points": 16.0,
+        "evidence": [
+          "Strong card rhythm, one saturated blue, clean gradient backdrop."
+        ],
+        "basis": "judged"
+      },
+      "discipline": {
+        "score": 3,
+        "weight": 20,
+        "points": 12.0,
+        "evidence": [
+          "Commerce conventions are followed, but a duplicated product name and a mismatched search scope break content correctness."
+        ],
+        "basis": "judged"
+      },
+      "usability": {
+        "score": 3,
+        "weight": 15,
+        "points": 9.0,
+        "evidence": [
+          "Active states are shown; the favorite state is unreadable."
+        ],
+        "basis": "judged"
+      },
+      "consistency": {
+        "score": 4,
+        "weight": 10,
+        "points": 8.0,
+        "evidence": [
+          "Cards, chips, tabs and bars share radii and the same blue."
+        ],
+        "basis": "judged"
+      },
+      "originality": {
+        "score": 3,
+        "weight": 10,
+        "points": 6.0,
+        "evidence": [
+          "A conventional commerce layout executed well."
+        ],
+        "basis": "judged"
+      },
+      "accessibility": {
+        "score": 1,
+        "weight": 10,
+        "points": 2.0,
+        "evidence": [
+          "Scored on conservative values: primary text min 1.73:1; secondary text min 2.04:1; icon min n/a:1; non-color state cue: True."
+        ],
+        "basis": "computed from measured contrast + cue flag (scope: contrast and non-color cues only; touch targets, motion and screen-reader support cannot be assessed from a static image)"
+      }
+    },
+    "raw_total": 65.0,
+    "critical_failures": [
+      {
+        "code": "CF1",
+        "description": "A primary text/label measures below 3:1 contrast (best estimate)",
+        "borderline": false,
+        "detail": [
+          "Tab 'Orders' (inactive): 1.73-1.82:1"
+        ]
+      }
+    ],
+    "cf1_watchlist": [],
+    "final_total": 65.0,
+    "cap_applied": false,
+    "readiness": "B",
+    "readiness_key": "A = ship with minor adjustments (>=80, no critical failure); B = needs specific fixes (60-79); C = rethink (<60)",
+    "scope": "Scored as presented in a static image. States, motion and behavior that are not shown are not scored as present."
+  }
+}
